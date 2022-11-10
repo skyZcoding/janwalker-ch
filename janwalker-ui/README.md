@@ -1,4 +1,4 @@
-# janwalker-ch
+# janwalker-ui
 
 ## Build Setup
 
