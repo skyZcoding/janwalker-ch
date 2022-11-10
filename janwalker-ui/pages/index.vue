@@ -127,6 +127,47 @@ export default {
       if (this.input.toLocaleLowerCase() == "help") {
         this.helpCommand()
       }
+      else {
+        this.commandNotFound()
+      }
+    },
+    commandNotFound() { 
+      let message = [
+      ]
+
+      message.push('')
+      message.push('')
+      message.push('')
+      message.push('')
+
+      this.history.push(message)
+      message = [
+      ]
+
+      message.push('')
+      message.push('')
+      message.push('')
+      message.push("Could\xa0not\xa0find\xa0any\xa0command\xa0called\xa0'" + this.input + "'.")
+
+      this.history.push(message)
+      message = [
+      ]
+
+      message.push('')
+      message.push('')
+      message.push('')
+      message.push("Use\xa0'help'\xa0to\xa0view\xa0all\xa0commands.")
+
+      this.history.push(message)
+      message = [
+      ]
+
+      message.push('')
+      message.push('')
+      message.push('')
+      message.push('')
+
+      this.history.push(message)
     },
     helpCommand() {
       let message = [
