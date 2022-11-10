@@ -1,7 +1,7 @@
 <template>
-  <div class="h-screen">
+  <div class="h-screen overflow-x-visible">
     <div class="h-full bg-slate-800 p-2">
-      <div class="flex flex-col overflow-x-visible">
+      <div class="flex flex-col ">
         <div class="font-mono h-6" :class="message.color" v-for="(message, index) in startup" :key="index">
           {{ message.command }}
         </div>
@@ -17,7 +17,7 @@
           <p class="font-mono text-white h-6">$&nbsp</p>
           <p class="font-mono text-white h-6">{{input}}</p>
         </div>
-        
+        <image class="h-6" src="~/resources/images/line-coursor.svg" ></image>
       </div>
       
     </div>
@@ -35,7 +35,7 @@ export default {
           color: 'text-white'
         },
         {
-          command: "Mounted: home-page",
+          command: "Mounted: /home/cv/",
           color: 'text-cyan-300',
         },
         {
@@ -127,9 +127,59 @@ export default {
       if (this.input.toLocaleLowerCase() == "help") {
         this.helpCommand()
       }
+      else if (this.input.toLocaleLowerCase() == "clear") { 
+        this.clearCommand()
+      }
+      else if (this.input.toLocaleLowerCase() == "view") {
+        this.viewCommand()
+      }
+      else if (this.input.toLocaleLowerCase() == "ls") {
+        this.viewCommand()
+      }
+      else if (this.input.toLocaleLowerCase() == "cd") {
+        this.viewCommand()
+      }
       else {
         this.commandNotFound()
       }
+    },
+    lsCommand() {
+      let message = [
+      ]
+
+      message.push('')
+      message.push('')
+      message.push('')
+      message.push("Not implemented yet")
+
+      this.history.push(message)
+    },
+    cdCommand() {
+      let message = [
+      ]
+
+      message.push('')
+      message.push('')
+      message.push('')
+      message.push("Not implemented yet")
+
+      this.history.push(message)
+    },
+    viewCommand() {
+      let message = [
+      ]
+
+      message.push('')
+      message.push('')
+      message.push('')
+      message.push("Not implemented yet")
+
+      this.history.push(message)
+    },
+    clearCommand() {
+      this.history = [
+
+      ]
     },
     commandNotFound() { 
       let message = [
@@ -184,8 +234,8 @@ export default {
 
       message.push('')
       message.push('')
-      message.push('')
-      message.push('HELP\xa0\xa0\xa0\xa0\xa0Shows all commands with a short description')
+      message.push('HELP')
+      message.push('\xa0\xa0\xa0\xa0\xa0Shows all commands with a short description')
 
       this.history.push(message)
       message = [
@@ -193,8 +243,8 @@ export default {
 
       message.push('')
       message.push('')
-      message.push('')
-      message.push('VIEW\xa0\xa0\xa0\xa0\xa0Displays the page')
+      message.push('VIEW')
+      message.push('\xa0\xa0\xa0\xa0\xa0Displays the page')
 
       this.history.push(message)
       message = [
@@ -202,8 +252,8 @@ export default {
 
       message.push('')
       message.push('')
-      message.push('')
-      message.push('CD\xa0\xa0\xa0\xa0\xa0\xa0\xa0Moves in or out of the directory')
+      message.push('CLEAR')
+      message.push('\xa0\xa0\xa0\xa0Clears the history of the console')
 
       this.history.push(message)
       message = [
@@ -211,8 +261,17 @@ export default {
 
       message.push('')
       message.push('')
+      message.push('CD')
+      message.push('\xa0\xa0\xa0\xa0\xa0\xa0\xa0Moves in or out of the directory')
+
+      this.history.push(message)
+      message = [
+      ]
+
       message.push('')
-      message.push('LS\xa0\xa0\xa0\xa0\xa0\xa0\xa0Shows all files and the directories in the directory')
+      message.push('')
+      message.push('LS')
+      message.push('\xa0\xa0\xa0\xa0\xa0\xa0\xa0Shows all files and the directories in the directory')
 
       this.history.push(message)
       message = [
