@@ -1,7 +1,7 @@
 <template>
   <div class="h-screen overflow-x-visible">
-    <div class="h-full bg-slate-800 p-2">
-      <div class="flex flex-col ">
+    <div class="h-full bg-slate-800 p-2 flex flex-col">
+      <div class="flex flex-col ju">
         <div class="font-mono h-6" :class="message.color" v-for="(message, index) in startup" :key="index">
           {{ message.command }}
         </div>
@@ -20,7 +20,10 @@
           <p class="font-mono text-white h-6">{{inputEnd}}</p>
         </div>
       </div>
-      
+
+      <div class="font-family-mono text-white absolute bottom-0 left-0 m-2">
+          &#169 By Jan Walker
+      </div>
     </div>
   </div>
 </template>
