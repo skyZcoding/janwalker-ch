@@ -1,7 +1,7 @@
 <template>
   <div class="h-screen overflow-x-visible">
-    <div class="h-full bg-slate-800 p-2">
-      <div class="flex flex-col ">
+    <div class="min-h-full bg-slate-800 p-2 flex flex-col justify-between">
+      <div class="flex flex-col">
         <div class="font-mono h-6" :class="message.color" v-for="(message, index) in startup" :key="index">
           {{ message.command }}
         </div>
@@ -15,11 +15,15 @@
           <p class="font-mono text-cyan-300 h-6">{{user}}{{desktop}}</p>
           <p class="font-mono text-violet-500 h-6">{{directory}}</p>
           <p class="font-mono text-white h-6">$&nbsp</p>
-          <p class="font-mono text-white h-6">{{input}}</p>
+          <p class="font-mono text-white h-6">{{inputStart}}</p>
+          <p class="font-mono text-white h-6 animate-pulse bg-violet-500">{{inputCursor}}</p>
+          <p class="font-mono text-white h-6">{{inputEnd}}</p>
         </div>
-        <image class="h-6" src="~/resources/images/line-coursor.svg" ></image>
       </div>
-      
+
+      <div class="font-family-mono text-white m-1 mt-10">
+          &#169 By Jan Walker
+      </div>
     </div>
   </div>
 </template>
@@ -82,7 +86,11 @@ export default {
       history: [
 
       ],
+      cursorPosition: 1,
       input: '',
+      inputStart: '',
+      inputEnd: '',
+      inputCursor: '\xa0',
       user: 'Jan@',
       desktop: 'home-page:',
       directory: "cv",
@@ -93,6 +101,25 @@ export default {
       ]
     }
   },
+  watch: {
+    cursorPosition: function (value) {
+      if (this.input.length == 0) { 
+        this.cursorPosition = 1
+      }
+      else if (value == 0) {
+        this.cursorPosition = 1
+      }
+      else if (value != this.input.length + 1) {
+        this.inputStart = this.input.slice(0, value - 1)
+        this.inputCursor = this.input.slice(value - 1, value )
+        this.inputEnd = this.input.slice(value, this.input.length)
+      }
+      else {
+        this.inputStart = this.input
+        this.inputCursor = '\xa0'
+      }
+    }
+  },
   methods: {
     keyDownHandler(e) {
       if (this.specialKeys.includes(e.keyCode))
@@ -101,27 +128,37 @@ export default {
       }
       else if (e.keyCode == 8) {
         this.input = this.input.slice(0, -1)
+        this.cursorPosition = this.cursorPosition - 1
       }
       else if (e.keyCode == 13) {
         this.createHistoryMessage()
         this.excuteCommand()
         this.input = ''
+        this.inputCursor = '\xa0'
+        this.inputStart = ''
+        this.inputEnd = ''
+        this.cursorPosition = 1
+      }
+      else if (e.keyCode == 40) {
+        // Down
       } 
+      else if (e.keyCode == 39) {
+        this.cursorPosition = this.cursorPosition + 1
+      }
+      else if (e.keyCode == 38) {
+        // Up
+      }
+      else if (e.keyCode == 37) {
+        this.cursorPosition = this.cursorPosition - 1
+      }
       else {
         this.input = this.input + e.key
+        this.cursorPosition = this.cursorPosition + 1
         console.log(e.keyCode)
       }
     },
     createHistoryMessage() {
-      let message = [
-      ]
-
-      message.push(this.user)
-      message.push(this.desktop)
-      message.push(this.directory)
-      message.push(this.input)
-      
-      this.history.push(message) 
+      this.createHistoryCommand(this.user, this.desktop, this.directory, this.input)
     },
     excuteCommand() { 
       if (this.input.toLocaleLowerCase() == "help") {
@@ -144,143 +181,37 @@ export default {
       }
     },
     lsCommand() {
-      let message = [
-      ]
-
-      message.push('')
-      message.push('')
-      message.push('')
-      message.push("Not implemented yet")
-
-      this.history.push(message)
+      this.createHistoryCommand('', '', '', 'Not implemented yet')
     },
     cdCommand() {
-      let message = [
-      ]
-
-      message.push('')
-      message.push('')
-      message.push('')
-      message.push("Not implemented yet")
-
-      this.history.push(message)
+      this.createHistoryCommand('', '', '', 'Not implemented yet')
     },
     viewCommand() {
-      let message = [
-      ]
-
-      message.push('')
-      message.push('')
-      message.push('')
-      message.push("Not implemented yet")
-
-      this.history.push(message)
+      this.createHistoryCommand('', '', '', 'Not implemented yet')
     },
     clearCommand() {
-      this.history = [
-
-      ]
+      this.history = []
+      this.cursorPosition = 0
     },
     commandNotFound() { 
-      let message = [
-      ]
-
-      message.push('')
-      message.push('')
-      message.push('')
-      message.push('')
-
-      this.history.push(message)
-      message = [
-      ]
-
-      message.push('')
-      message.push('')
-      message.push('')
-      message.push("Could\xa0not\xa0find\xa0any\xa0command\xa0called\xa0'" + this.input + "'.")
-
-      this.history.push(message)
-      message = [
-      ]
-
-      message.push('')
-      message.push('')
-      message.push('')
-      message.push("Use\xa0'help'\xa0to\xa0view\xa0all\xa0commands.")
-
-      this.history.push(message)
-      message = [
-      ]
-
-      message.push('')
-      message.push('')
-      message.push('')
-      message.push('')
-
-      this.history.push(message)
+      this.createHistoryCommand('', '', '', '')
+      this.createHistoryCommand('', '', '', "Could\xa0not\xa0find\xa0any\xa0command\xa0called\xa0'" + this.input + "'.")
+      this.createHistoryCommand('', '', '', "Use\xa0'help'\xa0to\xa0view\xa0all\xa0commands.")
+      this.createHistoryCommand('', '', '', '')
     },
     helpCommand() {
+      this.createHistoryCommand('', '', '', '')
+      this.createHistoryCommand('', '', 'HELP', '\xa0\xa0\xa0\xa0\xa0Shows all commands with a short description')
+      this.createHistoryCommand('', '', 'VIEW', '\xa0\xa0\xa0\xa0\xa0Displays the page')
+      this.createHistoryCommand('', '', 'CLEAR', '\xa0\xa0\xa0\xa0Clears the history of the console')
+      this.createHistoryCommand('', '', 'CD', '\xa0\xa0\xa0\xa0\xa0\xa0\xa0Moves in or out of the directory')
+      this.createHistoryCommand('', '', 'LS', '\xa0\xa0\xa0\xa0\xa0\xa0\xa0Shows all files and the directories in the directory')
+      this.createHistoryCommand('', '', '', '')
+    },
+    createHistoryCommand(user, desktop, directory, input) {
       let message = [
+        user, desktop, directory, input
       ]
-
-      message.push('')
-      message.push('')
-      message.push('')
-      message.push('')
-
-      this.history.push(message)
-      message = [
-      ]
-
-      message.push('')
-      message.push('')
-      message.push('HELP')
-      message.push('\xa0\xa0\xa0\xa0\xa0Shows all commands with a short description')
-
-      this.history.push(message)
-      message = [
-      ]
-
-      message.push('')
-      message.push('')
-      message.push('VIEW')
-      message.push('\xa0\xa0\xa0\xa0\xa0Displays the page')
-
-      this.history.push(message)
-      message = [
-      ]
-
-      message.push('')
-      message.push('')
-      message.push('CLEAR')
-      message.push('\xa0\xa0\xa0\xa0Clears the history of the console')
-
-      this.history.push(message)
-      message = [
-      ]
-
-      message.push('')
-      message.push('')
-      message.push('CD')
-      message.push('\xa0\xa0\xa0\xa0\xa0\xa0\xa0Moves in or out of the directory')
-
-      this.history.push(message)
-      message = [
-      ]
-
-      message.push('')
-      message.push('')
-      message.push('LS')
-      message.push('\xa0\xa0\xa0\xa0\xa0\xa0\xa0Shows all files and the directories in the directory')
-
-      this.history.push(message)
-      message = [
-      ]
-
-      message.push('')
-      message.push('')
-      message.push('')
-      message.push('')
 
       this.history.push(message)
     }
