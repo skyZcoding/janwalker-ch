@@ -204,7 +204,6 @@ export default {
         this.cursorPosition = this.cursorPosition - 1
       }
       else {
-
         if (this.cursorPosition - 1 == this.input.length) {
           this.input = this.input + e.key
           this.cursorPosition = this.cursorPosition + 1
@@ -259,7 +258,35 @@ export default {
       })
     },
     cdCommand() {
-      this.createHistoryCommand('', '', '', 'Not implemented yet')
+      let command = this.input.split(' ')
+      let directoryList = this.directory.split('/')
+      let that = this
+
+      if (command[1] == '..' && directoryList.length == 3) {
+        this.directories.forEach(function (directory) {
+          if (directory.directory == directoryList[0]) {
+            directory.active = true
+            directory.subdirectories.forEach(function (d) {
+              if (d.active) {
+                d.active = false
+              }
+            })
+          }
+        })
+        this.directory = directoryList[0]
+      } else {
+        this.directories.forEach(function (directory) {
+          if (directory.directory == directoryList[0]) {
+            directory.active = false
+            directory.subdirectories.forEach(function (d) {
+              if (d.directory == command[1]) {
+                that.directory = that.directory + '/' + d.directory + '/'
+                d.active = true
+              }
+            })
+          }
+        })
+      }
     },
     viewCommand() {
       this.createHistoryCommand('', '', '', 'Not implemented yet')
