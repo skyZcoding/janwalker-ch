@@ -178,8 +178,15 @@ export default {
         this.cursorPosition = this.cursorPosition - 1
       }
       else {
-        this.input = this.input + e.key
-        this.cursorPosition = this.cursorPosition + 1
+
+        if (this.cursorPosition - 1 == this.input.length) {
+          this.input = this.input + e.key
+          this.cursorPosition = this.cursorPosition + 1
+        }
+        else {
+          this.input = this.input.slice(0, this.cursorPosition) + e.key + this.input.slice(this.cursorPosition + 1, this.input.length)
+          this.cursorPosition = this.cursorPosition + 1
+        }
       }
     },
     createHistoryMessage() {
