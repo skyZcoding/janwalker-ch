@@ -1,27 +1,27 @@
 <template>
-  <div class="h-screen overflow-x-visible">
-    <div class="min-h-full bg-slate-800 p-2 flex flex-col justify-between">
+  <div class="h-screen">
+    <div class="min-h-full bg-slate-800 p-2 flex flex-col justify-between overflow-x-visible">
       <div class="flex flex-col">
-        <div class="font-mono h-6" :class="message.color" v-for="(message, index) in startup" :key="index">
+        <div class="font-mono" :class="message.color" v-for="(message, index) in startup" :key="index">
           {{ message.command }}
         </div>
-        <div class="flex flex-row" v-for="(command, index) in history" :key="index">
-          <p class="font-mono text-cyan-300 h-6">{{command[0]}}{{command[1]}}</p>
-          <p class="font-mono text-violet-500 h-6">{{command[2]}}</p>
-          <p class="font-mono text-white h-6" v-if="command[0]">$&nbsp</p>
-          <p class="font-mono text-white h-6">{{command[3]}}</p>
+        <div class="flex flex-row h-6" v-for="(command, index) in history" :key="index">
+          <p class="font-mono text-cyan-300">{{command[0]}}{{command[1]}}</p>
+          <p class="font-mono text-violet-500">{{command[2]}}</p>
+          <p class="font-mono text-white" v-if="command[0]">$&nbsp</p>
+          <p class="font-mono text-white">{{command[3]}}</p>
         </div>
-        <div class="flex flex-row">
-          <p class="font-mono text-cyan-300 h-6">{{user}}{{desktop}}</p>
-          <p class="font-mono text-violet-500 h-6">{{directory}}</p>
-          <p class="font-mono text-white h-6">$&nbsp</p>
-          <p class="font-mono text-white h-6">{{inputStart}}</p>
-          <p class="font-mono text-white h-6 animate-pulse bg-violet-500">{{inputCursor}}</p>
-          <p class="font-mono text-white h-6">{{inputEnd}}</p>
+        <div class="flex flex-row h-6" >
+          <p class="font-mono text-cyan-300">{{user}}{{desktop}}</p>
+          <p class="font-mono text-violet-500">{{directory}}</p>
+          <p class="font-mono text-white">$&nbsp</p>
+          <p class="font-mono text-white">{{inputStart}}</p>
+          <p class="font-mono text-white animate-pulse bg-violet-500">{{inputCursor}}</p>
+          <p class="font-mono text-white">{{inputEnd}}</p>
         </div>
       </div>
 
-      <div class="font-family-mono text-white m-1 mt-10">
+      <div class="font-family-mono text-white m-1 mt-5" id="copyright">
           &#169 By Jan Walker
       </div>
     </div>
@@ -160,6 +160,9 @@ export default {
         this.inputStart = ''
         this.inputEnd = ''
         this.cursorPosition = 1
+
+        let element = document.getElementById('copyright')
+        element.scrollIntoView(false)
       }
       else if (e.keyCode == 40) {
         // Down
@@ -184,7 +187,7 @@ export default {
           this.cursorPosition = this.cursorPosition + 1
         }
         else {
-          this.input = this.input.slice(0, this.cursorPosition) + e.key + this.input.slice(this.cursorPosition + 1, this.input.length)
+          this.input = this.input.slice(0, this.cursorPosition - 1) + e.key + this.input.slice(this.cursorPosition - 1, this.input.length)
           this.cursorPosition = this.cursorPosition + 1
         }
       }
