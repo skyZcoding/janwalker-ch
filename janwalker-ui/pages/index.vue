@@ -94,6 +94,29 @@ export default {
       user: 'Jan@',
       desktop: 'home-page:',
       directory: "cv",
+      directories: [
+        {
+          directory: "cv", active: true, subdirectories: [
+            {
+              directory: "contact", active: false, files: [
+              { name: "info.txt" }
+            ]},
+            {
+              directory: "projects", active: false, files: [
+              { name: "cobas_mobile_solution.txt" },
+              { name: "alumoo.txt" }
+            ]},
+            {
+              directory: "education", active: false, files: [
+              { name: "info.txt" } 
+            ]},
+            {
+              directory: "experience", active: false, files: [
+              { name: "apprenticeship.txt" },
+              { name: "junior_software.txt" }
+            ]},
+        ]},
+      ],
       specialKeys: [
         3, 12, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27,
         28, 29, 30, 31, 33, 34, 35, 36, 112, 113, 114, 115,
@@ -206,17 +229,34 @@ export default {
         this.viewCommand()
       }
       else if (this.input.toLocaleLowerCase() == "ls") {
-        this.viewCommand()
+        this.lsCommand()
       }
-      else if (this.input.toLocaleLowerCase() == "cd") {
-        this.viewCommand()
+      else if (this.input.toLocaleLowerCase().startsWith('cd ')) {
+        this.cdCommand()
       }
       else {
         this.commandNotFound()
       }
     },
     lsCommand() {
-      this.createHistoryCommand('', '', '', 'Not implemented yet')
+      let that = this
+
+      this.directories.forEach(function (root) {
+        if (root.active) {
+          root.subdirectories.forEach(function (directory) {
+            that.createHistoryCommand('', '', directory.directory, '')
+          })
+        } else {
+          root.subdirectories.forEach(function (directory) {
+            if (directory.active) {
+              directory.files.forEach(function (file) { 
+                that.createHistoryCommand('', '', '', file.name)
+              })
+            }
+          })
+        }
+        
+      })
     },
     cdCommand() {
       this.createHistoryCommand('', '', '', 'Not implemented yet')
