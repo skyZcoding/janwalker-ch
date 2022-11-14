@@ -102,6 +102,15 @@ export default {
     }
   },
   watch: {
+    input: function (value) {
+      if (value == '')
+      {
+        this.inputStart = ''
+        this.inputCursor = '\xa0'
+        this.inputEnd = ''
+        this.cursorPosition = 1
+      }
+    },
     cursorPosition: function (value) {
       if (this.input.length == 0) { 
         this.cursorPosition = 1
@@ -127,12 +136,25 @@ export default {
         console.log(e.keyCode)
       }
       else if (e.keyCode == 8) {
-        this.input = this.input.slice(0, -1)
-        this.cursorPosition = this.cursorPosition - 1
+        // Backspace
+
+        if (this.cursorPosition == 1) {
+          
+        }
+        else if (this.cursorPosition > 2 || this.input.length > 1)
+        {
+          this.input = this.input.slice(0, this.cursorPosition - 2) + this.input.slice(this.cursorPosition - 1, this.input.length)
+          this.cursorPosition = this.cursorPosition - 1
+        }
+        else {
+          this.input = ''
+        }
       }
       else if (e.keyCode == 13) {
+        // Enter
+
         this.createHistoryMessage()
-        this.excuteCommand()
+        this.executeCommand()
         this.input = ''
         this.inputCursor = '\xa0'
         this.inputStart = ''
@@ -143,24 +165,27 @@ export default {
         // Down
       } 
       else if (e.keyCode == 39) {
+        // Right
+
         this.cursorPosition = this.cursorPosition + 1
       }
       else if (e.keyCode == 38) {
         // Up
       }
       else if (e.keyCode == 37) {
+        // Left
+        
         this.cursorPosition = this.cursorPosition - 1
       }
       else {
         this.input = this.input + e.key
         this.cursorPosition = this.cursorPosition + 1
-        console.log(e.keyCode)
       }
     },
     createHistoryMessage() {
       this.createHistoryCommand(this.user, this.desktop, this.directory, this.input)
     },
-    excuteCommand() { 
+    executeCommand() { 
       if (this.input.toLocaleLowerCase() == "help") {
         this.helpCommand()
       }
