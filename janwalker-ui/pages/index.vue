@@ -204,12 +204,18 @@ export default {
         this.cursorPosition = this.cursorPosition - 1
       }
       else {
+        let key = e.key
+
+        if (e.keyCode == 32) {
+          key = '\xa0'
+        }
+
         if (this.cursorPosition - 1 == this.input.length) {
-          this.input = this.input + e.key
+          this.input = this.input + key
           this.cursorPosition = this.cursorPosition + 1
         }
         else {
-          this.input = this.input.slice(0, this.cursorPosition - 1) + e.key + this.input.slice(this.cursorPosition - 1, this.input.length)
+          this.input = this.input.slice(0, this.cursorPosition - 1) + key + this.input.slice(this.cursorPosition - 1, this.input.length)
           this.cursorPosition = this.cursorPosition + 1
         }
       }
@@ -230,7 +236,7 @@ export default {
       else if (this.input.toLocaleLowerCase() == "ls") {
         this.lsCommand()
       }
-      else if (this.input.toLocaleLowerCase().startsWith('cd ')) {
+      else if (this.input.toLocaleLowerCase().startsWith('cd\xa0')) {
         this.cdCommand()
       }
       else {
@@ -258,7 +264,7 @@ export default {
       })
     },
     cdCommand() {
-      let command = this.input.split(' ')
+      let command = this.input.split('\xa0')
       let directoryList = this.directory.split('/')
       let that = this
 
