@@ -2,10 +2,10 @@
   <div class="h-screen">
     <div class="min-h-full bg-slate-800 p-2 flex flex-col justify-between overflow-x-visible">
       <div class="flex flex-col">
-        <div class="font-mono" :class="message.color" v-for="(message, index) in startup" :key="index">
+        <div class="font-mono" :class="message.color" v-for="(message, index) in startup" :key="'message'+index">
           {{ message.command }}
         </div>
-        <div class="flex flex-row h-6" v-for="(command, index) in history" :key="index">
+        <div class="flex flex-row h-6" v-for="(command, index) in history" :key="'command' + index">
           <p class="font-mono text-cyan-300">{{command[0]}}{{command[1]}}</p>
           <p class="font-mono text-violet-500">{{command[2]}}</p>
           <p class="font-mono text-white" v-if="command[0]">$&nbsp</p>
