@@ -2,10 +2,10 @@
   <div class="h-screen">
     <div class="min-h-full bg-slate-800 p-2 flex flex-col justify-between overflow-x-visible">
       <div class="flex flex-col">
-        <div class="font-mono" :class="message.color" v-for="(message, index) in startup" :key="index">
+        <div class="font-mono" :class="message.color" v-for="(message, index) in startup" :key="'message'+index">
           {{ message.command }}
         </div>
-        <div class="flex flex-row h-6" v-for="(command, index) in history" :key="index">
+        <div class="flex flex-row h-6" v-for="(command, index) in history" :key="'command' + index">
           <p class="font-mono text-cyan-300">{{command[0]}}{{command[1]}}</p>
           <p class="font-mono text-violet-500">{{command[2]}}</p>
           <p class="font-mono text-white" v-if="command[0]">$&nbsp</p>
@@ -103,8 +103,7 @@ export default {
             ]},
             {
               directory: "projects", active: false, files: [
-              { name: "cobas_mobile_solution.txt" },
-              { name: "alumoo.txt" }
+                { name: "info.txt" }
             ]},
             {
               directory: "education", active: false, files: [
@@ -112,8 +111,7 @@ export default {
             ]},
             {
               directory: "experience", active: false, files: [
-              { name: "apprenticeship.txt" },
-              { name: "junior_software.txt" }
+              { name: "info.txt" }
             ]},
         ]},
       ],
@@ -230,7 +228,7 @@ export default {
       else if (this.input.toLocaleLowerCase() == "clear") { 
         this.clearCommand()
       }
-      else if (this.input.toLocaleLowerCase() == "view") {
+      else if (this.input.toLocaleLowerCase().startsWith('view\xa0')) {
         this.viewCommand()
       }
       else if (this.input.toLocaleLowerCase() == "ls") {
@@ -295,7 +293,15 @@ export default {
       }
     },
     viewCommand() {
-      this.createHistoryCommand('', '', '', 'Not implemented yet')
+      let command = this.input.split('\xa0')
+      let folders = this.directory.split('/')
+
+      if (folders.length == 3 && command[1] == 'info.txt') {
+        this.$router.push('/' + folders[1])
+      } else {
+        this.createHistoryCommand('', '', '', 'Could not find a file called ' + "'" + command[1] + "'")
+      }
+
     },
     clearCommand() {
       this.history = []
