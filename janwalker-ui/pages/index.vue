@@ -103,8 +103,7 @@ export default {
             ]},
             {
               directory: "projects", active: false, files: [
-              { name: "cobas_mobile_solution.txt" },
-              { name: "alumoo.txt" }
+                { name: "info.txt" }
             ]},
             {
               directory: "education", active: false, files: [
@@ -112,8 +111,7 @@ export default {
             ]},
             {
               directory: "experience", active: false, files: [
-              { name: "apprenticeship.txt" },
-              { name: "junior_software.txt" }
+              { name: "info.txt" }
             ]},
         ]},
       ],
@@ -230,7 +228,7 @@ export default {
       else if (this.input.toLocaleLowerCase() == "clear") { 
         this.clearCommand()
       }
-      else if (this.input.toLocaleLowerCase() == "view") {
+      else if (this.input.toLocaleLowerCase().startsWith('view\xa0')) {
         this.viewCommand()
       }
       else if (this.input.toLocaleLowerCase() == "ls") {
@@ -295,7 +293,15 @@ export default {
       }
     },
     viewCommand() {
-      this.createHistoryCommand('', '', '', 'Not implemented yet')
+      let command = this.input.split('\xa0')
+      let folders = this.directory.split('/')
+
+      if (folders.length == 3 && command[1] == 'info.txt') {
+        this.$router.push('/' + folders[1])
+      } else {
+        this.createHistoryCommand('', '', '', 'Could not find a file called ' + "'" + command[1] + "'")
+      }
+
     },
     clearCommand() {
       this.history = []
