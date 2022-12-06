@@ -4,7 +4,7 @@
             <img src="../assets/icons/arrow.png" class="h-8 m-3" alt="" />
         </a>
         <div class="h-screen flex flex-col justify-center items-center">
-            <div class="text-lg font-medium font-sans border-b-3 text-slate-600 border-slate-600 border-b-4">
+            <div class="text-lg font-medium font-sans text-slate-600 border-slate-600 border-b-4">
                 Feel free to reach out to me through one of the following channels
             </div>
             <div class="pt-2
