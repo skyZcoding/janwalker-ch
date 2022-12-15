@@ -72,7 +72,7 @@
                         1, 2022</time>
                     <time class="block mb-2 text-sm font-normal leading-none text-gray-400">Roche Diagnostics International AG</time>
                     <p class="mb-4 text-base font-normal text-gray-500">
-                        He worked as a full stack developer on multiple project using mainly .NET. As well was the user devices managed by him through the VMWare Workspace system.
+                        He worked as a full stack developer on multiple project using mainly .NET. As well were the user devices managed by him through the VMWare Workspace system.
                     </p>
                 </li>
 

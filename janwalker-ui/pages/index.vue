@@ -86,6 +86,10 @@ export default {
       history: [
 
       ],
+      commandHistory: [
+
+      ],
+      historyPosition: -1,
       cursorPosition: 1,
       input: '',
       inputStart: '',
@@ -148,6 +152,15 @@ export default {
         this.inputStart = this.input
         this.inputCursor = '\xa0'
       }
+    },
+    historyPosition: function (value) { 
+      if (value == -1) {
+        this.input = ''
+      }
+      else {
+        this.input = this.commandHistory[this.commandHistory.length - value -1]
+        this.cursorPosition = this.input.length + 1
+      }
     }
   },
   methods: {
@@ -171,10 +184,14 @@ export default {
           this.input = ''
         }
       }
+      else if (e.keyCode == 9) {
+        // Tab
+      }
       else if (e.keyCode == 13) {
         // Enter
         this.createHistoryMessage()
         this.executeCommand()
+        this.commandHistory.push(this.input)
         this.input = ''
         this.inputCursor = '\xa0'
         this.inputStart = ''
@@ -185,6 +202,10 @@ export default {
         element.scrollIntoView(false)
       }
       else if (e.keyCode == 40) {
+        if (this.historyPosition != -1) {
+          this.historyPosition = this.historyPosition - 1;
+        }
+
         // Down
       } 
       else if (e.keyCode == 39) {
@@ -194,6 +215,9 @@ export default {
       }
       else if (e.keyCode == 38) {
         // Up
+        if (this.historyPosition != this.commandHistory.length - 1) {
+          this.historyPosition = this.historyPosition + 1;
+        }
       }
       else if (e.keyCode == 37) {
         // Left
