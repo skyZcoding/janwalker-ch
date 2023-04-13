@@ -2,33 +2,34 @@
   <div class="h-screen">
     <div class="min-h-full bg-slate-800 p-2 flex flex-col justify-between">
       <div class="flex flex-col" id="scroller" style="overflow-anchor:none">
-        <div class="font-mono" :class="message.color" v-for="(message, index) in startup" :key="'message'+index">
+        <div class="font-mono" :class="message.color" v-for="(message, index) in startup" :key="'message' + index">
           {{ message.command }}
         </div>
         <div class="flex flex-row h-6" v-for="(command, index) in history" :key="'command' + index">
-          <p class="font-mono text-cyan-300">{{command[0]}}{{command[1]}}</p>
-          <p class="font-mono text-violet-500">{{command[2]}}</p>
+          <p class="font-mono text-cyan-300">{{ command[0] }}{{ command[1] }}</p>
+          <p class="font-mono text-violet-500">{{ command[2] }}</p>
           <p class="font-mono text-white" v-if="command[0]">$&nbsp</p>
-          <p class="font-mono text-white">{{command[3]}}</p>
+          <p class="font-mono text-white">{{ command[3] }}</p>
         </div>
         <div class="flex flex-row h-6" id="consoleInput" style="overflow-anchor:auto">
-          <p class="font-mono text-cyan-300">{{user}}{{desktop}}</p>
-          <p class="font-mono text-violet-500">{{directory}}</p>
+          <p class="font-mono text-cyan-300">{{ user }}{{ desktop }}</p>
+          <p class="font-mono text-violet-500">{{ directory }}</p>
           <p class="font-mono text-white">$&nbsp</p>
-          <p class="font-mono text-white">{{inputStart}}</p>
-          <p class="font-mono text-white animate-pulse bg-violet-500">{{inputCursor}}</p>
-          <p class="font-mono text-white">{{inputEnd}}</p>
+          <p class="font-mono text-white">{{ inputStart }}</p>
+          <p class="font-mono text-white animate-pulse bg-violet-500">{{ inputCursor }}</p>
+          <p class="font-mono text-white">{{ inputEnd }}</p>
         </div>
       </div>
       <div class="font-family-mono text-white m-1 mt-5" id="copyright">
         &#169 By Jan Walker
       </div>
     </div>
-    
+
   </div>
 </template>
 
-<script>
+
+<script lang="js">
 export default {
   name: 'IndexPage',
   data() {
@@ -103,21 +104,26 @@ export default {
           directory: "cv", active: true, subdirectories: [
             {
               directory: "contact", active: false, files: [
-              { name: "info.txt" }
-            ]},
+                { name: "info.txt" }
+              ]
+            },
             {
               directory: "projects", active: false, files: [
                 { name: "info.txt" }
-            ]},
+              ]
+            },
             {
               directory: "education", active: false, files: [
-              { name: "info.txt" } 
-            ]},
+                { name: "info.txt" }
+              ]
+            },
             {
               directory: "experience", active: false, files: [
-              { name: "info.txt" }
-            ]},
-        ]},
+                { name: "info.txt" }
+              ]
+            },
+          ]
+        },
       ],
       specialKeys: [
         3, 12, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27,
@@ -128,8 +134,7 @@ export default {
   },
   watch: {
     input: function (value) {
-      if (value == '')
-      {
+      if (value == '') {
         this.inputStart = ''
         this.inputCursor = '\xa0'
         this.inputEnd = ''
@@ -137,7 +142,7 @@ export default {
       }
     },
     cursorPosition: function (value) {
-      if (this.input.length == 0) { 
+      if (this.input.length == 0) {
         this.cursorPosition = 1
       }
       else if (value == 0) {
@@ -145,7 +150,7 @@ export default {
       }
       else if (value != this.input.length + 1) {
         this.inputStart = this.input.slice(0, value - 1)
-        this.inputCursor = this.input.slice(value - 1, value )
+        this.inputCursor = this.input.slice(value - 1, value)
         this.inputEnd = this.input.slice(value, this.input.length)
       }
       else {
@@ -153,30 +158,28 @@ export default {
         this.inputCursor = '\xa0'
       }
     },
-    historyPosition: function (value) { 
+    historyPosition: function (value) {
       if (value == -1) {
         this.input = ''
       }
       else {
-        this.input = this.commandHistory[this.commandHistory.length - value -1]
+        this.input = this.commandHistory[this.commandHistory.length - value - 1]
         this.cursorPosition = this.input.length + 1
       }
     }
   },
   methods: {
     keyDownHandler(e) {
-      if (this.specialKeys.includes(e.keyCode))
-      {
+      if (this.specialKeys.includes(e.keyCode)) {
         console.log(e.keyCode)
       }
       else if (e.keyCode == 8) {
         // Backspace
 
         if (this.cursorPosition == 1) {
-          
+
         }
-        else if (this.cursorPosition > 2 || this.input.length > 1)
-        {
+        else if (this.cursorPosition > 2 || this.input.length > 1) {
           this.input = this.input.slice(0, this.cursorPosition - 2) + this.input.slice(this.cursorPosition - 1, this.input.length)
           this.cursorPosition = this.cursorPosition - 1
         }
@@ -228,7 +231,7 @@ export default {
         }
 
         // Down
-      } 
+      }
       else if (e.keyCode == 39) {
         // Right
 
@@ -242,7 +245,7 @@ export default {
       }
       else if (e.keyCode == 37) {
         // Left
-        
+
         this.cursorPosition = this.cursorPosition - 1
       }
       else {
@@ -265,11 +268,11 @@ export default {
     createHistoryMessage() {
       this.createHistoryCommand(this.user, this.desktop, this.directory, this.input)
     },
-    executeCommand() { 
+    executeCommand() {
       if (this.input.toLocaleLowerCase() == "help") {
         this.helpCommand()
       }
-      else if (this.input.toLocaleLowerCase() == "clear") { 
+      else if (this.input.toLocaleLowerCase() == "clear") {
         this.clearCommand()
       }
       else if (this.input.toLocaleLowerCase().startsWith('view\xa0')) {
@@ -296,13 +299,13 @@ export default {
         } else {
           root.subdirectories.forEach(function (directory) {
             if (directory.active) {
-              directory.files.forEach(function (file) { 
+              directory.files.forEach(function (file) {
                 that.createHistoryCommand('', '', '', file.name)
               })
             }
           })
         }
-        
+
       })
     },
     cdCommand() {
@@ -313,12 +316,12 @@ export default {
       if (directoryList.length == 3) {
         if (command[1] == '..') {
           this.directories.forEach(function (directory) {
-              directory.active = true
-              directory.subdirectories.forEach(function (d) {
-                if (d.active) {
-                  d.active = false
-                }
-              })
+            directory.active = true
+            directory.subdirectories.forEach(function (d) {
+              if (d.active) {
+                d.active = false
+              }
+            })
           })
           this.directory = directoryList[0]
         } else {
@@ -355,7 +358,7 @@ export default {
       this.history = []
       this.cursorPosition = 0
     },
-    commandNotFound() { 
+    commandNotFound() {
       this.createHistoryCommand('', '', '', '')
       this.createHistoryCommand('', '', '', "Could\xa0not\xa0find\xa0any\xa0command\xa0called\xa0'" + this.input + "'.")
       this.createHistoryCommand('', '', '', "Use\xa0'help'\xa0to\xa0view\xa0all\xa0commands.")
@@ -379,10 +382,14 @@ export default {
     }
   },
   created() {
-    window.addEventListener('keydown', this.keyDownHandler)
+    if (process.client) {
+      window.addEventListener('keydown', this.keyDownHandler)
+    }
   },
   destroyed() {
-    window.removeEventListener('keydown', this.keyDownHandler)
+    if (process.client) {
+      window.removeEventListener('keydown', this.keyDownHandler)
+    }
   },
 }
 </script>

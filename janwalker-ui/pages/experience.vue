@@ -14,11 +14,12 @@
                             Apprenticeship as a software developer
                         </div>
                         <div class="font-sans font-medium 
-                                    text-center text-slate-500
-                                    text-sm">
+                                        text-center text-slate-500
+                                        text-sm">
                             The apprenticeship is a common starting ground in
                             switzerland to start as a software developer.
-                            During this period the apprentice will learn the basic to advance knowledge of the topics which are
+                            During this period the apprentice will learn the basic to advance knowledge of the topics which
+                            are
                             needed
                             to be a software developer.
                         </div>
@@ -33,9 +34,10 @@
                             Junior software developer
                         </div>
                         <div class="font-sans font-medium 
-                                    text-center text-slate-500
-                                    text-sm">
-                            He worked as a full stack developer on multiple project using mainly .NET. As well were the user devices managed by him through the VMWare Workspace system.
+                                        text-center text-slate-500
+                                        text-sm">
+                            He worked as a full stack developer on multiple project using mainly .NET. As well were the user
+                            devices managed by him through the VMWare Workspace system.
                         </div>
                         <div class="font-sans text-sm font-medium  text-slate-600">
                             Aug. 2022 - Present
@@ -48,9 +50,10 @@
                             Teaching an intercompany course for apprentices about Blazor
                         </div>
                         <div class="font-sans font-medium 
-                                    text-center text-slate-500
-                                    text-sm">
-                            As a course instructor he taught the first year apprentices how to develope a web frontend with Blazor.
+                                        text-center text-slate-500
+                                        text-sm">
+                            As a course instructor he taught the first year apprentices how to develope a web frontend with
+                            Blazor.
                         </div>
                         <div class="font-sans text-sm font-medium  text-slate-600">
                             Nov. 2022 - Dec. 2022
@@ -68,6 +71,4 @@ export default {
 }
 </script>
 
-<style>
-
-</style>
+<style></style>
