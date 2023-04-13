@@ -88,7 +88,7 @@
                     </span>
                     <h3 class="flex items-center mb-1 text-lg font-semibold text-gray-900">Attending HackZurich
                         <a class="bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded ml-3"
-                            href="https://hackzurich.com/">Website</a>
+                            href="https://old.creatorspace.dev/kennybets/projects/hiFkMYxIClrrVQAj">Website</a>
                     </h3>
                     <time class="block mb-2 text-sm font-normal leading-none text-gray-400">September
                         16, 2022 - September 18, 2022</time>
