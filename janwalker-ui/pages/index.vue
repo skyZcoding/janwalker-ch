@@ -186,6 +186,27 @@ export default {
       }
       else if (e.keyCode == 9) {
         // Tab
+        let that = this
+        let inputs = this.input.split('\xa0')
+        let lastElementInInput = inputs.lastIndex
+
+        this.directories.forEach(function (directory) {
+          if (directory.active) {
+            directory.subdirectories.forEach(function (d) {
+              if (d.directory.startsWith(inputs[lastElementInInput])) {
+                that.input = that.input.replace(inputs[lastElementInInput], d.directory) + '\xa0'
+                that.cursorPosition = that.cursorPosition - inputs[lastElementInInput].length + d.directory.length
+              }
+            })
+          } else {
+            let fileName = 'info.txt'
+            if (fileName.startsWith(inputs[lastElementInInput])) {
+              that.input = that.input.replace(inputs[lastElementInInput], fileName) + '\xa0'
+              that.cursorPosition = that.cursorPosition - inputs[lastElementInInput].length + fileName.length
+            }
+          }
+        })
+
       }
       else if (e.keyCode == 13) {
         // Enter
@@ -289,30 +310,34 @@ export default {
       let directoryList = this.directory.split('/')
       let that = this
 
-      if (command[1] == '..' && directoryList.length == 3) {
-        this.directories.forEach(function (directory) {
-          if (directory.directory == directoryList[0]) {
-            directory.active = true
-            directory.subdirectories.forEach(function (d) {
-              if (d.active) {
-                d.active = false
-              }
-            })
-          }
-        })
-        this.directory = directoryList[0]
+      if (directoryList.length == 3) {
+        if (command[1] == '..') {
+          this.directories.forEach(function (directory) {
+              directory.active = true
+              directory.subdirectories.forEach(function (d) {
+                if (d.active) {
+                  d.active = false
+                }
+              })
+          })
+          this.directory = directoryList[0]
+        } else {
+          that.createHistoryCommand('', '', '', 'Unable to find the directory.')
+        }
       } else {
-        this.directories.forEach(function (directory) {
-          if (directory.directory == directoryList[0]) {
-            directory.active = false
+        if (command[1] == '..') {
+          that.createHistoryCommand('', '', '', 'Unable to find the directory.')
+        } else {
+          this.directories.forEach(function (directory) {
             directory.subdirectories.forEach(function (d) {
               if (d.directory == command[1]) {
                 that.directory = that.directory + '/' + d.directory + '/'
                 d.active = true
+                directory.active = false
               }
             })
-          }
-        })
+          })
+        }
       }
     },
     viewCommand() {
