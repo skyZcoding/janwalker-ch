@@ -1,7 +1,7 @@
 <template>
     <div>
         <a class="absolute top-0 left-0" href="/">
-            <img src="../assets/icons/arrow.png" class="h-8 m-3" alt="" />
+            <ArrowBackIcon class="h-16 m-3 hover:text-slate-600 text-slate-900" alt="Back to home screen" />
         </a>
         <div class="h-screen flex flex-col justify-center items-center">
             <div class="text-xl font-bold font-sans text-slate-600">
@@ -64,7 +64,11 @@
 </template>
 
 <script>
-export default {
+import ArrowBackIcon from '~/components/ArrowBackIcon.vue'
 
+export default {
+    components: {
+        ArrowBackIcon
+    }
 }
 </script>
