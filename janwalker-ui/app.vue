@@ -15,7 +15,7 @@
       },
       {
       name: 'keywords',
-      content: 'software developer, software engineer, Software Developer, Software Engineer, junior software developer, Junior Software Developer, .NET, dotNet, React, Vue, Vue.js, Next.js, Blazor, Asp.Net, Course instructor, course instructor'
+      content: 'jan walker, walker jan, software developer, software engineer, junior software developer, .NET, dotNet, React, Vue, Vue.js, Next.js, Blazor, Asp.Net, course instructor'
     },
     ],
   });
