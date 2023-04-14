@@ -14,9 +14,13 @@
         content: 'This is the website of Jan Walker. It serves as a curriculum vitae and displays all of the information about his work career. This includes experience in the whole .Net ecosystem, Vue.js, Next.js and React.'
       },
       {
-      name: 'keywords',
-      content: 'jan walker, walker jan, software developer, software engineer, junior software developer, .NET, dotNet, React, Vue, Vue.js, Next.js, Blazor, Asp.Net, course instructor'
-    },
+        name: 'keywords',
+        content: 'jan walker, walker jan, software developer, software engineer, junior software developer, .NET, dotNet, React, Vue, Vue.js, Next.js, Blazor, Asp.Net, course instructor'
+      },
+      {
+        name: 'google-site-verification',
+        content: 'ByWX2P1yb7HEPfPymaJ9rd6a9E6olnxGSIu87z7lzFQ'
+      }
     ],
   });
 </script>
