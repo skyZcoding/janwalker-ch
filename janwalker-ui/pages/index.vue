@@ -1,15 +1,15 @@
 <template>
-  <div class="h-screen">
+  <main class="h-screen">
     <div class="min-h-full bg-slate-800 p-2 flex flex-col justify-between">
       <div class="flex flex-col" id="scroller" style="overflow-anchor:none">
         <div class="font-mono" :class="message.color" v-for="(message, index) in startup" :key="'message' + index">
           {{ message.command }}
         </div>
-        <div class="flex flex-row h-6" v-for="(command, index) in history" :key="'command' + index">
+        <div class="flex flex-row h-fit min-h-[1.5rem]" v-for="(command, index) in history" :key="'command' + index">
           <p class="font-mono text-cyan-300">{{ command[0] }}{{ command[1] }}</p>
           <p class="font-mono text-violet-500">{{ command[2] }}</p>
           <p class="font-mono text-white" v-if="command[0]">$&nbsp</p>
-          <p class="font-mono text-white">{{ command[3] }}</p>
+          <p class="font-mono h-fit text-white" v-html="command[3]"></p>
         </div>
         <div class="flex flex-row h-6" id="consoleInput" style="overflow-anchor:auto">
           <p class="font-mono text-cyan-300">{{ user }}{{ desktop }}</p>
@@ -25,7 +25,7 @@
       </div>
     </div>
 
-  </div>
+  </main>
 </template>
 
 
@@ -34,6 +34,205 @@ export default {
   name: 'IndexPage',
   data() {
     return {
+      infos: [
+        {
+          name: 'contact',
+          content: [
+            {
+              user: '', desktop: '', directory: '', input: ''
+            },
+            {
+              user: '', desktop: '', directory: '', input: 'Feel free to reach out to me through one of the following channels'
+            },
+            {
+              user: '', desktop: '', directory: '', input: '------------------------------------------------------------------'
+            },
+            {
+              user: '', desktop: '', directory: '', input: ''
+            },
+            {
+              user: '', desktop: 'Github', directory: '', input: '\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0skyZcoding'
+            },
+            {
+              user: '', desktop: 'LinkedIn', directory: '', input: '\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0jan-walker-jw'
+            },
+            {
+              user: '', desktop: 'Email', directory: '', input: '\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0skyZcoding'
+            },
+            {
+              user: '', desktop: '', directory: '', input: ''
+            },
+          ]
+        },
+        {
+          name: 'education',
+          content: [
+            {
+              user: '', desktop: '', directory: '', input: ''
+            },
+            {
+              user: '', desktop: '', directory: '', input: 'Education'
+            },
+            {
+              user: '', desktop: '', directory: '', input: '------------------------------------------------------------------'
+            },
+            {
+              user: '', desktop: '', directory: '', input: ''
+            },
+            {
+              user: '', desktop: 'Informatiker Fachrichtung Applikationsentwicklug EFZ', directory: '', input: ''
+            },
+            {
+              user: '', desktop: '----------------------------------------------------', directory: '', input: ''
+            },
+            {
+              user: '', desktop: '', directory: '', input: 'Gewerblich-industrielles Bildungszentrum Zug'
+            },
+            {
+              user: '', desktop: '', directory: '', input: 'Aug. 2018 - Aug. 2022'
+            },
+            {
+              user: '', desktop: '', directory: '', input: ''
+            },
+          ]
+        },
+        {
+          name: 'experience',
+          content: [
+            {
+              user: '', desktop: '', directory: '', input: ''
+            },
+            {
+              user: '', desktop: '', directory: '', input: 'Experience'
+            },
+            {
+              user: '', desktop: '', directory: '', input: '------------------------------------------------------------------'
+            },
+            {
+              user: '', desktop: '', directory: '', input: ''
+            },
+            {
+              user: '', desktop: 'Apprenticeship as a software developer', directory: '', input: ''
+            },
+            {
+              user: '', desktop: '----------------------------------------------------', directory: '', input: ''
+            },
+            {
+              user: '', desktop: '', directory: '', input: 'The apprenticeship is a common starting ground in switzerland to start as a software developer. During this period the apprentice will learn the basic to advance knowledge of the topics which are needed to be a software developer.'
+            },
+            {
+              user: '', desktop: '', directory: '', input: 'Aug. 2018 - Aug. 2022'
+            },
+            {
+              user: '', desktop: '', directory: '', input: ''
+            },
+            {
+              user: '', desktop: '', directory: '', input: ''
+            },
+            {
+              user: '', desktop: 'Junior software developer', directory: '', input: ''
+            },
+            {
+              user: '', desktop: '----------------------------------------------------', directory: '', input: ''
+            },
+            {
+              user: '', desktop: '', directory: '', input: 'He worked as a full stack developer on multiple project using mainly .NET. As well were the user devices managed by him through the VMWare Workspace system.'
+            },
+            {
+              user: '', desktop: '', directory: '', input: 'Aug. 2022 - Present'
+            },
+            {
+              user: '', desktop: '', directory: '', input: ''
+            },
+            {
+              user: '', desktop: '', directory: '', input: ''
+            },
+            {
+              user: '', desktop: 'Teaching an intercompany course for apprentices about Blazor', directory: '', input: ''
+            },
+            {
+              user: '', desktop: '----------------------------------------------------', directory: '', input: ''
+            },
+            {
+              user: '', desktop: '', directory: '', input: 'As a course instructor he taught the first year apprentices how to develope a web frontend with Blazor.'
+            },
+            {
+              user: '', desktop: '', directory: '', input: 'Nov. 2022 - Dec. 2022'
+            },
+            {
+              user: '', desktop: '', directory: '', input: ''
+            },
+          ]
+        },
+        {
+          name: 'projects',
+          content: [
+            {
+              user: '', desktop: '', directory: '', input: ''
+            },
+            {
+              user: '', desktop: '', directory: '', input: 'Projects'
+            },
+            {
+              user: '', desktop: '', directory: '', input: '------------------------------------------------------------------'
+            },
+            {
+              user: '', desktop: '', directory: '', input: ''
+            },
+            {
+              user: '', desktop: 'cobas® mobile solution', directory: '', input: ''
+            },
+            {
+              user: '', desktop: '----------------------------------------------------', directory: '', input: ''
+            },
+            {
+              user: '', desktop: '', directory: '', input: 'He developed multiple service on the product during his time working at Roche diagnostics.'
+            },
+            {
+              user: '', desktop: '', directory: '', input: '<a href="https://diagnostics.roche.com/global/en/products/instruments/cobas-mobile-solution-ins-6695.html" class="font-mono border-b-2 border-white text-white">Project page</a>'
+            },
+            {
+              user: '', desktop: '', directory: '', input: ''
+            },
+            {
+              user: '', desktop: '', directory: '', input: ''
+            },
+            {
+              user: '', desktop: 'Volunteering App', directory: '', input: ''
+            },
+            {
+              user: '', desktop: '----------------------------------------------------', directory: '', input: ''
+            },
+            {
+              user: '', desktop: '', directory: '', input: 'He created in a team a working prototype app to unite the different volunteering companies with the actual volunteers. This was done at the Hackzurich 2022.'
+            },
+            {
+              user: '', desktop: '', directory: '', input: '<a href="https://old.creatorspace.dev/kennybets/projects/hiFkMYxIClrrVQAj" class="font-mono border-b-2 border-white text-white">Project page</a>'
+            },
+            {
+              user: '', desktop: '', directory: '', input: ''
+            },
+            {
+              user: '', desktop: '', directory: '', input: ''
+            },
+            {
+              user: '', desktop: 'Home page', directory: '', input: ''
+            },
+            {
+              user: '', desktop: '----------------------------------------------------', directory: '', input: ''
+            },
+            {
+              user: '', desktop: '', directory: '', input: 'He created this home page to display his cv in a creative way.'
+            },
+            {
+              user: '', desktop: '', directory: '', input: '<a href="https://github.com/skyZcoding/janwalker-ch" class="font-mono border-b-2 border-white text-white">Github</a>'
+            },
+            {
+              user: '', desktop: '', directory: '', input: ''
+            },
+          ]
+        }
+      ],
       startup: [
         {
           command: 'Booting...',
@@ -275,8 +474,8 @@ export default {
       else if (this.input.toLocaleLowerCase() == "clear") {
         this.clearCommand()
       }
-      else if (this.input.toLocaleLowerCase().startsWith('view\xa0')) {
-        this.viewCommand()
+      else if (this.input.toLocaleLowerCase().startsWith('cat\xa0')) {
+        this.catCommand()
       }
       else if (this.input.toLocaleLowerCase() == "ls") {
         this.lsCommand()
@@ -343,12 +542,19 @@ export default {
         }
       }
     },
-    viewCommand() {
+    catCommand() {
       let command = this.input.split('\xa0')
       let folders = this.directory.split('/')
+      let that = this
 
       if (folders.length == 3 && command[1] == 'info.txt') {
-        this.$router.push('/' + folders[1])
+        this.infos.forEach(info => {
+          if (info.name == folders[1]) {
+            info.content.forEach(content => {
+              that.createHistoryCommand(content.user, content.desktop, content.directory, content.input)
+            });
+          }
+        })
       } else {
         this.createHistoryCommand('', '', '', 'Could not find a file called ' + "'" + command[1] + "'")
       }
@@ -367,7 +573,7 @@ export default {
     helpCommand() {
       this.createHistoryCommand('', '', '', '')
       this.createHistoryCommand('', '', 'HELP', '\xa0\xa0\xa0\xa0\xa0Shows all commands with a short description')
-      this.createHistoryCommand('', '', 'VIEW', '\xa0\xa0\xa0\xa0\xa0Displays the page')
+      this.createHistoryCommand('', '', 'CAT', '\xa0\xa0\xa0\xa0\xa0\xa0Displays the file')
       this.createHistoryCommand('', '', 'CLEAR', '\xa0\xa0\xa0\xa0Clears the history of the console')
       this.createHistoryCommand('', '', 'CD', '\xa0\xa0\xa0\xa0\xa0\xa0\xa0Moves in or out of the directory')
       this.createHistoryCommand('', '', 'LS', '\xa0\xa0\xa0\xa0\xa0\xa0\xa0Shows all files and the directories in the directory')
