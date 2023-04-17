@@ -83,7 +83,7 @@ export default {
               user: '', desktop: 'Informatiker Fachrichtung Applikationsentwicklug EFZ', directory: '', input: ''
             },
             {
-              user: '', desktop: '----------------------------------------------------', directory: '', input: ''
+              user: '', desktop: '------------------------------------------------------------', directory: '', input: ''
             },
             {
               user: '', desktop: '', directory: '', input: 'Gewerblich-industrielles Bildungszentrum Zug'
@@ -115,10 +115,13 @@ export default {
               user: '', desktop: 'Apprenticeship as a software developer', directory: '', input: ''
             },
             {
-              user: '', desktop: '----------------------------------------------------', directory: '', input: ''
+              user: '', desktop: '------------------------------------------------------------', directory: '', input: ''
             },
             {
               user: '', desktop: '', directory: '', input: 'The apprenticeship is a common starting ground in switzerland to start as a software developer. During this period the apprentice will learn the basic to advance knowledge of the topics which are needed to be a software developer.'
+            },
+            {
+              user: '', desktop: '', directory: '@Roche Diagnostics International AG', input: ''
             },
             {
               user: '', desktop: '', directory: '', input: 'Aug. 2018 - Aug. 2022'
@@ -133,10 +136,13 @@ export default {
               user: '', desktop: 'Junior software developer', directory: '', input: ''
             },
             {
-              user: '', desktop: '----------------------------------------------------', directory: '', input: ''
+              user: '', desktop: '------------------------------------------------------------', directory: '', input: ''
             },
             {
               user: '', desktop: '', directory: '', input: 'He worked as a full stack developer on multiple project using mainly .NET. As well were the user devices managed by him through the VMWare Workspace system.'
+            },
+            {
+              user: '', desktop: '', directory: '@Roche Diagnostics International AG', input: ''
             },
             {
               user: '', desktop: '', directory: '', input: 'Aug. 2022 - Present'
@@ -151,10 +157,13 @@ export default {
               user: '', desktop: 'Teaching an intercompany course for apprentices about Blazor', directory: '', input: ''
             },
             {
-              user: '', desktop: '----------------------------------------------------', directory: '', input: ''
+              user: '', desktop: '------------------------------------------------------------', directory: '', input: ''
             },
             {
               user: '', desktop: '', directory: '', input: 'As a course instructor he taught the first year apprentices how to develope a web frontend with Blazor.'
+            },
+            {
+              user: '', desktop: '', directory: '@Roche Diagnostics International AG', input: ''
             },
             {
               user: '', desktop: '', directory: '', input: 'Nov. 2022 - Dec. 2022'
@@ -183,7 +192,7 @@ export default {
               user: '', desktop: 'cobas® mobile solution', directory: '', input: ''
             },
             {
-              user: '', desktop: '----------------------------------------------------', directory: '', input: ''
+              user: '', desktop: '------------------------------------------------------------', directory: '', input: ''
             },
             {
               user: '', desktop: '', directory: '', input: 'He developed multiple service on the product during his time working at Roche diagnostics.'
@@ -201,7 +210,7 @@ export default {
               user: '', desktop: 'Volunteering App', directory: '', input: ''
             },
             {
-              user: '', desktop: '----------------------------------------------------', directory: '', input: ''
+              user: '', desktop: '------------------------------------------------------------', directory: '', input: ''
             },
             {
               user: '', desktop: '', directory: '', input: 'He created in a team a working prototype app to unite the different volunteering companies with the actual volunteers. This was done at the Hackzurich 2022.'
@@ -219,7 +228,7 @@ export default {
               user: '', desktop: 'Home page', directory: '', input: ''
             },
             {
-              user: '', desktop: '----------------------------------------------------', directory: '', input: ''
+              user: '', desktop: '------------------------------------------------------------', directory: '', input: ''
             },
             {
               user: '', desktop: '', directory: '', input: 'He created this home page to display his cv in a creative way.'
@@ -420,8 +429,6 @@ export default {
         this.inputStart = ''
         this.inputEnd = ''
         this.cursorPosition = 1
-
-        this.updateScreenPosition()
       }
       else if (e.keyCode == 40) {
         if (this.historyPosition != -1) {
@@ -485,6 +492,8 @@ export default {
       else {
         this.commandNotFound()
       }
+
+      this.updateScreenPosition()
     },
     lsCommand() {
       let that = this
@@ -585,8 +594,7 @@ export default {
       this.history.push(message)
     },
     updateScreenPosition() {
-      let element = document.getElementById('copyright')
-      element.scrollIntoView(false)
+      window.scrollTo(0, document.body.scrollHeight)
     }
   },
   created() {
