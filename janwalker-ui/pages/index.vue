@@ -51,13 +51,13 @@ export default {
               user: '', desktop: '', directory: '', input: ''
             },
             {
-              user: '', desktop: 'Github', directory: '', input: '\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0skyZcoding'
+              user: '', desktop: 'Github', directory: '', input: '\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0<a href="https://github.com/skyZcoding" target="_blank" class="font-mono border-b-2 border-white text-white">skyZcoding</a>'
             },
             {
-              user: '', desktop: 'LinkedIn', directory: '', input: '\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0jan-walker-jw'
+              user: '', desktop: 'LinkedIn', directory: '', input: '\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0<a href="https://www.linkedin.com/in/jan-walker-jw/" target="_blank" class="font-mono border-b-2 border-white text-white">jan-walker-jw</a>'
             },
             {
-              user: '', desktop: 'Email', directory: '', input: '\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0skyZcoding'
+              user: '', desktop: 'Email', directory: '', input: '\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0<a href="mailto:jan.walker.jw2@gmail.com" target="_blank" class="font-mono border-b-2 border-white text-white">jan.walker.jw2@gmail.com</a>'
             },
             {
               user: '', desktop: '', directory: '', input: ''
@@ -189,7 +189,7 @@ export default {
               user: '', desktop: '', directory: '', input: 'He developed multiple service on the product during his time working at Roche diagnostics.'
             },
             {
-              user: '', desktop: '', directory: '', input: '<a href="https://diagnostics.roche.com/global/en/products/instruments/cobas-mobile-solution-ins-6695.html" class="font-mono border-b-2 border-white text-white">Project page</a>'
+              user: '', desktop: '', directory: '', input: '<a href="https://diagnostics.roche.com/global/en/products/instruments/cobas-mobile-solution-ins-6695.html" target="_blank" class="font-mono border-b-2 border-white text-white">Project page</a>'
             },
             {
               user: '', desktop: '', directory: '', input: ''
@@ -207,7 +207,7 @@ export default {
               user: '', desktop: '', directory: '', input: 'He created in a team a working prototype app to unite the different volunteering companies with the actual volunteers. This was done at the Hackzurich 2022.'
             },
             {
-              user: '', desktop: '', directory: '', input: '<a href="https://old.creatorspace.dev/kennybets/projects/hiFkMYxIClrrVQAj" class="font-mono border-b-2 border-white text-white">Project page</a>'
+              user: '', desktop: '', directory: '', input: '<a href="https://old.creatorspace.dev/kennybets/projects/hiFkMYxIClrrVQAj" target="_blank" class="font-mono border-b-2 border-white text-white">Project page</a>'
             },
             {
               user: '', desktop: '', directory: '', input: ''
@@ -225,7 +225,7 @@ export default {
               user: '', desktop: '', directory: '', input: 'He created this home page to display his cv in a creative way.'
             },
             {
-              user: '', desktop: '', directory: '', input: '<a href="https://github.com/skyZcoding/janwalker-ch" class="font-mono border-b-2 border-white text-white">Github</a>'
+              user: '', desktop: '', directory: '', input: '<a href="https://github.com/skyZcoding/janwalker-ch" target="_blank" class="font-mono border-b-2 border-white text-white">Github</a>'
             },
             {
               user: '', desktop: '', directory: '', input: ''
@@ -421,8 +421,7 @@ export default {
         this.inputEnd = ''
         this.cursorPosition = 1
 
-        let element = document.getElementById('copyright')
-        element.scrollIntoView(false)
+        this.updateScreenPosition()
       }
       else if (e.keyCode == 40) {
         if (this.historyPosition != -1) {
@@ -558,7 +557,6 @@ export default {
       } else {
         this.createHistoryCommand('', '', '', 'Could not find a file called ' + "'" + command[1] + "'")
       }
-
     },
     clearCommand() {
       this.history = []
@@ -585,6 +583,10 @@ export default {
       ]
 
       this.history.push(message)
+    },
+    updateScreenPosition() {
+      let element = document.getElementById('copyright')
+      element.scrollIntoView(false)
     }
   },
   created() {
