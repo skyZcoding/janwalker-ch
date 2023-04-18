@@ -1,7 +1,7 @@
 <template>
-  <main class="h-screen">
+  <div class="h-screen">
     <div class="min-h-full bg-slate-800 p-2 flex flex-col justify-between">
-      <div class="flex flex-col" id="scroller" style="overflow-anchor:none">
+      <main class="flex flex-col" id="scroller" style="overflow-anchor:none">
         <div class="font-mono" :class="message.color" v-for="(message, index) in startup" :key="'message' + index">
           {{ message.command }}
         </div>
@@ -19,13 +19,13 @@
           <p class="font-mono text-white animate-pulse bg-violet-500">{{ inputCursor }}</p>
           <p class="font-mono text-white">{{ inputEnd }}</p>
         </div>
-      </div>
-      <div class="font-family-mono text-white m-1 mt-5" id="copyright">
+      </main>
+      <footer class="font-family-mono text-white m-1 mt-5" id="copyright">
         &#169 By Jan Walker
-      </div>
+      </footer>
     </div>
 
-  </main>
+  </div>
 </template>
 
 
@@ -595,10 +595,17 @@ export default {
     },
     updateScreenPosition() {
       window.scrollTo(0, document.body.scrollHeight)
+    },
+    isMobile() {
+      return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
     }
   },
   created() {
     if (process.client) {
+      if (this.isMobile()) {
+        this.$router.push('/mobile')
+      } 
+
       window.addEventListener('keydown', this.keyDownHandler)
     }
   },
