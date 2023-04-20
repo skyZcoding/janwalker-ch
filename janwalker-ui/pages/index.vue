@@ -399,8 +399,8 @@ export default {
         // Tab
         let that = this
         let inputs = this.input.split('\xa0')
-        let lastElementInInput = inputs.lastIndex
-
+        let lastElementInInput = inputs.length - 1
+        
         this.directories.forEach(function (directory) {
           if (directory.active) {
             directory.subdirectories.forEach(function (d) {
@@ -417,7 +417,6 @@ export default {
             }
           }
         })
-
       }
       else if (e.keyCode == 13) {
         // Enter
@@ -469,6 +468,8 @@ export default {
           this.cursorPosition = this.cursorPosition + 1
         }
       }
+
+      e.preventDefault()
     },
     createHistoryMessage() {
       this.createHistoryCommand(this.user, this.desktop, this.directory, this.input)
