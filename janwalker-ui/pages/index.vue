@@ -403,11 +403,15 @@ export default {
         
         this.directories.forEach(function (directory) {
           if (directory.active) {
-            directory.subdirectories.forEach(function (d) {
+            directory.subdirectories.every(function (d) {
               if (d.directory.startsWith(inputs[lastElementInInput])) {
                 that.input = that.input.replace(inputs[lastElementInInput], d.directory) + '\xa0'
                 that.cursorPosition = that.cursorPosition - inputs[lastElementInInput].length + d.directory.length
+
+                return false
               }
+
+              return true
             })
           } else {
             let fileName = 'info.txt'
@@ -428,6 +432,7 @@ export default {
         this.inputStart = ''
         this.inputEnd = ''
         this.cursorPosition = 1
+        this.updateScreenPosition()
       }
       else if (e.keyCode == 40) {
         if (this.historyPosition != -1) {
@@ -493,8 +498,6 @@ export default {
       else {
         this.commandNotFound()
       }
-
-      this.updateScreenPosition()
     },
     lsCommand() {
       let that = this
@@ -596,6 +599,7 @@ export default {
     },
     updateScreenPosition() {
       window.scrollTo(0, document.body.scrollHeight)
+      console.log("update screen position")
     },
     isMobile() {
       return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
