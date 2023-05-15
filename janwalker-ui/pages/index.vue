@@ -1,8 +1,8 @@
 <template>
   <div class="h-screen">
-    <div class="min-h-full bg-slate-800 p-2 flex flex-col justify-between">
-      <main class="flex flex-col" id="scroller" style="overflow-anchor:none">
-        <div class="font-mono" :class="message.color" v-for="(message, index) in startup" :key="'message' + index">
+    <div class="min-h-full bg-slate-800 p-2 flex flex-col justify-between overflow-y-visible">
+      <main class="flex flex-col" id="scroller">
+        <div class="font-mono h-fit min-h-[1.5rem]" :class="message.color" v-for="(message, index) in startup" :key="'message' + index">
           {{ message.command }}
         </div>
         <div class="flex flex-row h-fit min-h-[1.5rem]" v-for="(command, index) in history" :key="'command' + index">
@@ -11,7 +11,7 @@
           <p class="font-mono text-white" v-if="command[0]">$&nbsp</p>
           <p class="font-mono h-fit text-white" v-html="command[3]"></p>
         </div>
-        <div class="flex flex-row h-6" id="consoleInput" style="overflow-anchor:auto">
+        <div class="flex flex-row h-fit min-h-[1.5rem]" style="overflow-anchor:auto">
           <p class="font-mono text-cyan-300">{{ user }}{{ desktop }}</p>
           <p class="font-mono text-violet-500">{{ directory }}</p>
           <p class="font-mono text-white">$&nbsp</p>
@@ -20,7 +20,7 @@
           <p class="font-mono text-white">{{ inputEnd }}</p>
         </div>
       </main>
-      <footer class="font-family-mono text-white m-1 mt-5" id="copyright">
+      <footer class="font-mono text-white h-6 m-1 mt-5" id="copyright">
         &#169 By Jan Walker
       </footer>
     </div>
@@ -432,7 +432,6 @@ export default {
         this.inputStart = ''
         this.inputEnd = ''
         this.cursorPosition = 1
-        this.updateScreenPosition()
       }
       else if (e.keyCode == 40) {
         if (this.historyPosition != -1) {
@@ -597,10 +596,6 @@ export default {
 
       this.history.push(message)
     },
-    updateScreenPosition() {
-      window.scrollTo(0, document.body.scrollHeight)
-      console.log("update screen position")
-    },
     isMobile() {
       return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
     }
@@ -610,6 +605,20 @@ export default {
       if (this.isMobile()) {
         this.$router.push('/mobile')
       } 
+      const targetNode = document.getElementById("scroller");
+
+      const config = { childList: true };
+
+      const callback = function (mutationsList, observer) {
+        for (let mutation of mutationsList) {
+          if (mutation.type === "childList") {
+            window.scrollTo(0, document.body.scrollHeight);
+          }
+        }
+      };
+
+      const observer = new MutationObserver(callback);
+      observer.observe(targetNode, config);
 
       window.addEventListener('keydown', this.keyDownHandler)
     }
