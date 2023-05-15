@@ -139,7 +139,7 @@ export default {
               user: '', desktop: '------------------------------------------------------------', directory: '', input: ''
             },
             {
-              user: '', desktop: '', directory: '', input: 'He worked as a full stack developer on multiple project using mainly .NET. As well were the user devices managed by him through the VMWare Workspace system.'
+              user: '', desktop: '', directory: '', input: 'Worked as a full stack developer on multiple project using mainly .NET. As well managed the user devices through the VMWare Workspace system.'
             },
             {
               user: '', desktop: '', directory: '@Roche Diagnostics International AG', input: ''
@@ -160,7 +160,7 @@ export default {
               user: '', desktop: '------------------------------------------------------------', directory: '', input: ''
             },
             {
-              user: '', desktop: '', directory: '', input: 'As a course instructor he taught the first year apprentices how to develope a web frontend with Blazor.'
+              user: '', desktop: '', directory: '', input: 'Taught the first year apprentices how to develope a web frontend with Blazor as a course instructor.'
             },
             {
               user: '', desktop: '', directory: '@Roche Diagnostics International AG', input: ''
@@ -195,7 +195,7 @@ export default {
               user: '', desktop: '------------------------------------------------------------', directory: '', input: ''
             },
             {
-              user: '', desktop: '', directory: '', input: 'He developed multiple service on the product during his time working at Roche diagnostics.'
+              user: '', desktop: '', directory: '', input: 'Developed multiple service on the product during the time working at Roche diagnostics.'
             },
             {
               user: '', desktop: '', directory: '', input: '<a href="https://diagnostics.roche.com/global/en/products/instruments/cobas-mobile-solution-ins-6695.html" target="_blank" class="font-mono border-b-2 border-white text-white">Project page</a>'
@@ -213,7 +213,7 @@ export default {
               user: '', desktop: '------------------------------------------------------------', directory: '', input: ''
             },
             {
-              user: '', desktop: '', directory: '', input: 'He created in a team a working prototype app to unite the different volunteering companies with the actual volunteers. This was done at the Hackzurich 2022.'
+              user: '', desktop: '', directory: '', input: 'Created in a team a working prototype app to unite the different volunteering companies with the actual volunteers. This was done at the Hackzurich 2022.'
             },
             {
               user: '', desktop: '', directory: '', input: '<a href="https://old.creatorspace.dev/kennybets/projects/hiFkMYxIClrrVQAj" target="_blank" class="font-mono border-b-2 border-white text-white">Project page</a>'
@@ -231,7 +231,7 @@ export default {
               user: '', desktop: '------------------------------------------------------------', directory: '', input: ''
             },
             {
-              user: '', desktop: '', directory: '', input: 'He created this home page to display his cv in a creative way.'
+              user: '', desktop: '', directory: '', input: 'Created this home page to display the cv in a creative way.'
             },
             {
               user: '', desktop: '', directory: '', input: '<a href="https://github.com/skyZcoding/janwalker-ch" target="_blank" class="font-mono border-b-2 border-white text-white">Github</a>'
