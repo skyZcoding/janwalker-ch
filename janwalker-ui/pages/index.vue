@@ -11,7 +11,7 @@
           <p class="font-mono text-white" v-if="command[0]">$&nbsp</p>
           <p class="font-mono h-fit text-white" v-html="command[3]"></p>
         </div>
-        <div class="flex flex-row h-fit min-h-[1.5rem]" style="overflow-anchor:auto">
+        <div class="flex flex-row h-fit min-h-[1.5rem]">
           <p class="font-mono text-cyan-300">{{ user }}{{ desktop }}</p>
           <p class="font-mono text-violet-500">{{ directory }}</p>
           <p class="font-mono text-white">$&nbsp</p>
@@ -432,13 +432,14 @@ export default {
         this.inputStart = ''
         this.inputEnd = ''
         this.cursorPosition = 1
+        this.historyPosition = -1
       }
       else if (e.keyCode == 40) {
+        // Down
+
         if (this.historyPosition != -1) {
           this.historyPosition = this.historyPosition - 1;
         }
-
-        // Down
       }
       else if (e.keyCode == 39) {
         // Right
