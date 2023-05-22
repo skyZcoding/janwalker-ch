@@ -397,30 +397,41 @@ export default {
       }
       else if (e.keyCode == 9) {
         // Tab
-        let that = this
-        let inputs = this.input.split('\xa0')
-        let lastElementInInput = inputs.length - 1
-        
-        this.directories.forEach(function (directory) {
-          if (directory.active) {
-            directory.subdirectories.every(function (d) {
-              if (d.directory.startsWith(inputs[lastElementInInput])) {
-                that.input = that.input.replace(inputs[lastElementInInput], d.directory) + '\xa0'
-                that.cursorPosition = that.cursorPosition - inputs[lastElementInInput].length + d.directory.length
-
-                return false
-              }
-
-              return true
-            })
-          } else {
-            let fileName = 'info.txt'
-            if (fileName.startsWith(inputs[lastElementInInput])) {
-              that.input = that.input.replace(inputs[lastElementInInput], fileName) + '\xa0'
-              that.cursorPosition = that.cursorPosition - inputs[lastElementInInput].length + fileName.length
-            }
+        function removeWhitespace(value, index, arr) {
+          if (value == '') {
+            return false;
           }
-        })
+
+          return true;
+        }
+        
+        let that = this
+        let inputs = this.input.split('\xa0').filter(removeWhitespace)
+        let lastElementInInput = inputs.length - 1
+        let inputText = inputs[lastElementInInput]
+
+        if (lastElementInInput < 2) {
+          this.directories.forEach(function (directory) {
+            if (directory.active) {
+              directory.subdirectories.every(function (d) {
+                if (d.directory.startsWith(inputText)) {
+                  that.input = that.input.replace(inputText, d.directory) + '\xa0'
+                  that.cursorPosition = that.cursorPosition - inputText.length + d.directory.length
+
+                  return false
+                }
+
+                return true
+              })
+            } else {
+              let fileName = 'info.txt'
+              if (fileName.startsWith(inputText)) {
+                that.input = that.input.replace(inputText, fileName) + '\xa0'
+                that.cursorPosition = that.cursorPosition - inputText.length + fileName.length
+              }
+            }
+          })
+        }
       }
       else if (e.keyCode == 13) {
         // Enter
