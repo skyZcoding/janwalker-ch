@@ -409,13 +409,14 @@ export default {
         let inputs = this.input.split('\xa0').filter(removeWhitespace)
         let lastElementInInput = inputs.length - 1
         let inputText = inputs[lastElementInInput]
+        let re = new RegExp(inputText + '$')
 
         if (lastElementInInput < 2) {
           this.directories.forEach(function (directory) {
             if (directory.active) {
               directory.subdirectories.every(function (d) {
                 if (d.directory.startsWith(inputText)) {
-                  that.input = that.input.replace(inputText, d.directory) + '\xa0'
+                  that.input = that.input.replace(re, d.directory) + '\xa0'
                   that.cursorPosition = that.cursorPosition - inputText.length + d.directory.length
 
                   return false
