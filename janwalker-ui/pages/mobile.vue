@@ -2,7 +2,6 @@
     <div>
         <header class="bg-slate-800 h-[90rem] relative">
             <div class="h-full flex flex-col  items-center mx-10 py-10">
-                <img src="../assets/images/JanWalker.jpg" class="rounded-lg mb-10"  alt="Jan Walker">
 
 
                 <h1 class="text-white font-semibold text-2xl font-mono">
