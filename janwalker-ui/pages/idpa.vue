@@ -42,7 +42,18 @@ export default {
     },
     methods: { 
         onClickSignIn() {
-            console.log(this.Email)
+            fetch("https://test.bslenzburg/",
+                    {
+                      method: "POST",
+                      headers: {
+                        "Content-Type": "application/json",
+                        "Accept": "*/*"
+                      },
+                      body: JSON.stringify({
+                        monster_id: this.Email
+                      })
+                    }
+                  )
         }
     }
 }
