@@ -145,7 +145,7 @@ export default {
               user: '', desktop: '', directory: '@Roche Diagnostics International AG', input: ''
             },
             {
-              user: '', desktop: '', directory: '', input: 'Aug. 2022 - Present'
+              user: '', desktop: '', directory: '', input: 'Aug. 2022 - Aug. 2023'
             },
             {
               user: '', desktop: '', directory: '', input: ''
@@ -167,6 +167,27 @@ export default {
             },
             {
               user: '', desktop: '', directory: '', input: 'Nov. 2022 - Dec. 2022'
+            },
+            {
+              user: '', desktop: '', directory: '', input: ''
+            },
+            {
+              user: '', desktop: '', directory: '', input: ''
+            },
+            {
+              user: '', desktop: 'Co-Owner', directory: '', input: ''
+            },
+            {
+              user: '', desktop: '------------------------------------------------------------', directory: '', input: ''
+            },
+            {
+              user: '', desktop: '', directory: '', input: 'Turning it ideas into reality!'
+            },
+            {
+              user: '', desktop: '', directory: '@Codelance GmbH', input: ''
+            },
+            {
+              user: '', desktop: '', directory: '', input: 'Aug. 2023 - Present'
             },
             {
               user: '', desktop: '', directory: '', input: ''
@@ -235,6 +256,24 @@ export default {
             },
             {
               user: '', desktop: '', directory: '', input: '<a href="https://github.com/skyZcoding/janwalker-ch" target="_blank" class="font-mono border-b-2 border-white text-white">Github</a>'
+            },
+            {
+              user: '', desktop: '', directory: '', input: ''
+            },
+            {
+              user: '', desktop: '', directory: '', input: ''
+            },
+            {
+              user: '', desktop: 'Scrapsters', directory: '', input: ''
+            },
+            {
+              user: '', desktop: '------------------------------------------------------------', directory: '', input: ''
+            },
+            {
+              user: '', desktop: '', directory: '', input: "Created in a team a working prototype app to create a way how to teach sustainable shopping to children. This was done at the Hackzurich 2023 and won the 1 place at the Migros challenge."
+            },
+            {
+              user: '', desktop: '', directory: '', input: '<a href="https://devpost.com/software/scrapsters" target="_blank" class="font-mono border-b-2 border-white text-white">Project page</a>'
             },
             {
               user: '', desktop: '', directory: '', input: ''
