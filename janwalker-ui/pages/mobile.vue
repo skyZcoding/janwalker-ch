@@ -5,7 +5,7 @@
 
 
                 <h1 class="text-white font-semibold text-2xl font-mono">
-                    Digital life easy life.
+                    In progress
                 </h1>
             </div>
 
