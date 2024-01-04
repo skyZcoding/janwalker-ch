@@ -181,7 +181,7 @@ export default {
               user: '', desktop: '------------------------------------------------------------', directory: '', input: ''
             },
             {
-              user: '', desktop: '', directory: '', input: 'Turning it ideas into reality!'
+              user: '', desktop: '', directory: '', input: 'Turning IT ideas into reality!'
             },
             {
               user: '', desktop: '', directory: '@Codelance GmbH', input: ''
