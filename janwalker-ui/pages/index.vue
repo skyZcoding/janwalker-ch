@@ -266,43 +266,43 @@ const startup = [
     },
     {
         command: "\xa0\xa0\xa0\xa0\xa0\xa0\xa0_,\xa0\xa0\xa0\xa0_\xa0\xa0\xa0_\xa0\xa0\xa0\xa0,_",
-        color: 'text-cyan-500',
+        color: 'text-white',
     },
     {
         command: "\xa0\xa0.o888P\xa0\xa0\xa0\xa0\xa0Y8o8Y\xa0\xa0\xa0\xa0\xa0Y888o.",
-        color: 'text-cyan-500',
+        color: 'text-white',
     },
     {
         command: "\xa0d88888\xa0\xa0\xa0\xa0\xa0\xa088888\xa0\xa0\xa0\xa0\xa0\xa088888b",
-        color: 'text-cyan-500',
+        color: 'text-white',
     },
     {
         command: "d888888b_\xa0\xa0_d88888b_\xa0\xa0_d888888b",
-        color: 'text-cyan-500',
+        color: 'text-white',
     },
     {
         command: "8888888888888888888888888888888",
-        color: 'text-cyan-500',
+        color: 'text-white',
     },
     {
         command: "8888888888888888888888888888888",
-        color: 'text-cyan-500',
+        color: 'text-white',
     },
     {
         command: 'YJGS8P"Y888P"Y888P"Y888P"Y8888P',
-        color: 'text-cyan-500',
+        color: 'text-white',
     },
     {
         command: "\xa0Y888\xa0\xa0\xa0'8'\xa0\xa0\xa0Y8P\xa0\xa0\xa0'8'\xa0\xa0\xa0888Y",
-        color: 'text-cyan-500',
+        color: 'text-white',
     },
     {
         command: "\xa0\xa0'8o\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0V\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0o8'",
-        color: 'text-cyan-500',
+        color: 'text-white',
     },
     {
         command: '\xa0\xa0\xa0\xa0`\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0`',
-        color: 'text-cyan-500',
+        color: 'text-white',
     },
     {
         command: '',
