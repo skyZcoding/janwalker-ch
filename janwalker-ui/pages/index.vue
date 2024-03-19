@@ -337,6 +337,13 @@ const state = reactive({
     ]
 });
 
+const commandLinePrefix = {
+    user: 'Jan@',
+    desktop: 'home-page:',
+    directory: '/home/'
+};
+
+
 const user = 'Jan@';
 const desktop = 'home-page:';
 const specialKeys = [
@@ -457,7 +464,7 @@ function keyDownHandler(e) {
 }
 
 function createHistoryMessage() {
-    state.history.push([user, desktop, state.directory, state.input])
+    state.history.push([commandLinePrefix.user, commandLinePrefix.desktop, commandLinePrefix.directory + state.directory, state.input])
 }
 
 function executeCommand() {
@@ -659,8 +666,8 @@ onUnmounted(() => {
           <p class="font-mono h-fit text-white" v-html="command[3]"></p>
         </div>
         <div class="flex flex-row h-fit min-h-[1.5rem]">
-          <p class="font-mono text-cyan-300">{{ user }}{{ desktop }}</p>
-          <p class="font-mono text-violet-500">{{ state.directory }}</p>
+          <p class="font-mono text-cyan-300">{{ commandLinePrefix.user }}{{ commandLinePrefix.desktop }}</p>
+          <p class="font-mono text-violet-500">{{ commandLinePrefix.directory + state.directory }}</p>
           <p class="font-mono text-white">$&nbsp</p>
           <p class="font-mono text-white">{{ state.inputStart }}</p>
           <p class="font-mono text-white animate-pulse bg-violet-500">{{ state.inputCursor }}</p>
