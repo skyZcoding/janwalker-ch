@@ -616,7 +616,7 @@ watch(() => state.historyPosition, (value) => {
         state.input = ''
       }
       else {
-        state.input = state.commandHistory[this.commandHistory.length - value - 1]
+        state.input = state.commandHistory[state.commandHistory.length - value - 1]
         state.cursorPosition = state.input.length + 1
       }
 })
@@ -631,7 +631,7 @@ watch(() => state.cursorPosition, (value) => {
     else if (value != state.input.length + 1) {
         state.inputStart = state.input.slice(0, value - 1)
         state.inputCursor = state.input.slice(value - 1, value)
-        state.inputEnd = state.input.slice(value, this.input.length)
+        state.inputEnd = state.input.slice(value, state.input.length)
     }
     else {
         state.inputStart = state.input
