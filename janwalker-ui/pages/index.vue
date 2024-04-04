@@ -359,9 +359,6 @@ const commandLinePrefix = {
     directory: '/home/'
 };
 
-
-const user = 'Jan@';
-const desktop = 'home-page:';
 const specialKeys = [
     3, 12, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27,
     28, 29, 30, 31, 33, 34, 35, 36, 112, 113, 114, 115,
