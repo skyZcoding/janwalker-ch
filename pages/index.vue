@@ -662,6 +662,10 @@ watch(() => state.cursorPosition, (value) => {
 onUnmounted(() => {
     window.removeEventListener('keydown', keyDownHandler)
 });
+
+definePageMeta({
+    title: 'Home'
+});
 </script>
 
 

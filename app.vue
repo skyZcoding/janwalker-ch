@@ -1,6 +1,6 @@
 <script setup lang="ts">
 useHead({
-  title: 'Jan Walker',
+  title: 'Home',
   htmlAttrs: { lang: 'en' },
   meta: [
     {
@@ -11,11 +11,11 @@ useHead({
     },
     {
       name: 'description',
-      content: 'This is the website of Jan Walker. It serves as a curriculum vitae and displays all of the information about his work career. This includes experience in the whole .Net ecosystem, Vue.js, Next.js and React.'
+      content: "Explore Jan Walker's career journey on his website.Discover his expertise in the .NET ecosystem, Vue.js, Next.js, and NUXT."
     },
     {
       name: 'keywords',
-      content: 'jan walker, walker jan, software developer, software engineer, junior software developer, .NET, dotNet, React, Vue, Vue.js, Next.js, Blazor, Asp.Net, course instructor'
+      content: 'jan walker, walker jan, software developer, software engineer, junior software developer, .NET, dotNet, NUXT, Vue, Vue.js, Next.js, Blazor, Asp.Net, course instructor'
     },
     {
       name: 'google-site-verification',
@@ -23,6 +23,8 @@ useHead({
     }
   ],
 });
+
+
 </script>
 
 <template>
