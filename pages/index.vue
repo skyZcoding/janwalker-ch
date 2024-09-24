@@ -1,4 +1,8 @@
 <script setup>
+import { Shell } from '../services/Shell'
+
+const shell = Shell();
+
 const infos = [
     {
         name: 'contact',
@@ -16,13 +20,13 @@ const infos = [
                 user: '', desktop: '', directory: '', input: ''
             },
             {
-                user: '', desktop: 'Github', directory: '', input: '\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0<a href="https://github.com/skyZcoding" target="_blank" class="font-mono border-b-2 border-white text-white">skyZcoding</a>'
+                user: '', desktop: 'Github', directory: '', input: '            <a href="https://github.com/skyZcoding" target="_blank" class="font-mono border-b-2 border-white text-white">skyZcoding</a>'
             },
             {
-                user: '', desktop: 'LinkedIn', directory: '', input: '\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0<a href="https://www.linkedin.com/in/jan-walker-jw/" target="_blank" class="font-mono border-b-2 border-white text-white">jan-walker-jw</a>'
+                user: '', desktop: 'LinkedIn', directory: '', input: '          <a href="https://www.linkedin.com/in/jan-walker-jw/" target="_blank" class="font-mono border-b-2 border-white text-white">jan-walker-jw</a>'
             },
             {
-                user: '', desktop: 'Email', directory: '', input: '\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0<a href="mailto:jan.walker.jw2@gmail.com" target="_blank" class="font-mono border-b-2 border-white text-white">jan.walker.jw2@gmail.com</a>'
+                user: '', desktop: 'Email', directory: '', input: '             <a href="mailto:jan.walker.jw2@gmail.com" target="_blank" class="font-mono border-b-2 border-white text-white">jan.walker.jw2@gmail.com</a>'
             },
             {
                 user: '', desktop: '', directory: '', input: ''
@@ -248,70 +252,70 @@ const infos = [
 ];
 
 const startup = [
-    {
+    [{
         command: 'Booting...',
-        color: 'text-white'
-    },
-    {
+        color: '#ffffff'
+    }],
+    [{
         command: "Mounted: /home/cv/",
-        color: 'text-cyan-300',
-    },
-    {
+        color: '#67e8f9',
+    }],
+    [{
         command: 'Welcome to the home page of Jan Walker',
-        color: 'text-yellow-400',
-    },
-    {
+        color: '#facc15',
+    }],
+    [{
         command: '',
         color: '',
-    },
-    {
-        command: "\xa0\xa0\xa0\xa0\xa0\xa0\xa0_,\xa0\xa0\xa0\xa0_\xa0\xa0\xa0_\xa0\xa0\xa0\xa0,_",
-        color: 'text-white',
-    },
-    {
-        command: "\xa0\xa0.o888P\xa0\xa0\xa0\xa0\xa0Y8o8Y\xa0\xa0\xa0\xa0\xa0Y888o.",
-        color: 'text-white',
-    },
-    {
-        command: "\xa0d88888\xa0\xa0\xa0\xa0\xa0\xa088888\xa0\xa0\xa0\xa0\xa0\xa088888b",
-        color: 'text-white',
-    },
-    {
-        command: "d888888b_\xa0\xa0_d88888b_\xa0\xa0_d888888b",
-        color: 'text-white',
-    },
-    {
+    }],
+    [{
+        command: "       _,    _   _    ,_",
+        color: '#ffffff',
+    }],
+    [{
+        command: "  .o888P     Y8o8Y     Y888o.",
+        color: '#ffffff',
+    }],
+    [{
+        command: " d88888      88888      88888b",
+        color: '#ffffff',
+    }],
+    [{
+        command: "d888888b_  _d88888b_  _d888888b",
+        color: '#ffffff',
+    }],
+    [{
         command: "8888888888888888888888888888888",
-        color: 'text-white',
-    },
-    {
+        color: '#ffffff',
+    }],
+    [{
         command: "8888888888888888888888888888888",
-        color: 'text-white',
-    },
-    {
+        color: '#ffffff',
+    }],
+    [{
         command: 'YJGS8P"Y888P"Y888P"Y888P"Y8888P',
-        color: 'text-white',
-    },
-    {
-        command: "\xa0Y888\xa0\xa0\xa0'8'\xa0\xa0\xa0Y8P\xa0\xa0\xa0'8'\xa0\xa0\xa0888Y",
-        color: 'text-white',
-    },
-    {
-        command: "\xa0\xa0'8o\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0V\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0o8'",
-        color: 'text-white',
-    },
-    {
-        command: '\xa0\xa0\xa0\xa0`\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0`',
-        color: 'text-white',
-    },
-    {
+        color: '#ffffff',
+    }],
+    [{
+        command: " Y888   '8'   Y8P   '8'   888Y",
+        color: '#ffffff',
+    }],
+    [{
+        command: "  '8o          V          o8'",
+        color: '#ffffff',
+    }],
+    [{
+        command: '    `                     `',
+        color: '#ffffff',
+    }],
+    [{
         command: '',
         color: '',
-    },
-    {
+    }],
+    [{
         command: 'The home page serves as the base of the cv.',
-        color: 'text-yellow-400',
-    },
+        color: '#facc15',
+    }],
 ];
 
 const state = reactive({
@@ -354,8 +358,12 @@ const state = reactive({
 });
 
 const commandLinePrefix = {
-    user: 'Jan@',
-    desktop: 'home-page:',
+    user: {
+        command: 'Jan@', color: '#67e8f9'
+    },
+    desktop: {
+        command: 'home-page:', color: '#67e8f9'
+    },
     directory: '/home/'
 };
 
@@ -364,6 +372,16 @@ const specialKeys = [
     28, 29, 30, 31, 33, 34, 35, 36, 112, 113, 114, 115,
     116, 117, 118, 119, 120, 121, 122, 123, 91, 221, 45, 244
 ];
+
+function initialize() {
+    addCommands(startup);
+}
+
+function addCommands(commands) {
+    commands.forEach(function (command) {
+        state.history.push(shell.writeLine(command))
+    })
+}
 
 function keyDownHandler(e) {
     if (specialKeys.includes(e.keyCode)) {
@@ -477,7 +495,24 @@ function keyDownHandler(e) {
 }
 
 function createHistoryMessage() {
-    state.history.push([commandLinePrefix.user, commandLinePrefix.desktop, commandLinePrefix.directory + state.directory, state.input])
+    let commands = [
+        [
+            {
+                command: commandLinePrefix.user.command, color: commandLinePrefix.user.color
+            },
+            {
+                command: commandLinePrefix.desktop.command, color: commandLinePrefix.desktop.color
+            },
+            {
+                command: commandLinePrefix.directory + state.directory, color: '#a78bfa'
+            },
+            {
+                command: "$ " + state.input, color: '#ffffff'
+            }
+        ]
+    ]
+
+    addCommands(commands)
 }
 
 function executeCommand() {
@@ -502,57 +537,51 @@ function executeCommand() {
 }
 
 function lsCommand() {
-    state.directories.forEach(function (root) {
-        if (root.active) {
-            root.subdirectories.forEach(function (directory) {
-                createHistoryCommand('', '', directory.directory, '')
-            })
-        } else {
-            root.subdirectories.forEach(function (directory) {
-                if (directory.active) {
-                    directory.files.forEach(function (file) {
-                        createHistoryCommand('', '', '', file.name)
-                    })
-                }
-            })
-        }
+    let commands = [];
+    let directory = shell.getActiveDirectory();
 
-    })
+    if (directory.files) {
+        directory.files.forEach(function (file) {
+            commands.push([{ command: file.name, color: '#00a6ff' }])
+        })
+    }
+
+    if (directory.subdirectories) {
+        directory.subdirectories.forEach(function (directory) {
+            commands.push([{ command: directory.name, color: '#a78bfa' }])
+        })
+    }
+
+    addCommands(commands);
 }
 
 function cdCommand() {
-    let command = state.input.split('\xa0')
-    let directoryList = state.directory.split('/')
+    let commands = [];
 
-    if (directoryList.length == 3) {
-        if (command[1] == '..') {
-            state.directories.forEach(function (directory) {
-                directory.active = true
-                directory.subdirectories.forEach(function (d) {
-                    if (d.active) {
-                        d.active = false
-                    }
-                })
-            })
-            state.directory = directoryList[0]
-        } else {
-            createHistoryCommand('', '', '', 'Unable to find the directory.')
-        }
-    } else {
-        if (command[1] == '..') {
-            createHistoryCommand('', '', '', 'Unable to find the directory.')
-        } else {
-            state.directories.forEach(function (directory) {
-                directory.subdirectories.forEach(function (d) {
-                    if (d.directory == command[1]) {
-                        state.directory = state.directory + '/' + d.directory + '/'
-                        d.active = true
-                        directory.active = false
-                    }
-                })
-            })
-        }
+    let command = state.input.split('\xa0')
+
+    if (command[1] == '..') { 
+        shell.moveUp();
+
+        state.directory = shell.getActiveDirectory().name
+        return;
     }
+
+    let path = state.directory + '/' + command[1]
+
+    let isSuccessful = shell.setActiveDirectory(path)
+    console.log(isSuccessful)
+
+    if (isSuccessful == false) {
+        commands.push([{ command: '', color: '' }])
+        commands.push([{ command: 'Could not find a directory called ' + "'" + command[1] + "'", color: '#ff0000' }])
+        commands.push([{ command: '', color: '' }])
+    }
+    else {
+        state.directory = path
+    }
+
+    addCommands(commands)
 }
 
 function catCommand() {
@@ -578,20 +607,43 @@ function clearCommand() {
 }
 
 function commandNotFound() {
-    createHistoryCommand('', '', '', '')
-    createHistoryCommand('', '', '', "Could\xa0not\xa0find\xa0any\xa0command\xa0called\xa0'" + state.input + "'.")
-    createHistoryCommand('', '', '', "Use\xa0'help'\xa0to\xa0view\xa0all\xa0commands.")
-    createHistoryCommand('', '', '', '')
+    let commands = [];
+
+    commands.push([{ command: '', color: '' }])
+    commands.push([{ command: 'Could not find a command called ' + "'" + state.input + "'", color: '#ff0000' }])
+    commands.push([{ command: '', color: '' }]);
+
+    addCommands(commands);
 }
 
 function helpCommand() {
-    createHistoryCommand('', '', '', '')
-    createHistoryCommand('', '', 'HELP', '\xa0\xa0\xa0\xa0\xa0Shows all commands with a short description')
-    createHistoryCommand('', '', 'CAT', '\xa0\xa0\xa0\xa0\xa0\xa0Displays the file')
-    createHistoryCommand('', '', 'CLEAR', '\xa0\xa0\xa0\xa0Clears the history of the console')
-    createHistoryCommand('', '', 'CD', '\xa0\xa0\xa0\xa0\xa0\xa0\xa0Moves in or out of the directory')
-    createHistoryCommand('', '', 'LS', '\xa0\xa0\xa0\xa0\xa0\xa0\xa0Shows all files and the directories in the directory')
-    createHistoryCommand('', '', '', '')
+    let commands = [];
+
+    commands.push([{ command: '', color: '' }])
+    commands.push([{ command: 'Commands:', color: '#00a6ff' }])
+    commands.push([{ command: '------------------------------------------------------------------', color: '#00a6ff' }])
+    commands.push([
+        { command: 'ls', color: '#00a6ff' },
+        { command: '     Lists all files and directory from the current directory', color: '#ffffff' }
+    ])
+    commands.push([
+        { command: 'cd', color: '#00a6ff' },
+        { command: '     Change the current directory', color: '#ffffff' }
+    ])
+    commands.push([
+        { command: 'cat', color: '#00a6ff' },
+        { command: '    Concatenate and display file content', color: '#ffffff' }])
+    commands.push([
+        { command: 'help', color: '#00a6ff' },
+        { command: '   Display this help message', color: '#ffffff' }])
+    commands.push([
+        { command: 'clear', color: '#00a6ff' },
+        { command: '  Clear the terminal screen', color: '#ffffff' }
+    ])
+    commands.push([{ command: '', color: '' }])
+
+    addCommands(commands);
+
 }
 
 function createHistoryCommand(user, desktop, directory, input) {
@@ -607,6 +659,7 @@ function isMobile() {
 }
 
 onMounted(() => {
+    initialize()
     const targetNode = document.getElementById("scroller");
     const config = { childList: true };
     const callback = function (mutationsList, observer) {
@@ -673,19 +726,13 @@ definePageMeta({
     <div class="h-screen">
         <div class="min-h-full bg-slate-800 p-2 flex flex-col justify-between overflow-y-visible">
             <main class="flex flex-col" id="scroller">
-                <div class="font-mono h-fit min-h-[1.5rem]" :class="message.color" v-for="(message, index) in startup"
-                    :key="'message' + index">
-                    {{ message.command }}
-                </div>
                 <div class="flex flex-row h-fit min-h-[1.5rem]" v-for="(command, index) in state.history"
-                    :key="'command' + index">
-                    <p class="font-mono text-cyan-300">{{ command[0] }}{{ command[1] }}</p>
-                    <p class="font-mono text-violet-400">{{ command[2] }}</p>
-                    <p class="font-mono text-white" v-if="command[0]">$&nbsp</p>
-                    <p class="font-mono h-fit text-white" v-html="command[3]"></p>
+                    :key="'command' + index" v-html="command">
                 </div>
+
                 <div class="flex flex-row h-fit min-h-[1.5rem]">
-                    <p class="font-mono text-cyan-300">{{ commandLinePrefix.user }}{{ commandLinePrefix.desktop }}</p>
+                    <p class="font-mono" :style="'color: ' + commandLinePrefix.user.color">{{ commandLinePrefix.user.command }}</p>
+                    <p class="font-mono" :style="'color: ' + commandLinePrefix.desktop.color">{{ commandLinePrefix.desktop.command }}</p>
                     <p class="font-mono text-violet-400">{{ commandLinePrefix.directory + state.directory }}</p>
                     <p class="font-mono text-white">$&nbsp</p>
                     <p class="font-mono text-white">{{ state.inputStart }}</p>
