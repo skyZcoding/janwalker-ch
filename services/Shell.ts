@@ -7,11 +7,34 @@ export function Shell(): any {
                         {
                             name: "info.txt", 
                             content: [
-                                {
+                                [{
                                     line: "",
                                     color: ""
-                            
-                                },
+                                }],
+                                [{
+                                    line: "Feel free to reach out to me through one of the following channels",
+                                    color: "#ffffff"
+                                }],
+                                [{
+                                    line: "------------------------------------------------------------------",
+                                    color: ""
+                                }],
+                                [{
+                                    line: 'Github            <a href="https://github.com/skyZcoding" target="_blank" class="font-mono border-b-2 border-white text-white">skyZcoding</a>',
+                                    color: "#ffffff"
+                                }],
+                                [{
+                                    line: 'LinkedIn          <a href="https://www.linkedin.com/in/jan-walker-jw/" target="_blank" class="font-mono border-b-2 border-white text-white">jan-walker-jw</a>',
+                                    color: "#ffffff"
+                                }],
+                                [{
+                                    line: 'Email             <a href="mailto:jan.walker.jw2@gmail.com" target="_blank" class="font-mono border-b-2 border-white text-white">jan.walker.jw2@gmail.com</a>',
+                                    color: "#ffffff"
+                                }],
+                                [{
+                                    line: "",
+                                    color: ""
+                                }]
                             ]
                         }
                     ]
@@ -147,6 +170,19 @@ export function Shell(): any {
         return false;
     }
 
+    function getFileContent(fileName: string): any[] | null {
+        const activeDir = getActiveDirectory();
+        if (!activeDir || !activeDir.files) return null;
+
+        for (const file of activeDir.files) {
+            if (file.name === fileName) {
+                return file.content || null;
+            }
+        }
+
+        return null;
+    }
+
     function writeLine(commandParts: Array<ShellCommandPart>): string {
         let line = ''
 
@@ -161,7 +197,8 @@ export function Shell(): any {
         writeLine,
         setActiveDirectory,
         getActiveDirectory,
-        moveUp
+        moveUp,
+        getFileContent
     };
 }
 

@@ -586,19 +586,29 @@ function cdCommand() {
 
 function catCommand() {
     let command = state.input.split('\xa0')
-    let folders = state.directory.split('/')
+    let content = shell.getFileContent(command[1])
 
-    if (folders.length == 3 && command[1] == 'info.txt') {
-        infos.forEach(info => {
-            if (info.name == folders[1]) {
-                info.content.forEach(content => {
-                    createHistoryCommand(content.user, content.desktop, content.directory, content.input)
-                });
-            }
-        })
-    } else {
-        createHistoryCommand('', '', '', 'Could not find a file called ' + "'" + command[1] + "'")
+    if (content == null) {
+        let commands = []
+
+        commands.push([{ command: '', color: '' }])
+        commands.push([{ command: 'Could not find a file called ' + "'" + command[1] + "'", color: '#ff0000' }])
+        commands.push([{ command: '', color: '' }])
+
+        addCommands(commands)
     }
+    else {
+        let commands = []
+
+        content.forEach(function (line) {
+            line.forEach(function (part) {
+                commands.push([{ command: part.line, color: part.color }])
+            })
+        })
+
+        addCommands(commands)
+    }
+
 }
 
 function clearCommand() {
