@@ -284,9 +284,30 @@ function executeCommand() {
     else if (state.input.toLocaleLowerCase().startsWith('cd\xa0')) {
         cdCommand()
     }
+    else if (state.input.toLocaleLowerCase().startsWith('mkdir\xa0')) {
+        mkdirCommand()
+    }
     else {
         commandNotFound()
     }
+}
+
+function mkdirCommand() {
+    let commands = [];
+
+    let command = state.input.split('\xa0')
+
+    let path = command[1];
+
+    let isSuccessful = shell.createDirectory(path)
+
+    if (isSuccessful == false) {
+        commands.push([{ command: '', color: '' }])
+        commands.push([{ command: 'Could not create a directory called ' + "'" + command[1] + "'", color: '#ff0000' }])
+        commands.push([{ command: '', color: '' }])
+    }
+
+    addCommands(commands)
 }
 
 function lsCommand() {

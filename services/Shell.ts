@@ -458,7 +458,30 @@ export function Shell(): any {
     }
 
     return null;
-  }
+    }
+    
+    function createDirectory(directoryName: string): boolean {
+        const activeDir = getActiveDirectory();
+        if (!activeDir || !activeDir.subdirectories) return false;
+
+        // Check if directory already exists
+        for (const dir of activeDir.subdirectories) {
+            if (dir.name === directoryName) {
+                return false; // Directory already exists
+            }
+        }
+
+        // Create new directory
+        const newDirectory = {
+            name: directoryName,
+            active: false,
+            subdirectories: [],
+            files: [],
+        };
+
+        activeDir.subdirectories.push(newDirectory);
+        return true;
+    }
 
   function writeLine(commandParts: Array<ShellCommandPart>): string {
     let line = "";
@@ -483,6 +506,7 @@ export function Shell(): any {
     getActiveDirectory,
     moveUp,
     getFileContent,
+    createDirectory,
   };
 }
 
