@@ -168,25 +168,26 @@ function keyDownHandler(e) {
         let inputText = inputs[lastElementInInput]
         let re = new RegExp(inputText + '$')
 
-        if (lastElementInInput < 2) {
-            state.directories.forEach(function (directory) {
-                if (directory.active) {
-                    directory.subdirectories.every(function (d) {
-                        if (d.directory.startsWith(inputText)) {
-                            state.input = state.input.replace(re, d.directory) + '\xa0'
-                            state.cursorPosition = state.cursorPosition - inputText.length + d.directory.length
+        let directory = shell.getActiveDirectory()
 
-                            return false
-                        }
+        if (directory.subdirectories) {
+            directory.subdirectories.forEach(function (subdirectory) {
+                if (subdirectory.name.startsWith(inputText)) {
+                    state.input = state.input.replace(re, subdirectory.name) + '\xa0'
+                    state.cursorPosition = state.cursorPosition - inputText.length + subdirectory.name.length
 
-                        return true
-                    })
-                } else {
-                    let fileName = 'info.txt'
-                    if (fileName.startsWith(inputText)) {
-                        state.input = state.input.replace(inputText, fileName) + '\xa0'
-                        state.cursorPosition = state.cursorPosition - inputText.length + fileName.length
-                    }
+                    return;
+                }
+            })
+        }
+
+        if (directory.files) {
+            directory.files.forEach(function (file) {
+                if (file.name.startsWith(inputText)) {
+                    state.input = state.input.replace(re, file.name) + '\xa0'
+                    state.cursorPosition = state.cursorPosition - inputText.length + file.name.length
+
+                    return;
                 }
             })
         }
