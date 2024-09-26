@@ -7,6 +7,7 @@ export function Shell(): any {
         {
           name: "contact",
           active: false,
+          subdirectories: [],
           files: [
             {
               name: "info.txt",
@@ -62,6 +63,7 @@ export function Shell(): any {
         {
           name: "projects",
           active: false,
+          subdirectories: [],
           files: [
             {
               name: "info.txt",
@@ -186,6 +188,7 @@ export function Shell(): any {
         {
           name: "education",
           active: false,
+          subdirectories: [],
           files: [
             {
               name: "info.txt",
@@ -219,6 +222,7 @@ export function Shell(): any {
         {
           name: "experience",
           active: false,
+          subdirectories: [],
           files: [
             {
               name: "info.txt",
@@ -328,7 +332,8 @@ export function Shell(): any {
             },
           ],
         },
-      ],
+          ],
+      files: [],
     },
   ];
 
