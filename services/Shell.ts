@@ -26,19 +26,31 @@ export function Shell(): any {
                 ],
                 [
                   {
-                    line: 'Github            <a href="https://github.com/skyZcoding" target="_blank" class="font-mono border-b-2 border-white text-white">skyZcoding</a>',
+                    line: "Github            ",
+                    color: "#ffffff",
+                  },
+                  {
+                    line: '<a href="https://github.com/skyZcoding" target="_blank" class="font-mono border-b-2 border-white text-white">skyZcoding</a>',
                     color: "#ffffff",
                   },
                 ],
                 [
                   {
-                    line: 'LinkedIn          <a href="https://www.linkedin.com/in/jan-walker-jw/" target="_blank" class="font-mono border-b-2 border-white text-white">jan-walker-jw</a>',
+                    line: "LinkedIn          ",
+                    color: "#ffffff",
+                  },
+                  {
+                    line: '<a href="https://www.linkedin.com/in/jan-walker-jw/" target="_blank" class="font-mono border-b-2 border-white text-white">jan-walker-jw</a>',
                     color: "#ffffff",
                   },
                 ],
                 [
                   {
-                    line: 'Email             <a href="mailto:jan.walker.jw2@gmail.com" target="_blank" class="font-mono border-b-2 border-white text-white">jan.walker.jw2@gmail.com</a>',
+                    line: "Email             ",
+                    color: "#ffffff",
+                  },
+                  {
+                    line: '<a href="mailto:jan.walker.jw2@gmail.com" target="_blank" class="font-mono border-b-2 border-white text-white">jan.walker.jw2@gmail.com</a>',
                     color: "#ffffff",
                   },
                 ],
@@ -452,9 +464,14 @@ export function Shell(): any {
     let line = "";
 
     commandParts.forEach(function (part) {
+      let command = part.command;
+      if (!/<\/?[a-z][\s\S]*>/i.test(command)) {
+        command = command.replace(/\s/g, "&nbsp;");
+      }
+
       line += `<p class="font-mono h-fit break-all" style="color:${
         part.color ? part.color : "#ffffff"
-      }">${part.command.replace(/\s/g, "&nbsp;")}</p>`;
+      }">${command}</p>`;
     });
 
     return line;

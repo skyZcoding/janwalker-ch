@@ -353,9 +353,12 @@ function catCommand() {
         let commands = []
 
         content.forEach(function (line) {
+            let command = []
             line.forEach(function (part) {
-                commands.push([{ command: part.line, color: part.color }])
+                command.push({ command: part.line, color: part.color })
             })
+
+            commands.push(command)
         })
 
         addCommands(commands)
