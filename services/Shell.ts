@@ -11,50 +11,50 @@ export function Shell(): any {
             {
               name: "info.txt",
               content: [
-                [{ line: "", color: "#ffffff" }],
+                [{ linePart: "", color: "#ffffff" }],
                 [
                   {
-                    line: "Feel free to reach out to me through one of the following channels",
+                    linePart: "Feel free to reach out to me through one of the following channels",
                     color: "#ffffff",
                   },
                 ],
                 [
                   {
-                    line: "------------------------------------------------------------------",
+                    linePart: "------------------------------------------------------------------",
                     color: "#ffffff",
                   },
                 ],
                 [
                   {
-                    line: "Github            ",
+                    linePart: "Github            ",
                     color: "#ffffff",
                   },
                   {
-                    line: '<a href="https://github.com/skyZcoding" target="_blank" class="font-mono border-b-2 border-white text-white">skyZcoding</a>',
+                    linePart: '<a href="https://github.com/skyZcoding" target="_blank" class="font-mono border-b-2 border-white text-white">skyZcoding</a>',
                     color: "#ffffff",
                   },
                 ],
                 [
                   {
-                    line: "LinkedIn          ",
+                    linePart: "LinkedIn          ",
                     color: "#ffffff",
                   },
                   {
-                    line: '<a href="https://www.linkedin.com/in/jan-walker-jw/" target="_blank" class="font-mono border-b-2 border-white text-white">jan-walker-jw</a>',
+                    linePart: '<a href="https://www.linkedin.com/in/jan-walker-jw/" target="_blank" class="font-mono border-b-2 border-white text-white">jan-walker-jw</a>',
                     color: "#ffffff",
                   },
                 ],
                 [
                   {
-                    line: "Email             ",
+                    linePart: "Email             ",
                     color: "#ffffff",
                   },
                   {
-                    line: '<a href="mailto:jan.walker.jw2@gmail.com" target="_blank" class="font-mono border-b-2 border-white text-white">jan.walker.jw2@gmail.com</a>',
+                    linePart: '<a href="mailto:jan.walker.jw2@gmail.com" target="_blank" class="font-mono border-b-2 border-white text-white">jan.walker.jw2@gmail.com</a>',
                     color: "#ffffff",
                   },
                 ],
-                [{ line: "", color: "#ffffff" }],
+                [{ linePart: "", color: "#ffffff" }],
               ],
             },
           ],
@@ -66,119 +66,119 @@ export function Shell(): any {
             {
               name: "info.txt",
               content: [
-                [{ line: "", color: "#ffffff" }],
-                [{ line: "Projects", color: "#ffffff" }],
+                [{ linePart: "", color: "#ffffff" }],
+                [{ linePart: "Projects", color: "#ffffff" }],
                 [
                   {
-                    line: "------------------------------------------------------------------",
+                    linePart: "------------------------------------------------------------------",
                     color: "#ffffff",
                   },
                 ],
                 [
                   {
-                    line: "cobas® mobile solution",
+                    linePart: "cobas® mobile solution",
                     color: "#ffffff",
                   },
                 ],
                 [
                   {
-                    line: "------------------------------------------------------------",
+                    linePart: "------------------------------------------------------------",
                     color: "#ffffff",
                   },
                 ],
                 [
                   {
-                    line: "Developed multiple service on the product during the time working at Roche diagnostics",
+                    linePart: "Developed multiple service on the product during the time working at Roche diagnostics",
                     color: "#ffffff",
                   },
                 ],
                 [
                   {
-                    line: '<a href="https://diagnostics.roche.com/global/en/products/instruments/cobas-mobile-solution-ins-6695.html" target="_blank" class="font-mono border-b-2 border-white text-white">Project page</a>',
+                    linePart: '<a href="https://diagnostics.roche.com/global/en/products/instruments/cobas-mobile-solution-ins-6695.html" target="_blank" class="font-mono border-b-2 border-white text-white">Project page</a>',
                     color: "#ffffff",
                   },
                 ],
                 [
                   {
-                    line: "",
+                    linePart: "",
                     color: "",
                   },
                 ],
                 [
                   {
-                    line: "Volunteering App",
+                    linePart: "Volunteering App",
                     color: "#ffffff",
                   },
                 ],
                 [
                   {
-                    line: "------------------------------------------------------------",
+                    linePart: "------------------------------------------------------------",
                     color: "#ffffff",
                   },
                 ],
                 [
                   {
-                    line: "Created in a team a working prototype app to unite the different volunteering companies with the actual volunteers. This was done at the Hackzurich 2022.",
+                    linePart: "Created in a team a working prototype app to unite the different volunteering companies with the actual volunteers. This was done at the Hackzurich 2022.",
                     color: "#ffffff",
                   },
                 ],
                 [
                   {
-                    line: '<a href="https://old.creatorspace.dev/kennybets/projects/hiFkMYxIClrrVQAj" target="_blank" class="font-mono border-b-2 border-white text-white">Project page</a>',
+                    linePart: '<a href="https://old.creatorspace.dev/kennybets/projects/hiFkMYxIClrrVQAj" target="_blank" class="font-mono border-b-2 border-white text-white">Project page</a>',
                     color: "#ffffff",
                   },
                 ],
-                [{ line: "", color: "#ffffff" }],
+                [{ linePart: "", color: "#ffffff" }],
                 [
                   {
-                    line: "Home page",
-                    color: "#ffffff",
-                  },
-                ],
-                [
-                  {
-                    line: "------------------------------------------------------------",
+                    linePart: "Home page",
                     color: "#ffffff",
                   },
                 ],
                 [
                   {
-                    line: "Created this home page to display the cv in a creative way.",
+                    linePart: "------------------------------------------------------------",
                     color: "#ffffff",
                   },
                 ],
                 [
                   {
-                    line: '<a href="https://github.com/skyZcoding/janwalker-ch" target="_blank" class="font-mono border-b-2 border-white text-white">Github</a>',
-                    color: "#ffffff",
-                  },
-                ],
-                [{ line: "", color: "#ffffff" }],
-                [
-                  {
-                    line: "Scrapsters",
+                    linePart: "Created this home page to display the cv in a creative way.",
                     color: "#ffffff",
                   },
                 ],
                 [
                   {
-                    line: "------------------------------------------------------------",
+                    linePart: '<a href="https://github.com/skyZcoding/janwalker-ch" target="_blank" class="font-mono border-b-2 border-white text-white">Github</a>',
+                    color: "#ffffff",
+                  },
+                ],
+                [{ linePart: "", color: "#ffffff" }],
+                [
+                  {
+                    linePart: "Scrapsters",
                     color: "#ffffff",
                   },
                 ],
                 [
                   {
-                    line: "Created in a team a working prototype app to create a way how to teach sustainable shopping to children. This was done at the Hackzurich 2023 and won the 1 place at the Migros challenge.",
+                    linePart: "------------------------------------------------------------",
                     color: "#ffffff",
                   },
                 ],
                 [
                   {
-                    line: '<a href="https://devpost.com/software/scrapsters" target="_blank" class="font-mono border-b-2 border-white text-white">Project page</a>',
+                    linePart: "Created in a team a working prototype app to create a way how to teach sustainable shopping to children. This was done at the Hackzurich 2023 and won the 1 place at the Migros challenge.",
                     color: "#ffffff",
                   },
                 ],
-                [{ line: "", color: "#ffffff" }],
+                [
+                  {
+                    linePart: '<a href="https://devpost.com/software/scrapsters" target="_blank" class="font-mono border-b-2 border-white text-white">Project page</a>',
+                    color: "#ffffff",
+                  },
+                ],
+                [{ linePart: "", color: "#ffffff" }],
               ],
             },
           ],
@@ -190,28 +190,28 @@ export function Shell(): any {
             {
               name: "info.txt",
               content: [
-                [{ line: "", color: "#ffffff" }],
-                [{ line: "Education", color: "#ffffff" }],
+                [{ linePart: "", color: "#ffffff" }],
+                [{ linePart: "Education", color: "#ffffff" }],
                 [
                   {
-                    line: "------------------------------------------------------------------",
+                    linePart: "------------------------------------------------------------------",
                     color: "#ffffff",
                   },
                 ],
                 [
                   {
-                    line: "Informatiker Fachrichtung Applikationsentwicklug EFZ",
+                    linePart: "Informatiker Fachrichtung Applikationsentwicklug EFZ",
                     color: "#ffffff",
                   },
                 ],
                 [
                   {
-                    line: "Gewerblich-industrielles Bildungszentrum Zug",
+                    linePart: "Gewerblich-industrielles Bildungszentrum Zug",
                     color: "#ffffff",
                   },
                 ],
-                [{ line: "Aug. 2018 - Aug. 2022", color: "#ffffff" }],
-                [{ line: "", color: "#ffffff" }],
+                [{ linePart: "Aug. 2018 - Aug. 2022", color: "#ffffff" }],
+                [{ linePart: "", color: "#ffffff" }],
               ],
             },
           ],
@@ -223,107 +223,107 @@ export function Shell(): any {
             {
               name: "info.txt",
               content: [
-                [{ line: "", color: "#ffffff" }],
-                [{ line: "Experience", color: "#ffffff" }],
+                [{ linePart: "", color: "#ffffff" }],
+                [{ linePart: "Experience", color: "#ffffff" }],
                 [
                   {
-                    line: "------------------------------------------------------------------",
+                    linePart: "------------------------------------------------------------------",
                     color: "#ffffff",
                   },
                 ],
-                [{ line: "", color: "#ffffff" }],
+                [{ linePart: "", color: "#ffffff" }],
                 [
                   {
-                    line: "Apprenticeship as a software developer",
-                    color: "#ffffff",
-                  },
-                ],
-                [
-                  {
-                    line: "------------------------------------------------------------",
+                    linePart: "Apprenticeship as a software developer",
                     color: "#ffffff",
                   },
                 ],
                 [
                   {
-                    line: "The apprenticeship is a common starting ground in switzerland to start as a software developer. During this period the apprentice will learn the basic to advance knowledge of the topics which are needed to be a software developer.",
+                    linePart: "------------------------------------------------------------",
                     color: "#ffffff",
                   },
                 ],
                 [
                   {
-                    line: "@Roche Diagnostics International AG",
-                    color: "#ffffff",
-                  },
-                ],
-                [{ line: "Aug. 2018 - Aug. 2022", color: "#ffffff" }],
-                [{ line: "", color: "#ffffff" }],
-                [{ line: "", color: "#ffffff" }],
-                [{ line: "Junior software developer", color: "#ffffff" }],
-                [
-                  {
-                    line: "------------------------------------------------------------",
+                    linePart: "The apprenticeship is a common starting ground in switzerland to start as a software developer. During this period the apprentice will learn the basic to advance knowledge of the topics which are needed to be a software developer.",
                     color: "#ffffff",
                   },
                 ],
                 [
                   {
-                    line: "Worked as a full stack developer on multiple project using mainly .NET. As well managed the user devices through the VMWare Workspace system.",
+                    linePart: "@Roche Diagnostics International AG",
+                    color: "#ffffff",
+                  },
+                ],
+                [{ linePart: "Aug. 2018 - Aug. 2022", color: "#ffffff" }],
+                [{ linePart: "", color: "#ffffff" }],
+                [{ linePart: "", color: "#ffffff" }],
+                [{ linePart: "Junior software developer", color: "#ffffff" }],
+                [
+                  {
+                    linePart: "------------------------------------------------------------",
                     color: "#ffffff",
                   },
                 ],
                 [
                   {
-                    line: "@Roche Diagnostics International AG",
-                    color: "#ffffff",
-                  },
-                ],
-                [{ line: "Aug. 2022 - Aug. 2023", color: "#ffffff" }],
-                [{ line: "", color: "#ffffff" }],
-                [{ line: "", color: "#ffffff" }],
-                [
-                  {
-                    line: "Teaching an intercompany course for apprentices about Blazor",
+                    linePart: "Worked as a full stack developer on multiple project using mainly .NET. As well managed the user devices through the VMWare Workspace system.",
                     color: "#ffffff",
                   },
                 ],
                 [
                   {
-                    line: "------------------------------------------------------------",
+                    linePart: "@Roche Diagnostics International AG",
+                    color: "#ffffff",
+                  },
+                ],
+                [{ linePart: "Aug. 2022 - Aug. 2023", color: "#ffffff" }],
+                [{ linePart: "", color: "#ffffff" }],
+                [{ linePart: "", color: "#ffffff" }],
+                [
+                  {
+                    linePart: "Teaching an intercompany course for apprentices about Blazor",
                     color: "#ffffff",
                   },
                 ],
                 [
                   {
-                    line: "Taught the first year apprentices how to develope a web frontend with Blazor as a course instructor.",
+                    linePart: "------------------------------------------------------------",
                     color: "#ffffff",
                   },
                 ],
                 [
                   {
-                    line: "@Roche Diagnostics International AG",
-                    color: "#ffffff",
-                  },
-                ],
-                [{ line: "Nov. 2022 - Dec. 2022", color: "#ffffff" }],
-                [{ line: "", color: "#ffffff" }],
-                [{ line: "", color: "#ffffff" }],
-                [{ line: "Co-Owner", color: "#ffffff" }],
-                [
-                  {
-                    line: "------------------------------------------------------------",
+                    linePart: "Taught the first year apprentices how to develope a web frontend with Blazor as a course instructor.",
                     color: "#ffffff",
                   },
                 ],
                 [
                   {
-                    line: "Turning IT ideas into reality!",
+                    linePart: "@Roche Diagnostics International AG",
                     color: "#ffffff",
                   },
                 ],
-                [{ line: "@Codelance GmbH", color: "#ffffff" }],
-                [{ line: "Aug. 2023 - Present", color: "#ffffff" }],
-                [{ line: "", color: "#ffffff" }],
+                [{ linePart: "Nov. 2022 - Dec. 2022", color: "#ffffff" }],
+                [{ linePart: "", color: "#ffffff" }],
+                [{ linePart: "", color: "#ffffff" }],
+                [{ linePart: "Co-Owner", color: "#ffffff" }],
+                [
+                  {
+                    linePart: "------------------------------------------------------------",
+                    color: "#ffffff",
+                  },
+                ],
+                [
+                  {
+                    linePart: "Turning IT ideas into reality!",
+                    color: "#ffffff",
+                  },
+                ],
+                [{ linePart: "@Codelance GmbH", color: "#ffffff" }],
+                [{ linePart: "Aug. 2023 - Present", color: "#ffffff" }],
+                [{ linePart: "", color: "#ffffff" }],
               ],
             },
           ],

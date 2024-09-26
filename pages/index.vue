@@ -352,10 +352,10 @@ function catCommand() {
     else {
         let commands = []
 
-        content.forEach(function (line) {
+        content.forEach(function (linePart) {
             let command = []
-            line.forEach(function (part) {
-                command.push({ command: part.line, color: part.color })
+            linePart.forEach(function (part) {
+                command.push({ command: part.linePart, color: part.color })
             })
 
             commands.push(command)
