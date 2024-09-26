@@ -335,7 +335,27 @@ export function Shell(): any {
           ],
       files: [],
     },
-  ];
+    ];
+    
+    function getDirectoryFullPath(directoryName: string): string | null {
+        function findPath(directories: any[], targetName: string, currentPath: string): string | null {
+            for (const dir of directories) {
+                const newPath = `${currentPath}/${dir.name}`;
+                if (dir.name === targetName) {
+                    return newPath;
+                }
+                if (dir.subdirectories) {
+                    const result = findPath(dir.subdirectories, targetName, newPath);
+                    if (result) {
+                        return result;
+                    }
+                }
+            }
+            return null;
+        }
+
+        return findPath(drive, directoryName, "") || null;
+    }
 
   function setActiveDirectory(fullPath: string): boolean {
     const pathParts = fullPath.split("/").filter((part) => part !== "");
@@ -444,9 +464,10 @@ export function Shell(): any {
     }
 
     const parentDir = findParent(drive, activeDir);
-    if (parentDir) {
-      setActiveDirectory(parentDir.name);
-      return true;
+      if (parentDir) {
+        let fullPath = getDirectoryFullPath(parentDir.name) || "";
+        setActiveDirectory(fullPath);
+        return true;
     }
 
     return false;
@@ -512,6 +533,7 @@ export function Shell(): any {
     moveUp,
     getFileContent,
     createDirectory,
+    getDirectoryFullPath,
   };
 }
 

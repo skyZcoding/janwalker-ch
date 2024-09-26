@@ -337,7 +337,8 @@ function cdCommand() {
     if (command[1] == '..') { 
         shell.moveUp();
 
-        state.directory = shell.getActiveDirectory().name
+        let path = shell.getDirectoryFullPath(shell.getActiveDirectory().name);
+        state.directory = path.slice(1, path.length);
         return;
     }
 
