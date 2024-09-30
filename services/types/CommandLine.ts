@@ -2,7 +2,7 @@ import type ShellCommandPart from "./ShellCommandPart";
 import type Directory from "./Directory";
 
 export default interface CommandLine {
-  writeLine(commandParts: Array<ShellCommandPart>): string;
+  writeLine(commandParts: ShellCommandPart[]): string;
   setActiveDirectory(fullPath: string): boolean;
   getActiveDirectory(): Directory | null;
   moveUp(): boolean;
