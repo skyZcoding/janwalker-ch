@@ -1,8 +1,8 @@
 import type ShellCommandPart from "./types/ShellCommandPart";
-import type File from "./types/File";
 import type Directory from "./types/Directory";
+import type CommandLine from "./types/Shell";
 
-export function Shell(): any {
+export function Shell(): CommandLine {
   const drive: Directory[] = [
     {
       name: "cv",

@@ -7,6 +7,9 @@ import eslintConfigPrettier from 'eslint-config-prettier';
 import tseslint from 'typescript-eslint';
 
 export default tseslint.config(
+    {
+        ignores: ['server/*', 'node_modules/*', 'assets/*', '.nuxt/*', 'app.vue', 'nuxt.config.ts'],
+    },
     js.configs.recommended,
     ...tseslint.configs.recommended,
     {
@@ -43,7 +46,8 @@ export default tseslint.config(
             'vue/script-setup-uses-vars': 'error',
             'vue/no-unused-components': 'warn',
             'vue/multi-word-component-names': 'off',
-            'vue/one-component-per-file': 'off'
+            'vue/one-component-per-file': 'off',
+            'no-undef': 'off',
         }
     },
     eslintConfigPrettier,
