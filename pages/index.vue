@@ -505,9 +505,10 @@ definePageMeta({
 <template>
     <div class="h-screen">
         <div class="min-h-full bg-slate-800 p-2 flex flex-col justify-between overflow-y-visible">
-            <main class="flex flex-col" id="scroller">
-                <div class="flex flex-row h-fit min-h-[1.5rem]" v-for="(command, index) in state.history"
-                    :key="'command' + index" v-html="command">
+            <main id="scroller" class="flex flex-col">
+                <div
+v-for="(command, index) in state.history" :key="'command' + index"
+                    class="flex flex-row h-fit min-h-[1.5rem]" v-html="command">
                 </div>
 
                 <div class="flex flex-row h-fit min-h-[1.5rem]">
@@ -520,7 +521,7 @@ definePageMeta({
                     <p class="font-mono text-white break-all">{{ state.inputEnd }}</p>
                 </div>
             </main>
-            <footer class="font-mono text-white h-6 m-1 mt-5" id="copyright">
+            <footer id="copyright" class="font-mono text-white h-6 m-1 mt-5">
                 &#169 By Jan Walker
             </footer>
         </div>

@@ -15,13 +15,15 @@ export function Shell(): any {
                 [{ linePart: "", color: "#ffffff" }],
                 [
                   {
-                    linePart: "Feel free to reach out to me through one of the following channels",
+                    linePart:
+                      "Feel free to reach out to me through one of the following channels",
                     color: "#ffffff",
                   },
                 ],
                 [
                   {
-                    linePart: "------------------------------------------------------------------",
+                    linePart:
+                      "------------------------------------------------------------------",
                     color: "#ffffff",
                   },
                 ],
@@ -31,7 +33,8 @@ export function Shell(): any {
                     color: "#ffffff",
                   },
                   {
-                    linePart: '<a href="https://github.com/skyZcoding" target="_blank" class="font-mono border-b-2 border-white text-white">skyZcoding</a>',
+                    linePart:
+                      '<a href="https://github.com/skyZcoding" target="_blank" class="font-mono border-b-2 border-white text-white">skyZcoding</a>',
                     color: "#ffffff",
                   },
                 ],
@@ -41,7 +44,8 @@ export function Shell(): any {
                     color: "#ffffff",
                   },
                   {
-                    linePart: '<a href="https://www.linkedin.com/in/jan-walker-jw/" target="_blank" class="font-mono border-b-2 border-white text-white">jan-walker-jw</a>',
+                    linePart:
+                      '<a href="https://www.linkedin.com/in/jan-walker-jw/" target="_blank" class="font-mono border-b-2 border-white text-white">jan-walker-jw</a>',
                     color: "#ffffff",
                   },
                 ],
@@ -51,7 +55,8 @@ export function Shell(): any {
                     color: "#ffffff",
                   },
                   {
-                    linePart: '<a href="mailto:jan.walker.jw2@gmail.com" target="_blank" class="font-mono border-b-2 border-white text-white">jan.walker.jw2@gmail.com</a>',
+                    linePart:
+                      '<a href="mailto:jan.walker.jw2@gmail.com" target="_blank" class="font-mono border-b-2 border-white text-white">jan.walker.jw2@gmail.com</a>',
                     color: "#ffffff",
                   },
                 ],
@@ -72,7 +77,8 @@ export function Shell(): any {
                 [{ linePart: "Projects", color: "#ffffff" }],
                 [
                   {
-                    linePart: "------------------------------------------------------------------",
+                    linePart:
+                      "------------------------------------------------------------------",
                     color: "#ffffff",
                   },
                 ],
@@ -84,19 +90,22 @@ export function Shell(): any {
                 ],
                 [
                   {
-                    linePart: "------------------------------------------------------------",
+                    linePart:
+                      "------------------------------------------------------------",
                     color: "#ffffff",
                   },
                 ],
                 [
                   {
-                    linePart: "Developed multiple service on the product during the time working at Roche diagnostics",
+                    linePart:
+                      "Developed multiple service on the product during the time working at Roche diagnostics",
                     color: "#ffffff",
                   },
                 ],
                 [
                   {
-                    linePart: '<a href="https://diagnostics.roche.com/global/en/products/instruments/cobas-mobile-solution-ins-6695.html" target="_blank" class="font-mono border-b-2 border-white text-white">Project page</a>',
+                    linePart:
+                      '<a href="https://diagnostics.roche.com/global/en/products/instruments/cobas-mobile-solution-ins-6695.html" target="_blank" class="font-mono border-b-2 border-white text-white">Project page</a>',
                     color: "#ffffff",
                   },
                 ],
@@ -114,19 +123,22 @@ export function Shell(): any {
                 ],
                 [
                   {
-                    linePart: "------------------------------------------------------------",
+                    linePart:
+                      "------------------------------------------------------------",
                     color: "#ffffff",
                   },
                 ],
                 [
                   {
-                    linePart: "Created in a team a working prototype app to unite the different volunteering companies with the actual volunteers. This was done at the Hackzurich 2022.",
+                    linePart:
+                      "Created in a team a working prototype app to unite the different volunteering companies with the actual volunteers. This was done at the Hackzurich 2022.",
                     color: "#ffffff",
                   },
                 ],
                 [
                   {
-                    linePart: '<a href="https://old.creatorspace.dev/kennybets/projects/hiFkMYxIClrrVQAj" target="_blank" class="font-mono border-b-2 border-white text-white">Project page</a>',
+                    linePart:
+                      '<a href="https://old.creatorspace.dev/kennybets/projects/hiFkMYxIClrrVQAj" target="_blank" class="font-mono border-b-2 border-white text-white">Project page</a>',
                     color: "#ffffff",
                   },
                 ],
@@ -139,19 +151,22 @@ export function Shell(): any {
                 ],
                 [
                   {
-                    linePart: "------------------------------------------------------------",
+                    linePart:
+                      "------------------------------------------------------------",
                     color: "#ffffff",
                   },
                 ],
                 [
                   {
-                    linePart: "Created this home page to display the cv in a creative way.",
+                    linePart:
+                      "Created this home page to display the cv in a creative way.",
                     color: "#ffffff",
                   },
                 ],
                 [
                   {
-                    linePart: '<a href="https://github.com/skyZcoding/janwalker-ch" target="_blank" class="font-mono border-b-2 border-white text-white">Github</a>',
+                    linePart:
+                      '<a href="https://github.com/skyZcoding/janwalker-ch" target="_blank" class="font-mono border-b-2 border-white text-white">Github</a>',
                     color: "#ffffff",
                   },
                 ],
@@ -164,19 +179,22 @@ export function Shell(): any {
                 ],
                 [
                   {
-                    linePart: "------------------------------------------------------------",
+                    linePart:
+                      "------------------------------------------------------------",
                     color: "#ffffff",
                   },
                 ],
                 [
                   {
-                    linePart: "Created in a team a working prototype app to create a way how to teach sustainable shopping to children. This was done at the Hackzurich 2023 and won the 1 place at the Migros challenge.",
+                    linePart:
+                      "Created in a team a working prototype app to create a way how to teach sustainable shopping to children. This was done at the Hackzurich 2023 and won the 1 place at the Migros challenge.",
                     color: "#ffffff",
                   },
                 ],
                 [
                   {
-                    linePart: '<a href="https://devpost.com/software/scrapsters" target="_blank" class="font-mono border-b-2 border-white text-white">Project page</a>',
+                    linePart:
+                      '<a href="https://devpost.com/software/scrapsters" target="_blank" class="font-mono border-b-2 border-white text-white">Project page</a>',
                     color: "#ffffff",
                   },
                 ],
@@ -197,13 +215,15 @@ export function Shell(): any {
                 [{ linePart: "Education", color: "#ffffff" }],
                 [
                   {
-                    linePart: "------------------------------------------------------------------",
+                    linePart:
+                      "------------------------------------------------------------------",
                     color: "#ffffff",
                   },
                 ],
                 [
                   {
-                    linePart: "Informatiker Fachrichtung Applikationsentwicklug EFZ",
+                    linePart:
+                      "Informatiker Fachrichtung Applikationsentwicklug EFZ",
                     color: "#ffffff",
                   },
                 ],
@@ -231,7 +251,8 @@ export function Shell(): any {
                 [{ linePart: "Experience", color: "#ffffff" }],
                 [
                   {
-                    linePart: "------------------------------------------------------------------",
+                    linePart:
+                      "------------------------------------------------------------------",
                     color: "#ffffff",
                   },
                 ],
@@ -244,13 +265,15 @@ export function Shell(): any {
                 ],
                 [
                   {
-                    linePart: "------------------------------------------------------------",
+                    linePart:
+                      "------------------------------------------------------------",
                     color: "#ffffff",
                   },
                 ],
                 [
                   {
-                    linePart: "The apprenticeship is a common starting ground in switzerland to start as a software developer. During this period the apprentice will learn the basic to advance knowledge of the topics which are needed to be a software developer.",
+                    linePart:
+                      "The apprenticeship is a common starting ground in switzerland to start as a software developer. During this period the apprentice will learn the basic to advance knowledge of the topics which are needed to be a software developer.",
                     color: "#ffffff",
                   },
                 ],
@@ -266,13 +289,15 @@ export function Shell(): any {
                 [{ linePart: "Junior software developer", color: "#ffffff" }],
                 [
                   {
-                    linePart: "------------------------------------------------------------",
+                    linePart:
+                      "------------------------------------------------------------",
                     color: "#ffffff",
                   },
                 ],
                 [
                   {
-                    linePart: "Worked as a full stack developer on multiple project using mainly .NET. As well managed the user devices through the VMWare Workspace system.",
+                    linePart:
+                      "Worked as a full stack developer on multiple project using mainly .NET. As well managed the user devices through the VMWare Workspace system.",
                     color: "#ffffff",
                   },
                 ],
@@ -287,19 +312,22 @@ export function Shell(): any {
                 [{ linePart: "", color: "#ffffff" }],
                 [
                   {
-                    linePart: "Teaching an intercompany course for apprentices about Blazor",
+                    linePart:
+                      "Teaching an intercompany course for apprentices about Blazor",
                     color: "#ffffff",
                   },
                 ],
                 [
                   {
-                    linePart: "------------------------------------------------------------",
+                    linePart:
+                      "------------------------------------------------------------",
                     color: "#ffffff",
                   },
                 ],
                 [
                   {
-                    linePart: "Taught the first year apprentices how to develope a web frontend with Blazor as a course instructor.",
+                    linePart:
+                      "Taught the first year apprentices how to develope a web frontend with Blazor as a course instructor.",
                     color: "#ffffff",
                   },
                 ],
@@ -315,7 +343,8 @@ export function Shell(): any {
                 [{ linePart: "Co-Owner", color: "#ffffff" }],
                 [
                   {
-                    linePart: "------------------------------------------------------------",
+                    linePart:
+                      "------------------------------------------------------------",
                     color: "#ffffff",
                   },
                 ],
@@ -332,30 +361,34 @@ export function Shell(): any {
             },
           ],
         },
-          ],
+      ],
       files: [],
     },
-    ];
-    
-    function getDirectoryFullPath(directoryName: string): string | null {
-        function findPath(directories: any[], targetName: string, currentPath: string): string | null {
-            for (const dir of directories) {
-                const newPath = `${currentPath}/${dir.name}`;
-                if (dir.name === targetName) {
-                    return newPath;
-                }
-                if (dir.subdirectories) {
-                    const result = findPath(dir.subdirectories, targetName, newPath);
-                    if (result) {
-                        return result;
-                    }
-                }
-            }
-            return null;
-        }
+  ];
 
-        return findPath(drive, directoryName, "") || null;
+  function getDirectoryFullPath(directoryName: string): string | null {
+    function findPath(
+      directories: any[],
+      targetName: string,
+      currentPath: string,
+    ): string | null {
+      for (const dir of directories) {
+        const newPath = `${currentPath}/${dir.name}`;
+        if (dir.name === targetName) {
+          return newPath;
+        }
+        if (dir.subdirectories) {
+          const result = findPath(dir.subdirectories, targetName, newPath);
+          if (result) {
+            return result;
+          }
+        }
+      }
+      return null;
     }
+
+    return findPath(drive, directoryName, "") || null;
+  }
 
   function setActiveDirectory(fullPath: string): boolean {
     const pathParts = fullPath.split("/").filter((part) => part !== "");
@@ -464,10 +497,10 @@ export function Shell(): any {
     }
 
     const parentDir = findParent(drive, activeDir);
-      if (parentDir) {
-        let fullPath = getDirectoryFullPath(parentDir.name) || "";
-        setActiveDirectory(fullPath);
-        return true;
+    if (parentDir) {
+      const fullPath = getDirectoryFullPath(parentDir.name) || "";
+      setActiveDirectory(fullPath);
+      return true;
     }
 
     return false;
@@ -484,30 +517,30 @@ export function Shell(): any {
     }
 
     return null;
+  }
+
+  function createDirectory(directoryName: string): boolean {
+    const activeDir = getActiveDirectory();
+    if (!activeDir || !activeDir.subdirectories) return false;
+
+    // Check if directory already exists
+    for (const dir of activeDir.subdirectories) {
+      if (dir.name === directoryName) {
+        return false; // Directory already exists
+      }
     }
-    
-    function createDirectory(directoryName: string): boolean {
-        const activeDir = getActiveDirectory();
-        if (!activeDir || !activeDir.subdirectories) return false;
 
-        // Check if directory already exists
-        for (const dir of activeDir.subdirectories) {
-            if (dir.name === directoryName) {
-                return false; // Directory already exists
-            }
-        }
+    // Create new directory
+    const newDirectory = {
+      name: directoryName,
+      active: false,
+      subdirectories: [],
+      files: [],
+    };
 
-        // Create new directory
-        const newDirectory = {
-            name: directoryName,
-            active: false,
-            subdirectories: [],
-            files: [],
-        };
-
-        activeDir.subdirectories.push(newDirectory);
-        return true;
-    }
+    activeDir.subdirectories.push(newDirectory);
+    return true;
+  }
 
   function writeLine(commandParts: Array<ShellCommandPart>): string {
     let line = "";
