@@ -558,7 +558,6 @@ export function Shell(): CommandLine {
     commandParts.forEach(function (part) {
       let command = part.command;
 
-      console.log(command);
       if (!/<\/?[a-z][\s\S]*>/i.test(command)) {
         command = command.replace(/\s/g, "&nbsp;");
       }

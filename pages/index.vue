@@ -381,9 +381,7 @@ function cdCommand(): void {
   }
 
   let path = state.directory + "/" + command[1];
-
   let isSuccessful = shell.setActiveDirectory(path);
-  console.log(isSuccessful);
 
   if (isSuccessful == false) {
     commands.push([{ command: "", color: "" }]);
