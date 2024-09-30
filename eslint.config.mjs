@@ -21,7 +21,7 @@ export default tseslint.config(
     },
     ...vue.configs['flat/recommended'], 
     {
-        files: ['assets/js/**/*.{vue,ts}'],
+        files: ['**/*.{vue,ts}'],
         plugins: {
             'typescript-eslint': tseslint.plugin,
         },
