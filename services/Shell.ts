@@ -1,5 +1,9 @@
+import type ShellCommandPart from "./types/ShellCommandPart";
+import type File from "./types/File";
+import type Directory from "./types/Directory";
+
 export function Shell(): any {
-  const drive = [
+  const drive: Directory[] = [
     {
       name: "cv",
       active: true,
@@ -368,7 +372,7 @@ export function Shell(): any {
 
   function getDirectoryFullPath(directoryName: string): string | null {
     function findPath(
-      directories: any[],
+      directories: Directory[],
       targetName: string,
       currentPath: string,
     ): string | null {
@@ -393,7 +397,7 @@ export function Shell(): any {
   function setActiveDirectory(fullPath: string): boolean {
     const pathParts = fullPath.split("/").filter((part) => part !== "");
 
-    function setActive(directories: any[], parts: string[]): boolean {
+    function setActive(directories: Directory[], parts: string[]): boolean {
       if (parts.length === 0) return false;
 
       const [currentPart, ...remainingParts] = parts;
@@ -416,7 +420,7 @@ export function Shell(): any {
     }
 
     // Reset all directories to inactive
-    function resetActive(directories: any[]): void {
+    function resetActive(directories: Directory[]): void {
       for (const dir of directories) {
         dir.active = false;
         if (dir.subdirectories) {
@@ -436,7 +440,10 @@ export function Shell(): any {
   function directoryExists(fullPath: string): boolean {
     const pathParts = fullPath.split("/").filter((part) => part !== "");
 
-    function checkExistence(directories: any[], parts: string[]): boolean {
+    function checkExistence(
+      directories: Directory[],
+      parts: string[],
+    ): boolean {
       if (parts.length === 0) return true;
 
       const [currentPart, ...remainingParts] = parts;
@@ -457,8 +464,8 @@ export function Shell(): any {
     return checkExistence(drive, pathParts);
   }
 
-  function getActiveDirectory(): any {
-    function findActive(directories: any[]): any {
+  function getActiveDirectory(): Directory | null {
+    function findActive(directories: Directory[]): Directory | null {
       for (const dir of directories) {
         if (dir.active) {
           return dir;
@@ -481,7 +488,10 @@ export function Shell(): any {
     const activeDir = getActiveDirectory();
     if (!activeDir) return false;
 
-    function findParent(directories: any[], target: any): any {
+    function findParent(
+      directories: Directory[],
+      target: Directory,
+    ): Directory | null {
       for (const dir of directories) {
         if (dir.subdirectories && dir.subdirectories.includes(target)) {
           return dir;
@@ -506,7 +516,7 @@ export function Shell(): any {
     return false;
   }
 
-  function getFileContent(fileName: string): any[] | null {
+  function getFileContent(fileName: string): Array<ShellCommandPart[]> | null {
     const activeDir = getActiveDirectory();
     if (!activeDir || !activeDir.files) return null;
 
@@ -531,7 +541,7 @@ export function Shell(): any {
     }
 
     // Create new directory
-    const newDirectory = {
+    const newDirectory: Directory = {
       name: directoryName,
       active: false,
       subdirectories: [],
@@ -568,9 +578,4 @@ export function Shell(): any {
     createDirectory,
     getDirectoryFullPath,
   };
-}
-
-interface ShellCommandPart {
-  command: string;
-  color: string;
 }
