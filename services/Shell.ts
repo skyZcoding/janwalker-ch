@@ -38,7 +38,7 @@ export function Shell(): CommandLine {
                   },
                   {
                     command:
-                      '<a href="https://github.com/skyZcoding" target="_blank" class="font-mono border-b-2 border-white text-white">skyZcoding</a>',
+                      '<a href="https://github.com/skyZcoding" target="_blank" style="text-decoration-line: underline;" class="font-mono border-b-2 border-white text-white">skyZcoding</a>',
                     color: "#ffffff",
                   },
                 ],
@@ -49,7 +49,7 @@ export function Shell(): CommandLine {
                   },
                   {
                     command:
-                      '<a href="https://www.linkedin.com/in/jan-walker-jw/" target="_blank" class="font-mono border-b-2 border-white text-white">jan-walker-jw</a>',
+                      '<a href="https://www.linkedin.com/in/jan-walker-jw/" target="_blank" style="text-decoration-line: underline;" class="font-mono border-b-2 border-white text-white">jan-walker-jw</a>',
                     color: "#ffffff",
                   },
                 ],
@@ -60,7 +60,7 @@ export function Shell(): CommandLine {
                   },
                   {
                     command:
-                      '<a href="mailto:jan.walker.jw2@gmail.com" target="_blank" class="font-mono border-b-2 border-white text-white">jan.walker.jw2@gmail.com</a>',
+                      '<a href="mailto:jan.walker.jw2@gmail.com" target="_blank" style="text-decoration-line: underline;" class="font-mono border-b-2 border-white text-white">jan.walker.jw2@gmail.com</a>',
                     color: "#ffffff",
                   },
                 ],
@@ -109,7 +109,7 @@ export function Shell(): CommandLine {
                 [
                   {
                     command:
-                      '<a href="https://diagnostics.roche.com/global/en/products/instruments/cobas-mobile-solution-ins-6695.html" target="_blank" class="font-mono border-b-2 border-white text-white">Project page</a>',
+                      '<a href="https://diagnostics.roche.com/global/en/products/instruments/cobas-mobile-solution-ins-6695.html" target="_blank" style="text-decoration-line: underline;" class="font-mono border-b-2 border-white text-white">Project page</a>',
                     color: "#ffffff",
                   },
                 ],
@@ -142,7 +142,7 @@ export function Shell(): CommandLine {
                 [
                   {
                     command:
-                      '<a href="https://old.creatorspace.dev/kennybets/projects/hiFkMYxIClrrVQAj" target="_blank" class="font-mono border-b-2 border-white text-white">Project page</a>',
+                      '<a href="https://old.creatorspace.dev/kennybets/projects/hiFkMYxIClrrVQAj" target="_blank" style="text-decoration-line: underline;" class="font-mono border-b-2 border-white text-white">Project page</a>',
                     color: "#ffffff",
                   },
                 ],
@@ -170,7 +170,7 @@ export function Shell(): CommandLine {
                 [
                   {
                     command:
-                      '<a href="https://github.com/skyZcoding/janwalker-ch" target="_blank" class="font-mono border-b-2 border-white text-white">Github</a>',
+                      '<a href="https://github.com/skyZcoding/janwalker-ch" target="_blank" style="text-decoration-line: underline;" class="font-mono border-b-2 border-white text-white">Github</a>',
                     color: "#ffffff",
                   },
                 ],
@@ -198,7 +198,7 @@ export function Shell(): CommandLine {
                 [
                   {
                     command:
-                      '<a href="https://devpost.com/software/scrapsters" target="_blank" class="font-mono border-b-2 border-white text-white">Project page</a>',
+                      '<a href="https://devpost.com/software/scrapsters" style="text-decoration-line: underline;" target="_blank" class="font-mono border-b-2 border-white text-white">Project page</a>',
                     color: "#ffffff",
                   },
                 ],
