@@ -147,7 +147,7 @@ const state = reactive({
 
 const commandLinePrefix = {
   user: {
-    command: "Jan@",
+    command: "Jan",
     color: "#67e8f9",
   },
   desktop: {
@@ -285,7 +285,7 @@ function createHistoryMessage(): void {
   let commands: Array<ShellCommandPart[]> = [
     [
       {
-        command: commandLinePrefix.user.command,
+        command: commandLinePrefix.user.command + "@",
         color: commandLinePrefix.user.color,
       },
       {
@@ -319,9 +319,19 @@ function executeCommand(): void {
     cdCommand();
   } else if (state.input.toLocaleLowerCase().startsWith("mkdir\xa0")) {
     mkdirCommand();
+  } else if (state.input.toLocaleLowerCase() == "whoami") {
+    whoamiCommand();
   } else {
     commandNotFound();
   }
+}
+
+function whoamiCommand(): void {
+  let commands: Array<ShellCommandPart[]> = [];
+
+  commands.push([commandLinePrefix.user]);
+
+  addCommands(commands);
 }
 
 function mkdirCommand(): void {
@@ -579,7 +589,7 @@ definePageMeta({
             class="font-mono"
             :style="'color: ' + commandLinePrefix.user.color"
           >
-            {{ commandLinePrefix.user.command }}
+            {{ commandLinePrefix.user.command + "@" }}
           </p>
           <p
             class="font-mono"
