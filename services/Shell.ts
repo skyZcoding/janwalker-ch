@@ -552,6 +552,20 @@ export function Shell(): CommandLine {
     return true;
   }
 
+  function removeDirectory(directoryName: string): boolean {
+    const activeDir = getActiveDirectory();
+    if (!activeDir || !activeDir.subdirectories) return false;
+
+    const index = activeDir.subdirectories.findIndex(
+      (dir) => dir.name === directoryName,
+    );
+
+    if (index === -1) return false; // Directory not found
+
+    activeDir.subdirectories.splice(index, 1);
+    return true;
+  }
+
   function writeLine(commandParts: ShellCommandPart[]): string {
     let line = "";
 
@@ -578,5 +592,6 @@ export function Shell(): CommandLine {
     getFileContent,
     createDirectory,
     getDirectoryFullPath,
+    removeDirectory
   };
 }

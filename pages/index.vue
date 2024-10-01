@@ -321,9 +321,34 @@ function executeCommand(): void {
     mkdirCommand();
   } else if (state.input.toLocaleLowerCase() == "whoami") {
     whoamiCommand();
+  } else if (state.input.toLocaleLowerCase().startsWith("rm\xa0")) {
+    rmCommand();
   } else {
     commandNotFound();
   }
+}
+
+function rmCommand(): void {
+  let commands = [];
+
+  let command = state.input.split("\xa0");
+
+  let path = command[1];
+
+  let isSuccessful = shell.removeDirectory(path);
+
+  if (!isSuccessful) {
+    commands.push([{ command: "", color: "" }]);
+    commands.push([
+      {
+        command: "Could not remove a directory called " + "'" + command[1] + "'",
+        color: "#ff0000",
+      },
+    ]);
+    commands.push([{ command: "", color: "" }]);
+  }
+
+  addCommands(commands);
 }
 
 function whoamiCommand(): void {

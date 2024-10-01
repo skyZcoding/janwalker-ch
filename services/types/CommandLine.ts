@@ -9,4 +9,5 @@ export default interface CommandLine {
   getFileContent(fileName: string): Array<ShellCommandPart[]> | null;
   createDirectory(directoryName: string): boolean;
   getDirectoryFullPath(directoryName: string): string | null;
+  removeDirectory(directoryName: string): boolean;
 }
