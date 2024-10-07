@@ -356,20 +356,32 @@ function rmCommand(): void {
 
   let command = state.input.split("\xa0");
 
-  let path = command[1];
+  if (command[1] == "-r") {
+    let isSuccessful = shell.removeDirectory(command[2]);
 
-  let isSuccessful = shell.removeDirectory(path);
+    if (isSuccessful == false) {
+      commands.push([{ command: "", color: "" }]);
+      commands.push([
+        {
+          command: "Could not remove a directory called " + "'" + command[2] + "'",
+          color: "#ff0000",
+        },
+      ]);
+      commands.push([{ command: "", color: "" }]);
+    }
+  } else {
+    let isSuccessful = shell.removeFile(command[1]);
 
-  if (!isSuccessful) {
-    commands.push([{ command: "", color: "" }]);
-    commands.push([
-      {
-        command:
-          "Could not remove a directory called " + "'" + command[1] + "'",
-        color: "#ff0000",
-      },
-    ]);
-    commands.push([{ command: "", color: "" }]);
+    if (isSuccessful == false) {
+      commands.push([{ command: "", color: "" }]);
+      commands.push([
+        {
+          command: "Could not remove a file called " + "'" + command[1] + "'",
+          color: "#ff0000",
+        },
+      ]);
+      commands.push([{ command: "", color: "" }]);
+    }
   }
 
   addCommands(commands);

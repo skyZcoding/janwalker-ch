@@ -17,6 +17,7 @@ export function Shell(): CommandLine {
           subdirectories: [],
           files: [
             {
+              uid: uid(),
               name: "info.txt",
               content: [
                 [{ command: "", color: "#ffffff" }],
@@ -79,6 +80,7 @@ export function Shell(): CommandLine {
           subdirectories: [],
           files: [
             {
+              uid: uid(),
               name: "info.txt",
               content: [
                 [{ command: "", color: "#ffffff" }],
@@ -218,6 +220,7 @@ export function Shell(): CommandLine {
           subdirectories: [],
           files: [
             {
+              uid: uid(),
               name: "info.txt",
               content: [
                 [{ command: "", color: "#ffffff" }],
@@ -255,6 +258,7 @@ export function Shell(): CommandLine {
           subdirectories: [],
           files: [
             {
+              uid: uid(),
               name: "info.txt",
               content: [
                 [{ command: "", color: "#ffffff" }],
@@ -398,6 +402,18 @@ export function Shell(): CommandLine {
     }
 
     return findPath(drive, uid, "") || null;
+  }
+
+  function removeFile(fileName: string): boolean {
+    const activeDir = getActiveDirectory();
+    if (!activeDir || !activeDir.files) return false;
+
+    const index = activeDir.files.findIndex((file) => file.name === fileName);
+
+    if (index === -1) return false; // File not found
+
+    activeDir.files.splice(index, 1);
+    return true;
   }
 
   function setActiveDirectory(fullPath: string): boolean {
@@ -622,5 +638,6 @@ export function Shell(): CommandLine {
     getDirectoryFullPath,
     removeDirectory,
     createFile,
+    removeFile,
   };
 }
