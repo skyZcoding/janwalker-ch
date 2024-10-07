@@ -1,14 +1,17 @@
 import type ShellCommandPart from "./types/ShellCommandPart";
 import type Directory from "./types/Directory";
 import type CommandLine from "./types/CommandLine";
+import { uid } from "uid";
 
 export function Shell(): CommandLine {
   const drive: Directory[] = [
     {
+      uid: uid(),
       name: "cv",
       active: true,
       subdirectories: [
         {
+          uid: uid(),
           name: "contact",
           active: false,
           subdirectories: [],
@@ -70,6 +73,7 @@ export function Shell(): CommandLine {
           ],
         },
         {
+          uid: uid(),
           name: "projects",
           active: false,
           subdirectories: [],
@@ -208,6 +212,7 @@ export function Shell(): CommandLine {
           ],
         },
         {
+          uid: uid(),
           name: "education",
           active: false,
           subdirectories: [],
@@ -244,6 +249,7 @@ export function Shell(): CommandLine {
           ],
         },
         {
+          uid: uid(),
           name: "experience",
           active: false,
           subdirectories: [],
@@ -370,15 +376,15 @@ export function Shell(): CommandLine {
     },
   ];
 
-  function getDirectoryFullPath(directoryName: string): string | null {
+  function getDirectoryFullPath(uid: string): string | null {
     function findPath(
       directories: Directory[],
       targetName: string,
-      currentPath: string,
+      currentPath: string
     ): string | null {
       for (const dir of directories) {
         const newPath = `${currentPath}/${dir.name}`;
-        if (dir.name === targetName) {
+        if (dir.uid === targetName) {
           return newPath;
         }
         if (dir.subdirectories) {
@@ -391,7 +397,7 @@ export function Shell(): CommandLine {
       return null;
     }
 
-    return findPath(drive, directoryName, "") || null;
+    return findPath(drive, uid, "") || null;
   }
 
   function setActiveDirectory(fullPath: string): boolean {
@@ -442,7 +448,7 @@ export function Shell(): CommandLine {
 
     function checkExistence(
       directories: Directory[],
-      parts: string[],
+      parts: string[]
     ): boolean {
       if (parts.length === 0) return true;
 
@@ -508,7 +514,7 @@ export function Shell(): CommandLine {
 
     const parentDir = findParent(drive, activeDir);
     if (parentDir) {
-      const fullPath = getDirectoryFullPath(parentDir.name) || "";
+      const fullPath = getDirectoryFullPath(parentDir.uid) || "";
       setActiveDirectory(fullPath);
       return true;
     }
@@ -542,6 +548,7 @@ export function Shell(): CommandLine {
 
     // Create new directory
     const newDirectory: Directory = {
+      uid: uid(),
       name: directoryName,
       active: false,
       subdirectories: [],
@@ -557,7 +564,7 @@ export function Shell(): CommandLine {
     if (!activeDir || !activeDir.subdirectories) return false;
 
     const index = activeDir.subdirectories.findIndex(
-      (dir) => dir.name === directoryName,
+      (dir) => dir.name === directoryName
     );
 
     if (index === -1) return false; // Directory not found
@@ -592,6 +599,6 @@ export function Shell(): CommandLine {
     getFileContent,
     createDirectory,
     getDirectoryFullPath,
-    removeDirectory
+    removeDirectory,
   };
 }

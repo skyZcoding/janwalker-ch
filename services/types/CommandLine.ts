@@ -8,6 +8,6 @@ export default interface CommandLine {
   moveUp(): boolean;
   getFileContent(fileName: string): Array<ShellCommandPart[]> | null;
   createDirectory(directoryName: string): boolean;
-  getDirectoryFullPath(directoryName: string): string | null;
+  getDirectoryFullPath(uid: string): string | null;
   removeDirectory(directoryName: string): boolean;
 }

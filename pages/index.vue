@@ -341,7 +341,8 @@ function rmCommand(): void {
     commands.push([{ command: "", color: "" }]);
     commands.push([
       {
-        command: "Could not remove a directory called " + "'" + command[1] + "'",
+        command:
+          "Could not remove a directory called " + "'" + command[1] + "'",
         color: "#ff0000",
       },
     ]);
@@ -410,7 +411,7 @@ function cdCommand(): void {
   if (command[1] == "..") {
     shell.moveUp();
 
-    let path = shell.getDirectoryFullPath(shell.getActiveDirectory().name);
+    let path = shell.getDirectoryFullPath(shell.getActiveDirectory().uid);
     state.directory = path.slice(1, path.length);
     return;
   }
