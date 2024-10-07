@@ -380,7 +380,7 @@ export function Shell(): CommandLine {
     function findPath(
       directories: Directory[],
       targetName: string,
-      currentPath: string
+      currentPath: string,
     ): string | null {
       for (const dir of directories) {
         const newPath = `${currentPath}/${dir.name}`;
@@ -448,7 +448,7 @@ export function Shell(): CommandLine {
 
     function checkExistence(
       directories: Directory[],
-      parts: string[]
+      parts: string[],
     ): boolean {
       if (parts.length === 0) return true;
 
@@ -564,7 +564,7 @@ export function Shell(): CommandLine {
     if (!activeDir || !activeDir.subdirectories) return false;
 
     const index = activeDir.subdirectories.findIndex(
-      (dir) => dir.name === directoryName
+      (dir) => dir.name === directoryName,
     );
 
     if (index === -1) return false; // Directory not found
