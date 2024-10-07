@@ -10,4 +10,5 @@ export default interface CommandLine {
   createDirectory(directoryName: string): boolean;
   getDirectoryFullPath(uid: string): string | null;
   removeDirectory(directoryName: string): boolean;
+  createFile(fileName: string): boolean;
 }

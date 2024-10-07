@@ -323,8 +323,31 @@ function executeCommand(): void {
     whoamiCommand();
   } else if (state.input.toLocaleLowerCase().startsWith("rm\xa0")) {
     rmCommand();
+  } else if (state.input.toLocaleLowerCase().startsWith("touch\xa0")) {
+    touchCommand();
   } else {
     commandNotFound();
+  }
+}
+
+function touchCommand(): void {
+  let commands = [];
+
+  let command = state.input.split("\xa0");
+
+  let fileName = command[1];
+
+  let isSuccessful = shell.createFile(fileName);
+
+  if (!isSuccessful) {
+    commands.push([{ command: "", color: "" }]);
+    commands.push([
+      {
+        command: "Could not create a file called " + "'" + command[1] + "'",
+        color: "#ff0000",
+      },
+    ]);
+    commands.push([{ command: "", color: "" }]);
   }
 }
 

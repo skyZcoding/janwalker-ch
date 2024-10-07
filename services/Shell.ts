@@ -573,6 +573,27 @@ export function Shell(): CommandLine {
     return true;
   }
 
+  function createFile(fileName: string): boolean {
+    const activeDir = getActiveDirectory();
+    if (!activeDir || !activeDir.files) return false;
+
+    // Check if file already exists
+    for (const file of activeDir.files) {
+      if (file.name === fileName) {
+        return false; // File already exists
+      }
+    }
+
+    // Create new file
+    const newFile = {
+      name: fileName,
+      content: [],
+    };
+
+    activeDir.files.push(newFile);
+    return true;
+  }
+
   function writeLine(commandParts: ShellCommandPart[]): string {
     let line = "";
 
@@ -600,5 +621,6 @@ export function Shell(): CommandLine {
     createDirectory,
     getDirectoryFullPath,
     removeDirectory,
+    createFile,
   };
 }
