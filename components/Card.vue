@@ -1,6 +1,6 @@
 <template>
   <div
-    class="bg-white bg-opacity-[2.5%] backdrop-blur-xl rounded-lg p-4 shadow-md hover:bg-blue duration-700"
+    class="bg-white bg-opacity-[5%] backdrop-blur-xl rounded-lg p-4 shadow-md hover:border-gradient duration-700"
   >
     <slot></slot>
   </div>

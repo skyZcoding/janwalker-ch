@@ -21,7 +21,7 @@ const links = [
 
 <template>
   <div class="bg-dark-gray">
-    <header class="w-full py-4 flex justify-center">
+    <header class="w-full py-4 flex justify-center mb-8">
       <div class="flex flex-row items-center">
         <div v-for="(link, index) in links" :key="index" class="mx-2">
           <NuxtLink :to="link.link" class="align-middle">
@@ -35,17 +35,24 @@ const links = [
         </div>
       </div>
     </header>
-    <section class="">
-      <Card>
-        <h1>Test</h1>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores
-          facilis necessitatibus et recusandae error. Praesentium, consequatur
-          saepe nobis impedit necessitatibus ab voluptatibus maiores in alias,
-          voluptatem repellat, repudiandae odio sequi.
+    <section class="flex flex-col md:flex-row">
+      <div
+        class="flex flex-col w-fit justify-center md:pr-8 lg:pr-12 items-center md:items-start"
+      >
+        <h1 class="font-bold">
+          Building <span class="text-gradient">Seamless</span> Web Applications
+        </h1>
+        <p class="text-gray-300 text-base mt-2">
+          I am a full-stack software developer with six years of professional
+          experience. I love trying out new technologies, mainly in web
+          development.
         </p>
-        <Button>Test</Button>
-      </Card>
+      </div>
+      <div
+        class="w-auto min-w-96 flex justify-center items-center mt-4 md:mt-0"
+      >
+        <NuxtImg src="/images/hero.svg" alt="Hero Image" />
+      </div>
     </section>
 
     <footer class="h-[90rem]"></footer>

@@ -16,30 +16,30 @@
   }
 
   h1 {
-    @apply text-3xl lg:text-[40px] font-semibold;
+    @apply text-neutral-lightGray text-3xl lg:text-[40px] font-semibold;
   }
 
   h2 {
-    @apply text-2xl font-semibold;
+    @apply text-neutral-lightGray text-2xl font-semibold;
   }
 
   h3 {
-    @apply text-xl font-medium;
+    @apply text-neutral-lightGray text-xl font-medium;
   }
 
   h4 {
-    @apply text-xl;
+    @apply text-neutral-lightGray text-xl;
   }
 
   p {
-    @apply leading-[21px] font-normal tracking-wider;
+    @apply text-neutral-lightGray leading-[21px] font-normal tracking-wider;
   }
 
   a {
-    @apply cursor-pointer;
+    @apply text-neutral-lightGray cursor-pointer;
   }
 
   section {
-    @apply px-12;
+    @apply lg:px-16 xl:px-64 px-5;
   }
 }
