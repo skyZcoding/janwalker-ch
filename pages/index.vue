@@ -363,7 +363,8 @@ function rmCommand(): void {
       commands.push([{ command: "", color: "" }]);
       commands.push([
         {
-          command: "Could not remove a directory called " + "'" + command[2] + "'",
+          command:
+            "Could not remove a directory called " + "'" + command[2] + "'",
           color: "#ff0000",
         },
       ]);

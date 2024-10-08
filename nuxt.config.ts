@@ -6,4 +6,7 @@ export default defineNuxtConfig({
     url: "https://janwalker.ch",
     name: "Jan Walker",
   },
+  tailwindcss: {
+    configPath: "tailwind.config.js",
+  },
 });

@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  .text-gradient {
+    @apply bg-gradient-to-r from-electric-purple-700 to-pink-500 text-transparent bg-clip-text;
+  }
+
+  .border-gradient {
+    @apply bg-gradient-to-r from-electric-purple-700 to-pink-500;
+  }
+
+  .bg-blurred {
+    @apply backdrop-blur-md bg-white/5 bg-opacity-5;
+  }
+
+  h1 {
+    @apply text-3xl lg:text-[40px] font-semibold;
+  }
+
+  h2 {
+    @apply text-2xl font-semibold;
+  }
+
+  h3 {
+    @apply text-xl font-medium;
+  }
+
+  h4 {
+    @apply text-xl;
+  }
+
+  p {
+    @apply leading-[21px] font-normal tracking-wider;
+  }
+
+  a {
+    @apply cursor-pointer;
+  }
+
+  section {
+    @apply px-12;
+  }
+}
