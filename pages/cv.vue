@@ -42,11 +42,12 @@ const links = [
         <h1 class="font-bold">
           Building <span class="text-gradient">Seamless</span> Web Applications
         </h1>
-        <p class="text-gray-300 text-base mt-2">
+        <p class="text-gray-300 text-base mt-4">
           I am a full-stack software developer with six years of professional
           experience. I love trying out new technologies, mainly in web
           development.
         </p>
+        <Button class="mt-2">Contact Me</Button>
       </div>
       <div
         class="w-auto min-w-96 flex justify-center items-center mt-4 md:mt-0"

@@ -40,6 +40,6 @@
   }
 
   section {
-    @apply lg:px-16 xl:px-64 px-5;
+    @apply lg:px-16 xl:px-64 px-5 mb-8;
   }
 }
