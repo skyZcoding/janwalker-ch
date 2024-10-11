@@ -16,7 +16,7 @@
   }
 
   h1 {
-    @apply text-neutral-lightGray text-3xl lg:text-[40px] font-semibold;
+    @apply text-neutral-lightGray font-bold text-3xl lg:text-[40px];
   }
 
   h2 {
@@ -40,6 +40,6 @@
   }
 
   section {
-    @apply lg:px-16 xl:px-64 px-5 mb-8;
+    @apply lg:px-16 xl:px-64 px-5 mb-16;
   }
 }
