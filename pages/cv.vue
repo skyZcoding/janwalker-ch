@@ -1,7 +1,4 @@
 <script setup lang="ts">
-import ServerIcon from "#build/components/icon/Backend.vue";
-import BackendIcon from "#build/components/icon/Backend.vue";
-
 const links = [
   {
     title: "Home",
