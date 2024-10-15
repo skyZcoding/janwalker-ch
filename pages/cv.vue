@@ -20,7 +20,7 @@ const links = [
 </script>
 
 <template>
-  <div class="bg-dark-gray">
+  <div class="bg-dark-gray w-full">
     <header class="w-full py-4 flex justify-center mb-8">
       <div class="flex flex-row items-center">
         <div v-for="(link, index) in links" :key="index" class="mx-2">
@@ -51,7 +51,7 @@ const links = [
         <Button class="mt-2">Learn more</Button>
       </div>
       <div
-        class="w-auto min-w-96 flex justify-center items-center mt-4 md:mt-0"
+        class="w-auto md:min-w-96 flex justify-center items-center mt-4 md:mt-0"
       >
         <NuxtImg src="/images/hero.svg" alt="Hero Image" />
       </div>
