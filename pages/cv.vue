@@ -111,7 +111,9 @@ const experiences = [
             <p class="font-semibold text-neutral-lightGray mr-10">
               0{{ index + 1 }}
             </p>
-            <h1 class="font-bold text-neutral-lightGray w-[25rem]">
+            <h1
+              class="font-bold text-neutral-lightGray w-[12rem] sm:w-[25rem] text-2xl sm:text-3xl lg:text-[40px]"
+            >
               {{ experience.title }}
             </h1>
           </div>
