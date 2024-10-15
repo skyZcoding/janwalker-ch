@@ -56,6 +56,14 @@ const links = [
       </div>
     </section>
     <section>
+      <h4 class="font-bold text-center w-100 mb-4">Tech I Work With</h4>
+
+      <div class="w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
+        <IconNuxt class="text-neutral-lightGray h-10 w-fit" />
+        <IconVue class="text-neutral-lightGray h-10 w-fit" />
+      </div>
+    </section>
+    <section>
       <h1 class="text-center mb-10">
         What I <span class="text-gradient">Bring</span> to the Table
       </h1>
@@ -110,11 +118,7 @@ const links = [
         </Card>
       </div>
     </section>
-    <section>
-      <h1 class="text-center mb-10">
-        Tech I <span class="text-gradient">Work</span> With
-      </h1>
-    </section>
+    <section></section>
     <footer class="h-[90rem]"></footer>
   </div>
 </template>
