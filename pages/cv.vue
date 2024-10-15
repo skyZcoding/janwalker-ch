@@ -63,11 +63,11 @@ const links = [
       <div
         class="w-full gap-4 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 justify-items-center"
       >
-        <IconNuxt class="text-neutral-lightGray h-10 w-fit" />
-        <IconVue class="text-neutral-lightGray h-10 w-fit" />
-        <IconDotNet class="text-neutral-lightGray h-10 w-fit" />
-        <IconBlazor class="text-neutral-lightGray h-10 w-fit" />
-        <IconDocker class="text-neutral-lightGray h-10 w-fit" />
+        <IconNuxt class="text-neutral-lightGray max-h-12 w-full" />
+        <IconVue class="text-neutral-lightGray max-h-12 w-full" />
+        <IconDotNet class="text-neutral-lightGray max-h-12 w-full" />
+        <IconBlazor class="text-neutral-lightGray max-h-12 w-full" />
+        <IconDocker class="text-neutral-lightGray max-h-12 w-full" />
       </div>
     </section>
 
