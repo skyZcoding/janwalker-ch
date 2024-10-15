@@ -1,29 +1,24 @@
 <template>
   <svg
-    width="800px"
-    height="800px"
-    viewBox="0 0 64 64"
     version="1.1"
+    viewBox="0 0 261.76 226.69"
     xmlns="http://www.w3.org/2000/svg"
-    xmlns:xlink="http://www.w3.org/1999/xlink"
-    xml:space="preserve"
-    xmlns:serif="http://www.serif.com/"
-    style="
-      fill-rule: evenodd;
-      clip-rule: evenodd;
-      stroke-linejoin: round;
-      stroke-miterlimit: 2;
-    "
+    class="fill-current"
   >
-    <path
-      d="M17.595,11.204l8.91,0l5.536,9.391l5.591,-9.391l8.831,0l-14.422,25.359l-14.446,-25.359Z"
-      fill="currentColor"
-      class="brightness-50"
-    />
-
-    <path
-      d="M8.089,11.204l23.952,41.845l24.126,-41.845l-9.704,0l-14.422,25.359l-14.446,-25.359l-9.506,0Z"
-      fill="currentColor"
-    />
+    <g transform="matrix(1.3333 0 0 -1.3333 -76.311 313.34)">
+      <g transform="translate(178.06 235.01)">
+        <path
+          d="m0 0-22.669-39.264-22.669 39.264h-75.491l98.16-170.02 98.16 170.02z"
+          fill="#currentColor"
+          class="brightness-50"
+        />
+      </g>
+      <g transform="translate(178.06 235.01)">
+        <path
+          d="m0 0-22.669-39.264-22.669 39.264h-36.227l58.896-102.01 58.896 102.01z"
+          fill="#currentColor"
+        />
+      </g>
+    </g>
   </svg>
 </template>

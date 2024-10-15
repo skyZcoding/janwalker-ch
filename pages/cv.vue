@@ -35,6 +35,7 @@ const links = [
         </div>
       </div>
     </header>
+
     <section class="flex flex-col md:flex-row">
       <div
         class="flex flex-col w-fit justify-center md:pr-8 lg:pr-12 items-center md:items-start"
@@ -55,14 +56,21 @@ const links = [
         <NuxtImg src="/images/hero.svg" alt="Hero Image" />
       </div>
     </section>
+
     <section>
       <h4 class="font-bold text-center w-100 mb-4">Tech I Work With</h4>
 
-      <div class="w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
+      <div
+        class="w-full gap-4 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 justify-items-center"
+      >
         <IconNuxt class="text-neutral-lightGray h-10 w-fit" />
         <IconVue class="text-neutral-lightGray h-10 w-fit" />
+        <IconDotNet class="text-neutral-lightGray h-10 w-fit" />
+        <IconBlazor class="text-neutral-lightGray h-10 w-fit" />
+        <IconDocker class="text-neutral-lightGray h-10 w-fit" />
       </div>
     </section>
+
     <section>
       <h1 class="text-center mb-10">
         What I <span class="text-gradient">Bring</span> to the Table
