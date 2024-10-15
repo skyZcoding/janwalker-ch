@@ -17,6 +17,29 @@ const links = [
     link: "/cv",
   },
 ];
+
+const experiences = [
+  {
+    title: "Computer scientist in software development EFZ",
+    company: "Roche Diagnostics International AG",
+    date: "Aug. 2018 - Aug. 2022",
+  },
+  {
+    title: "Junior software developer",
+    company: "Roche Diagnostics International AG",
+    date: "Aug. 2022 - Aug. 2023",
+  },
+  {
+    title: "Course instructor",
+    company: "Roche Diagnostics International AG",
+    date: "Sep. 2022 - Dec. 2022",
+  },
+  {
+    title: "Co-Owner",
+    company: "Codelance GmbH",
+    date: "Apr. 2023 - Present",
+  },
+];
 </script>
 
 <template>
@@ -68,6 +91,32 @@ const links = [
         <IconDotNet class="text-neutral-lightGray max-h-12 w-full" />
         <IconBlazor class="text-neutral-lightGray max-h-12 w-full" />
         <IconDocker class="text-neutral-lightGray max-h-12 w-full" />
+      </div>
+    </section>
+
+    <section>
+      <h1 class="text-center mb-10">
+        My <span class="text-gradient">Experience</span>
+      </h1>
+      <div class="grid grid-cols-1 auto-rows-fr">
+        <div
+          v-for="(experience, index) in experiences"
+          :key="index"
+          class="w-full flex flex-row border-b border-neutral-lightGray py-4 justify-between items-center"
+        >
+          <div class="flex flex-row items-center">
+            <p class="font-semibold text-neutral-lightGray mr-10">
+              0{{ index + 1 }}
+            </p>
+            <h1 class="font-bold text-neutral-lightGray w-[25rem]">
+              {{ experience.title }}
+            </h1>
+          </div>
+          <div class="flex flex-col justify-start mr-10 w-[20rem]">
+            <p class="text-neutral-lightGray">{{ experience.company }}</p>
+            <p class="text-neutral-lightGray">{{ experience.date }}</p>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -126,7 +175,7 @@ const links = [
         </Card>
       </div>
     </section>
-    <section></section>
+
     <footer class="h-[90rem]"></footer>
   </div>
 </template>
