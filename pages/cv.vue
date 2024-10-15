@@ -138,8 +138,11 @@ const experiences = [
           </div>
           <h2 class="mb-2">Frontend Web Development</h2>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec
-            odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi.
+            I specialize in creating dynamic and responsive web applications
+            using modern frameworks like Nuxt, Vue, and Blazor. My expertise in
+            these technologies allows me to build seamless user interfaces and
+            efficient client-side logic, ensuring a smooth and engaging user
+            experience.
           </p>
         </Card>
         <Card>
@@ -150,8 +153,10 @@ const experiences = [
           </div>
           <h2 class="mb-2">Backend Development</h2>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec
-            odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi.
+            I build reliable backends using .NET with C# and Node.js with
+            TypeScript. With .NET, I create scalable server-side apps, and with
+            Node.js, I develop fast, asynchronous services. These skills help me
+            deliver solid backend solutions for various projects.
           </p>
         </Card>
         <Card>
@@ -162,8 +167,11 @@ const experiences = [
           </div>
           <h2 class="mb-2">Desktop Development</h2>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec
-            odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi.
+            I develop desktop applications using Windows Presentation Foundation
+            (WPF) with C#. My experience with WPF allows me to create rich,
+            visually appealing, and highly interactive desktop applications. I
+            focus on delivering robust and user-friendly solutions that meet the
+            specific needs of each project.
           </p>
         </Card>
         <Card>
@@ -174,8 +182,11 @@ const experiences = [
           </div>
           <h2 class="mb-2">Mobile Device Management</h2>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec
-            odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi.
+            I have experience developing mobile device management (MDM)
+            solutions using VMware Workspace One. With Workspace One, I manage
+            and secure mobile devices, apps, and data, ensuring compliance and
+            protecting corporate resources. My expertise in MDM helps
+            organizations streamline device management and enhance security.
           </p>
         </Card>
       </div>
