@@ -62,7 +62,7 @@ const experiences = [
     <section>
       <div class="flex flex-col md:flex-row">
         <div
-          class="flex flex-col w-fit justify-center md:pr-8 lg:pr-12 items-center md:items-start"
+          class="flex flex-col w-fit justify-center md:pr-8 lg:pr-12 items-start"
         >
           <h1>
             Building <span class="text-gradient">Seamless</span> Web
