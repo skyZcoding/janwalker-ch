@@ -2,19 +2,15 @@
 const links = [
   {
     title: "Home",
-    link: "/",
+    link: "#home",
   },
   {
-    title: "About",
-    link: "/about",
+    title: "Experience",
+    link: "#experience",
   },
   {
-    title: "Contact",
-    link: "/contact",
-  },
-  {
-    title: "CV",
-    link: "/cv",
+    title: "Qualities",
+    link: "#qualities",
   },
 ];
 
@@ -59,7 +55,7 @@ const experiences = [
       </div>
     </header>
 
-    <section>
+    <section id="home">
       <div class="flex flex-col md:flex-row">
         <div
           class="flex flex-col w-fit justify-center md:pr-8 lg:pr-12 items-start"
@@ -97,7 +93,7 @@ const experiences = [
       </div>
     </section>
 
-    <section>
+    <section id="experience">
       <h1 class="text-center mb-10">
         My <span class="text-gradient">Experience</span>
       </h1>
@@ -125,7 +121,7 @@ const experiences = [
       </div>
     </section>
 
-    <section>
+    <section id="qualities">
       <h1 class="text-center mb-10">
         What I <span class="text-gradient">Bring</span> to the Table
       </h1>
