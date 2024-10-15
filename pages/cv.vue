@@ -43,7 +43,7 @@ const experiences = [
     <header class="w-full py-4 flex justify-center mb-8">
       <div class="flex flex-row items-center">
         <div v-for="(link, index) in links" :key="index" class="mx-2">
-          <NuxtLink :to="link.link" class="align-middle">
+          <NuxtLink :to="link.link" class="align-middle scroll-smooth">
             <p
               class="text-neutral-lightGray font-semibold hover:text-gradient duration-200"
               :title="link.title"
