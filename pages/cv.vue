@@ -59,38 +59,41 @@ const experiences = [
       </div>
     </header>
 
-    <section class="flex flex-col md:flex-row">
-      <div
-        class="flex flex-col w-fit justify-center md:pr-8 lg:pr-12 items-center md:items-start"
-      >
-        <h1>
-          Building <span class="text-gradient">Seamless</span> Web Applications
-        </h1>
-        <p class="text-gray-300 text-base mt-4">
-          I am a full-stack software developer with six years of professional
-          experience. I love trying out new technologies, mainly in web
-          development.
-        </p>
-        <Button class="mt-2">Learn more</Button>
-      </div>
-      <div
-        class="w-auto md:min-w-96 flex justify-center items-center mt-4 md:mt-0"
-      >
-        <NuxtImg src="/images/hero.svg" alt="Hero Image" />
-      </div>
-    </section>
-
     <section>
-      <h4 class="font-bold text-center w-100 mb-4">Tech I Work With</h4>
+      <div class="flex flex-col md:flex-row">
+        <div
+          class="flex flex-col w-fit justify-center md:pr-8 lg:pr-12 items-center md:items-start"
+        >
+          <h1>
+            Building <span class="text-gradient">Seamless</span> Web
+            Applications
+          </h1>
+          <p class="text-gray-300 text-base mt-4">
+            I am a full-stack software developer with six years of professional
+            experience. I love trying out new technologies, mainly in web
+            development.
+          </p>
+          <Button class="mt-2">Learn more</Button>
+        </div>
+        <div
+          class="w-auto md:min-w-96 flex justify-center items-center mt-4 md:mt-0"
+        >
+          <NuxtImg src="/images/hero.svg" alt="Hero Image" />
+        </div>
+      </div>
 
-      <div
-        class="w-full gap-4 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 justify-items-center"
-      >
-        <IconNuxt class="text-neutral-lightGray max-h-12 w-full" />
-        <IconVue class="text-neutral-lightGray max-h-12 w-full" />
-        <IconDotNet class="text-neutral-lightGray max-h-12 w-full" />
-        <IconBlazor class="text-neutral-lightGray max-h-12 w-full" />
-        <IconDocker class="text-neutral-lightGray max-h-12 w-full" />
+      <div class="mt-24">
+        <h4 class="font-bold text-center w-100 mb-4">Tech I Work With</h4>
+
+        <div
+          class="w-full gap-4 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 justify-items-center"
+        >
+          <IconNuxt class="text-neutral-lightGray max-h-12 w-full" />
+          <IconVue class="text-neutral-lightGray max-h-12 w-full" />
+          <IconDotNet class="text-neutral-lightGray max-h-12 w-full" />
+          <IconBlazor class="text-neutral-lightGray max-h-12 w-full" />
+          <IconDocker class="text-neutral-lightGray max-h-12 w-full" />
+        </div>
       </div>
     </section>
 
