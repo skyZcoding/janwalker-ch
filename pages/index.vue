@@ -115,34 +115,6 @@ const state = reactive({
   inputEnd: "",
   inputCursor: "\xa0",
   directory: "cv",
-  directories: [
-    {
-      directory: "cv",
-      active: true,
-      subdirectories: [
-        {
-          directory: "contact",
-          active: false,
-          files: [{ name: "info.txt" }],
-        },
-        {
-          directory: "projects",
-          active: false,
-          files: [{ name: "info.txt" }],
-        },
-        {
-          directory: "education",
-          active: false,
-          files: [{ name: "info.txt" }],
-        },
-        {
-          directory: "experience",
-          active: false,
-          files: [{ name: "info.txt" }],
-        },
-      ],
-    },
-  ],
 });
 
 const commandLinePrefix = {
@@ -165,6 +137,8 @@ const specialKeys = [
 
 function initialize(): void {
   addCommands(startup);
+  let directory: Directory = shell.getActiveDirectory();
+  state.directory = shell.getDirectoryFullPath(directory.uid)?.slice(1);
 }
 
 function addCommands(commands: Array<ShellCommandPart[]>): void {
@@ -456,7 +430,6 @@ function echoCommand(): void {
   shellCommand.push({ command: content, color: "#ffffff" });
 
   if (command[2] == ">>") {
-    console.log(">>");
     shell.addLineToFile(path + fileName, shellCommand);
   } else if (command[2] == ">") {
     shell.replaceFileContent(path + fileName, shellCommand);
@@ -654,7 +627,6 @@ function helpCommand(): void {
 }
 
 onMounted(() => {
-  initialize();
   const targetNode = document.getElementById("scroller");
   const config = { childList: true };
   const callback = function (mutationsList): MutationCallback {
@@ -669,6 +641,7 @@ onMounted(() => {
   observer.observe(targetNode, config);
   window.addEventListener("keydown", keyDownHandler);
   shell.initializeDrive();
+  initialize();
 });
 
 watch(
