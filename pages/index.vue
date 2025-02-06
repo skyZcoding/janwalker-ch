@@ -628,6 +628,26 @@ function helpCommand(): void {
     { command: "clear", color: "#00a6ff" },
     { command: "  Clear the terminal screen", color: "#ffffff" },
   ]);
+  commands.push([
+    { command: "mkdir", color: "#00a6ff" },
+    { command: "  Create a new directory", color: "#ffffff" },
+  ]);
+  commands.push([
+    { command: "whoami", color: "#00a6ff" },
+    { command: " Display the current user", color: "#ffffff" },
+  ]);
+  commands.push([
+    { command: "rm", color: "#00a6ff" },
+    { command: "     Remove a file or directory", color: "#ffffff" },
+  ]);
+  commands.push([
+    { command: "touch", color: "#00a6ff" },
+    { command: "  Create a new file", color: "#ffffff" },
+  ]);
+  commands.push([
+    { command: "echo", color: "#00a6ff" },
+    { command: "   Display a line of text", color: "#ffffff" },
+  ]);
   commands.push([{ command: "", color: "" }]);
 
   addCommands(commands);
