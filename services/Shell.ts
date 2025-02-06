@@ -11,6 +11,10 @@ export function Shell(): CommandLine {
     }
   }
 
+  function reset(): void {
+    localStorage.removeItem("drive");
+  }
+
   let drive: Directory[] = [
     {
       uid: uid(),
@@ -733,5 +737,6 @@ export function Shell(): CommandLine {
     replaceFileContent,
     saveChanges,
     initializeDrive,
+    reset,
   };
 }

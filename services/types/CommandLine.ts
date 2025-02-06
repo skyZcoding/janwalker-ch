@@ -17,4 +17,5 @@ export default interface CommandLine {
   replaceFileContent(fullPath: string, newLine: ShellCommandPart[]): boolean;
   saveChanges(): void;
   initializeDrive(): void;
+  reset(): void;
 }

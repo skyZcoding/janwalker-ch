@@ -308,6 +308,7 @@ function createHistoryMessage(): void {
 }
 
 function executeCommand(): void {
+  console.log(state.input);
   if (state.input.toLocaleLowerCase() == "help") {
     helpCommand();
   } else if (state.input.toLocaleLowerCase() == "clear") {
@@ -324,6 +325,8 @@ function executeCommand(): void {
     whoamiCommand();
   } else if (state.input.toLocaleLowerCase().startsWith("rm\xa0")) {
     rmCommand();
+  } else if (state.input.toLocaleLowerCase() == "shutdown\xa0-r\xa0now") {
+    rebootCommand();
   } else if (state.input.toLocaleLowerCase().startsWith("touch\xa0")) {
     touchCommand();
   } else if (state.input.toLocaleLowerCase().startsWith("echo\xa0")) {
@@ -331,6 +334,11 @@ function executeCommand(): void {
   } else {
     commandNotFound();
   }
+}
+
+function rebootCommand(): void {
+  shell.reset();
+  location.reload();
 }
 
 function touchCommand(): void {
