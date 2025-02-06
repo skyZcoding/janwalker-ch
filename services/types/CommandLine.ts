@@ -6,7 +6,7 @@ export default interface CommandLine {
   setActiveDirectory(fullPath: string): boolean;
   getActiveDirectory(): Directory | null;
   moveUp(): boolean;
-  getFileContent(fileName: string): Array<ShellCommandPart[]> | null;
+  getFileContent(fullPath: string): Array<ShellCommandPart[]> | null;
   createDirectory(directoryName: string): boolean;
   getDirectoryFullPath(uid: string): string | null;
   removeDirectory(directoryName: string): boolean;

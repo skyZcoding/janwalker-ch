@@ -505,7 +505,9 @@ function cdCommand(): void {
 
 function catCommand(): void {
   let command = state.input.split("\xa0");
-  let content = shell.getFileContent(command[1]);
+  let path = state.directory + "/" + command[1];
+  
+  let content = shell.getFileContent(path);
 
   if (content == null) {
     let commands: Array<ShellCommandPart[]> = [];

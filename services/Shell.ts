@@ -565,11 +565,16 @@ export function Shell(): CommandLine {
     return false;
   }
 
-  function getFileContent(fileName: string): Array<ShellCommandPart[]> | null {
-    const activeDir = getActiveDirectory();
-    if (!activeDir || !activeDir.files) return null;
+  function getFileContent(fullPath: string): Array<ShellCommandPart[]> | null {
+    const pathParts = fullPath.split("/").filter((part) => part !== "");
+    const fileName = pathParts.pop();
+    if (!fileName) return null;
 
-    for (const file of activeDir.files) {
+    const directoryPath = pathParts.join("/");
+    const directory = getDirectoryFromFullPath(directoryPath);
+    if (!directory || !directory.files) return null;
+
+    for (const file of directory.files) {
       if (file.name === fileName) {
         return file.content || null;
       }
