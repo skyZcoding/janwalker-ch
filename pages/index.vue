@@ -433,6 +433,11 @@ function echoCommand(): void {
     shell.addLineToFile(path + fileName, shellCommand);
   } else if (command[2] == ">") {
     shell.replaceFileContent(path + fileName, shellCommand);
+  } else {
+    let commands: Array<ShellCommandPart[]> = [];
+    commands.push([{ command: content, color: "" }]);
+
+    addCommands(commands);
   }
 }
 
