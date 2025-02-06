@@ -648,6 +648,7 @@ onMounted(() => {
 
   observer.observe(targetNode, config);
   window.addEventListener("keydown", keyDownHandler);
+  shell.initializeDrive();
 });
 
 watch(

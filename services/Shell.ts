@@ -4,7 +4,14 @@ import type CommandLine from "./types/CommandLine";
 import { uid } from "uid";
 
 export function Shell(): CommandLine {
-  const drive: Directory[] = [
+  function initializeDrive(): void {
+    const storedDrive = localStorage.getItem("drive");
+    if (storedDrive) {
+      drive = JSON.parse(storedDrive);
+    }
+  }
+
+  let drive: Directory[] = [
     {
       uid: uid(),
       name: "cv",
@@ -300,7 +307,12 @@ export function Shell(): CommandLine {
                 [{ command: "Aug. 2018 - Aug. 2022", color: "#ffffff" }],
                 [{ command: "", color: "#ffffff" }],
                 [{ command: "", color: "#ffffff" }],
-                [{ command: "Junior software developer", color: "#ffffff" }],
+                [
+                  {
+                    command: "Junior software developer",
+                    color: "#ffffff",
+                  },
+                ],
                 [
                   {
                     command:
@@ -431,6 +443,10 @@ export function Shell(): CommandLine {
     return findPath(drive, uid, "") || null;
   }
 
+  function saveChanges(): void {
+    localStorage.setItem("drive", JSON.stringify(drive));
+  }
+
   function removeFile(fileName: string): boolean {
     const activeDir = getActiveDirectory();
     if (!activeDir || !activeDir.files) return false;
@@ -440,6 +456,7 @@ export function Shell(): CommandLine {
     if (index === -1) return false; // File not found
 
     activeDir.files.splice(index, 1);
+    saveChanges();
     return true;
   }
 
@@ -455,6 +472,7 @@ export function Shell(): CommandLine {
         if (dir.name === currentPart) {
           if (remainingParts.length === 0) {
             dir.active = true;
+            saveChanges();
             return true;
           }
           if (
@@ -565,7 +583,10 @@ export function Shell(): CommandLine {
     return false;
   }
 
-  function replaceFileContent(fullPath: string, newLine: ShellCommandPart[]): boolean {
+  function replaceFileContent(
+    fullPath: string,
+    newLine: ShellCommandPart[],
+  ): boolean {
     const pathParts = fullPath.split("/").filter((part) => part !== "");
     const fileName = pathParts.pop();
     if (!fileName) return false;
@@ -620,6 +641,7 @@ export function Shell(): CommandLine {
     };
 
     activeDir.subdirectories.push(newDirectory);
+    saveChanges();
     return true;
   }
 
@@ -634,6 +656,7 @@ export function Shell(): CommandLine {
     if (index === -1) return false; // Directory not found
 
     activeDir.subdirectories.splice(index, 1);
+    saveChanges();
     return true;
   }
 
@@ -655,6 +678,7 @@ export function Shell(): CommandLine {
     };
 
     activeDir.files.push(newFile);
+    saveChanges();
     return true;
   }
 
@@ -671,6 +695,7 @@ export function Shell(): CommandLine {
     if (!file) return false; // File not found
 
     file.content.push(line);
+    saveChanges();
     return true;
   }
 
@@ -706,5 +731,7 @@ export function Shell(): CommandLine {
     removeFile,
     addLineToFile,
     replaceFileContent,
+    saveChanges,
+    initializeDrive,
   };
 }

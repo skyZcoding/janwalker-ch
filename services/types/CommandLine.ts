@@ -14,5 +14,7 @@ export default interface CommandLine {
   removeFile(fileName: string): boolean;
   getDirectoryFromFullPath(fullPath: string): Directory | null;
   addLineToFile(fullPath: string, line: ShellCommandPart[]): boolean;
-  replaceFileContent(fullPath: string, newLine: ShellCommandPart[]): boolean
+  replaceFileContent(fullPath: string, newLine: ShellCommandPart[]): boolean;
+  saveChanges(): void;
+  initializeDrive(): void;
 }
