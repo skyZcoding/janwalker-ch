@@ -565,6 +565,22 @@ export function Shell(): CommandLine {
     return false;
   }
 
+  function replaceFileContent(fullPath: string, newLine: ShellCommandPart[]): boolean {
+    const pathParts = fullPath.split("/").filter((part) => part !== "");
+    const fileName = pathParts.pop();
+    if (!fileName) return false;
+
+    const directoryPath = pathParts.join("/");
+    const directory = getDirectoryFromFullPath(directoryPath);
+    if (!directory || !directory.files) return false;
+
+    const file = directory.files.find((file) => file.name === fileName);
+    if (!file) return false; // File not found
+
+    file.content = [newLine];
+    return true;
+  }
+
   function getFileContent(fullPath: string): Array<ShellCommandPart[]> | null {
     const pathParts = fullPath.split("/").filter((part) => part !== "");
     const fileName = pathParts.pop();
@@ -642,6 +658,22 @@ export function Shell(): CommandLine {
     return true;
   }
 
+  function addLineToFile(fullPath: string, line: ShellCommandPart[]): boolean {
+    const pathParts = fullPath.split("/").filter((part) => part !== "");
+    const fileName = pathParts.pop();
+    if (!fileName) return false;
+
+    const directoryPath = pathParts.join("/");
+    const directory = getDirectoryFromFullPath(directoryPath);
+    if (!directory || !directory.files) return false;
+
+    const file = directory.files.find((file) => file.name === fileName);
+    if (!file) return false; // File not found
+
+    file.content.push(line);
+    return true;
+  }
+
   function writeLine(commandParts: ShellCommandPart[]): string {
     let line = "";
 
@@ -672,5 +704,7 @@ export function Shell(): CommandLine {
     removeDirectory,
     createFile,
     removeFile,
+    addLineToFile,
+    replaceFileContent,
   };
 }

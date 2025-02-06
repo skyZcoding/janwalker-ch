@@ -13,4 +13,6 @@ export default interface CommandLine {
   createFile(fileName: string): boolean;
   removeFile(fileName: string): boolean;
   getDirectoryFromFullPath(fullPath: string): Directory | null;
+  addLineToFile(fullPath: string, line: ShellCommandPart[]): boolean;
+  replaceFileContent(fullPath: string, newLine: ShellCommandPart[]): boolean
 }

@@ -357,6 +357,8 @@ function executeCommand(): void {
     rmCommand();
   } else if (state.input.toLocaleLowerCase().startsWith("touch\xa0")) {
     touchCommand();
+  } else if (state.input.toLocaleLowerCase().startsWith("echo\xa0")) {
+    echoCommand();
   } else {
     commandNotFound();
   }
@@ -426,6 +428,39 @@ function whoamiCommand(): void {
   commands.push([commandLinePrefix.user]);
 
   addCommands(commands);
+}
+
+function echoCommand(): void {
+  let command = state.input.split("\xa0");
+  let path = state.directory + "/";
+
+  function getString(command: string): string {
+    if (command.includes('"')) {
+      return command.substring(
+        command.indexOf('"') + 1,
+        command.lastIndexOf('"'),
+      );
+    } else if (command.includes("'")) {
+      return command.substring(
+        command.indexOf("'") + 1,
+        command.lastIndexOf("'"),
+      );
+    } else {
+      return command;
+    }
+  }
+
+  let content = getString(command[1]);
+  let fileName = command[3];
+  let shellCommand: ShellCommandPart[] = [];
+  shellCommand.push({ command: content, color: "#ffffff" });
+
+  if (command[2] == ">>") {
+    console.log(">>");
+    shell.addLineToFile(path + fileName, shellCommand);
+  } else if (command[2] == ">") {
+    shell.replaceFileContent(path + fileName, shellCommand);
+  }
 }
 
 function mkdirCommand(): void {
@@ -506,7 +541,7 @@ function cdCommand(): void {
 function catCommand(): void {
   let command = state.input.split("\xa0");
   let path = state.directory + "/" + command[1];
-  
+
   let content = shell.getFileContent(path);
 
   if (content == null) {
