@@ -181,14 +181,13 @@ function keyDownHandler(e): void {
     let directory: Directory = shell.getActiveDirectory();
 
     if (state.input.includes("/")) {
-      let path =
-        state.directory +
-        "/" +
-        inputs.toString().replace(inputs[0], "").replace(",", "");
+      let path = state.directory + "/" + inputs.at(-1);
 
       let paths = path.split("/");
       inputText = paths.pop();
       path = paths.join("/");
+
+      console.log(path);
 
       directory = shell.getDirectoryFromFullPath(path);
     }
