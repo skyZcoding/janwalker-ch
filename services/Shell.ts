@@ -380,6 +380,33 @@ export function Shell(): CommandLine {
     },
   ];
 
+  function getDirectoryFromFullPath(fullPath: string): Directory | null {
+    const pathParts = fullPath.split("/").filter((part) => part !== "");
+
+    function findDirectory(
+      directories: Directory[],
+      parts: string[],
+    ): Directory | null {
+      if (parts.length === 0) return null;
+
+      const [currentPart, ...remainingParts] = parts;
+
+      for (const dir of directories) {
+        if (dir.name === currentPart) {
+          if (remainingParts.length === 0) {
+            return dir;
+          }
+          if (dir.subdirectories) {
+            return findDirectory(dir.subdirectories, remainingParts);
+          }
+        }
+      }
+      return null;
+    }
+
+    return findDirectory(drive, pathParts);
+  }
+
   function getDirectoryFullPath(uid: string): string | null {
     function findPath(
       directories: Directory[],
@@ -630,6 +657,7 @@ export function Shell(): CommandLine {
 
   return {
     writeLine,
+    getDirectoryFromFullPath,
     setActiveDirectory,
     getActiveDirectory,
     moveUp,

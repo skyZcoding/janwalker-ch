@@ -206,12 +206,37 @@ function keyDownHandler(e): void {
 
     let directory: Directory = shell.getActiveDirectory();
 
+    if (state.input.includes("/")) {
+      let path =
+        state.directory +
+        "/" +
+        inputs.toString().replace(inputs[0], "").replace(",", "");
+
+      let paths = path.split("/");
+      inputText = paths.pop();
+      path = paths.join("/");
+
+      directory = shell.getDirectoryFromFullPath(path);
+    }
+
     if (directory.subdirectories) {
       directory.subdirectories.forEach(function (subdirectory) {
         if (subdirectory.name.startsWith(inputText)) {
-          state.input = state.input.replace(re, subdirectory.name) + "\xa0";
+          let paths = state.input.split("/");
+          if (paths.length > 1) {
+            paths.pop();
+            state.input =
+              paths.join("/") + "/" + subdirectory.name + "/" + "\xa0";
+          } else {
+            state.input =
+              state.input.replace(re, subdirectory.name) + "/" + "\xa0";
+          }
+
           state.cursorPosition =
-            state.cursorPosition - inputText.length + subdirectory.name.length;
+            state.cursorPosition -
+            inputText.length +
+            subdirectory.name.length +
+            1;
 
           return;
         }
@@ -221,7 +246,14 @@ function keyDownHandler(e): void {
     if (directory.files) {
       directory.files.forEach(function (file) {
         if (file.name.startsWith(inputText)) {
-          state.input = state.input.replace(re, file.name) + "\xa0";
+          let paths = state.input.split("/");
+          if (paths.length > 1) {
+            paths.pop();
+            state.input = paths.join("/") + "/" + file.name + "\xa0";
+          } else {
+            state.input = state.input.replace(re, file.name) + "\xa0";
+          }
+
           state.cursorPosition =
             state.cursorPosition - inputText.length + file.name.length;
 
