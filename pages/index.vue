@@ -187,8 +187,6 @@ function keyDownHandler(e): void {
       inputText = paths.pop();
       path = paths.join("/");
 
-      console.log(path);
-
       directory = shell.getDirectoryFromFullPath(path);
     }
 
