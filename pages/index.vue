@@ -199,11 +199,9 @@ function keyDownHandler(e): void {
           let paths = state.input.split("/");
           if (paths.length > 1) {
             paths.pop();
-            state.input =
-              paths.join("/") + "/" + subdirectory.name + "/" + "\xa0";
+            state.input = paths.join("/") + "/" + subdirectory.name + "/";
           } else {
-            state.input =
-              state.input.replace(re, subdirectory.name) + "/" + "\xa0";
+            state.input = state.input.replace(re, subdirectory.name) + "/";
           }
 
           state.cursorPosition =
@@ -223,9 +221,9 @@ function keyDownHandler(e): void {
           let paths = state.input.split("/");
           if (paths.length > 1) {
             paths.pop();
-            state.input = paths.join("/") + "/" + file.name + "\xa0";
+            state.input = paths.join("/") + "/" + file.name;
           } else {
-            state.input = state.input.replace(re, file.name) + "\xa0";
+            state.input = state.input.replace(re, file.name);
           }
 
           state.cursorPosition =
