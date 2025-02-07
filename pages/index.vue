@@ -129,7 +129,7 @@ const commandLinePrefix = {
   directory: "/home/",
 };
 
-const specialKeys = [
+const specialKeys: Array<number> = [
   3, 12, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 33, 34,
   35, 36, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 91, 221,
   45, 244,
@@ -308,27 +308,29 @@ function createHistoryMessage(): void {
 }
 
 function executeCommand(): void {
-  if (state.input.toLocaleLowerCase() == "help") {
+  const input = state.input.toLowerCase();
+
+  if (input === "help") {
     helpCommand();
-  } else if (state.input.toLocaleLowerCase() == "clear") {
+  } else if (input === "clear") {
     clearCommand();
-  } else if (state.input.toLocaleLowerCase().startsWith("cat\xa0")) {
+  } else if (input.startsWith("cat\xa0")) {
     catCommand();
-  } else if (state.input.toLocaleLowerCase() == "ls") {
+  } else if (input === "ls") {
     lsCommand();
-  } else if (state.input.toLocaleLowerCase().startsWith("cd\xa0")) {
+  } else if (input.startsWith("cd\xa0")) {
     cdCommand();
-  } else if (state.input.toLocaleLowerCase().startsWith("mkdir\xa0")) {
+  } else if (input.startsWith("mkdir\xa0")) {
     mkdirCommand();
-  } else if (state.input.toLocaleLowerCase() == "whoami") {
+  } else if (input === "whoami") {
     whoamiCommand();
-  } else if (state.input.toLocaleLowerCase().startsWith("rm\xa0")) {
+  } else if (input.startsWith("rm\xa0")) {
     rmCommand();
-  } else if (state.input.toLocaleLowerCase() == "shutdown\xa0-r\xa0now") {
+  } else if (input === "shutdown\xa0-r\xa0now") {
     rebootCommand();
-  } else if (state.input.toLocaleLowerCase().startsWith("touch\xa0")) {
+  } else if (input.startsWith("touch\xa0")) {
     touchCommand();
-  } else if (state.input.toLocaleLowerCase().startsWith("echo\xa0")) {
+  } else if (input.startsWith("echo\xa0")) {
     echoCommand();
   } else {
     commandNotFound();
