@@ -308,7 +308,6 @@ function createHistoryMessage(): void {
 }
 
 function executeCommand(): void {
-  console.log(state.input);
   if (state.input.toLocaleLowerCase() == "help") {
     helpCommand();
   } else if (state.input.toLocaleLowerCase() == "clear") {
@@ -489,8 +488,21 @@ function lsCommand(): void {
 
 function cdCommand(): void {
   let commands: Array<ShellCommandPart[]> = [];
-
   let command = state.input.split("\xa0");
+
+  if (command[1] == "") {
+    commands.push([{ command: "", color: "" }]);
+    commands.push([
+      {
+        command: "Could not find a directory called " + "'" + command[1] + "'",
+        color: "#ff0000",
+      },
+    ]);
+    commands.push([{ command: "", color: "" }]);
+
+    addCommands(commands);
+    return;
+  }
 
   if (command[1] == "..") {
     shell.moveUp();
