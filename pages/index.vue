@@ -525,7 +525,7 @@ function cdCommand(): void {
     ]);
     commands.push([{ command: "", color: "" }]);
   } else {
-    state.directory = path;
+    state.directory = path.slice(0, -1);
   }
 
   addCommands(commands);
