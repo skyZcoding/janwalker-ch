@@ -706,7 +706,7 @@ export function Shell(): CommandLine {
   function writeLine(commandParts: ShellCommandPart[]): string {
     let line = "";
 
-    commandParts.forEach(function (part) {
+    for (const part of commandParts) {
       let command = part.command;
 
       if (!/<\/?[a-z][\s\S]*>/i.test(command)) {
@@ -716,7 +716,7 @@ export function Shell(): CommandLine {
       line += `<p class="font-mono h-fit break-all" style="color:${
         part.color ? part.color : "#ffffff"
       }">${command}</p>`;
-    });
+    }
 
     return line;
   }

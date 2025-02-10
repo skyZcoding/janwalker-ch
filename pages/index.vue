@@ -142,9 +142,9 @@ function initialize(): void {
 }
 
 function addCommands(commands: Array<ShellCommandPart[]>): void {
-  commands.forEach(function (command: ShellCommandPart[]): void {
+  for (let command of commands) {
     state.history.push(shell.writeLine(command));
-  });
+  }
 }
 
 function keyDownHandler(e): void {
@@ -191,7 +191,7 @@ function keyDownHandler(e): void {
     }
 
     if (directory.subdirectories) {
-      directory.subdirectories.forEach(function (subdirectory) {
+      for (let subdirectory of directory.subdirectories) {
         if (subdirectory.name.startsWith(inputText)) {
           let paths = state.input.split("/");
           if (paths.length > 1) {
@@ -209,11 +209,11 @@ function keyDownHandler(e): void {
 
           return;
         }
-      });
+      }
     }
 
     if (directory.files) {
-      directory.files.forEach(function (file) {
+      for (let file of directory.files) {
         if (file.name.startsWith(inputText)) {
           let paths = state.input.split("/");
           if (paths.length > 1) {
@@ -228,7 +228,7 @@ function keyDownHandler(e): void {
 
           return;
         }
-      });
+      }
     }
   } else if (e.keyCode == 13) {
     // Enter
@@ -474,15 +474,15 @@ function lsCommand(): void {
   let directory: Directory = shell.getActiveDirectory();
 
   if (directory.files) {
-    directory.files.forEach(function (file) {
+    for (let file of directory.files) {
       commands.push([{ command: file.name, color: "#00a6ff" }]);
-    });
+    }
   }
 
   if (directory.subdirectories) {
-    directory.subdirectories.forEach(function (directory) {
-      commands.push([{ command: directory.name, color: "#a78bfa" }]);
-    });
+    for (let subdirectory of directory.subdirectories) {
+      commands.push([{ command: subdirectory.name, color: "#a78bfa" }]);
+    }
   }
 
   addCommands(commands);
@@ -555,14 +555,15 @@ function catCommand(): void {
   } else {
     let commands: Array<ShellCommandPart[]> = [];
 
-    content.forEach(function (linePart) {
+    for (let linePart of content) {
       let command: ShellCommandPart[] = [];
-      linePart.forEach(function (part) {
+
+      for (let part of linePart) {
         command.push({ command: part.command, color: part.color });
-      });
+      }
 
       commands.push(command);
-    });
+    }
 
     addCommands(commands);
   }
