@@ -4,4 +4,5 @@ export default interface File {
   uid: string;
   name: string;
   content: Array<ShellCommandPart[]>;
+  permissions: string;
 }

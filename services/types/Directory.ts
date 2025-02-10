@@ -6,4 +6,5 @@ export default interface Directory {
   active: boolean;
   files: File[];
   subdirectories: Directory[];
+  permissions: string;
 }

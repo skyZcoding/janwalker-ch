@@ -20,16 +20,19 @@ export function Shell(): CommandLine {
       uid: uid(),
       name: "cv",
       active: true,
+      permissions: "drwxr-xr-x",
       subdirectories: [
         {
           uid: uid(),
           name: "contact",
           active: false,
+          permissions: "drwxr-xr-x",
           subdirectories: [],
           files: [
             {
               uid: uid(),
               name: "info.txt",
+              permissions: "-rw-r--r--",
               content: [
                 [{ command: "", color: "#ffffff" }],
                 [
@@ -88,11 +91,13 @@ export function Shell(): CommandLine {
           uid: uid(),
           name: "projects",
           active: false,
+          permissions: "drwxr-xr-x",
           subdirectories: [],
           files: [
             {
               uid: uid(),
               name: "info.txt",
+              permissions: "-rw-r--r--",
               content: [
                 [{ command: "", color: "#ffffff" }],
                 [{ command: "Projects", color: "#ffffff" }],
@@ -228,11 +233,13 @@ export function Shell(): CommandLine {
           uid: uid(),
           name: "education",
           active: false,
+          permissions: "drwxr-xr-x",
           subdirectories: [],
           files: [
             {
               uid: uid(),
               name: "info.txt",
+              permissions: "-rw-r--r--",
               content: [
                 [{ command: "", color: "#ffffff" }],
                 [{ command: "Education", color: "#ffffff" }],
@@ -266,11 +273,13 @@ export function Shell(): CommandLine {
           uid: uid(),
           name: "experience",
           active: false,
+          permissions: "drwxr-xr-x",
           subdirectories: [],
           files: [
             {
               uid: uid(),
               name: "info.txt",
+              permissions: "-rw-r--r--",
               content: [
                 [{ command: "", color: "#ffffff" }],
                 [{ command: "Experience", color: "#ffffff" }],
