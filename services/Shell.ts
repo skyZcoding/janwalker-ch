@@ -746,7 +746,66 @@ export function Shell(): CommandLine {
     return line;
   }
 
+  function calculateFileSize(fileUid: string): number | null {
+    function findFile(
+      directories: Directory[],
+    ): Array<ShellCommandPart[]> | null {
+      for (const dir of directories) {
+        for (const file of dir.files) {
+          if (file.uid === fileUid) {
+            return file.content;
+          }
+        }
+        const subdirResult = findFile(dir.subdirectories);
+        if (subdirResult) {
+          return subdirResult;
+        }
+      }
+      return null;
+    }
+
+    const fileContent = findFile(drive);
+    if (!fileContent) return null;
+
+    let size = 0;
+    for (const line of fileContent) {
+      for (const part of line) {
+        size += new Blob([part.command]).size;
+      }
+    }
+    return size;
+  }
+
+  function calculateDirectorySize(fullPath: string): number | null {
+    const directory = getDirectoryFromFullPath(fullPath);
+    if (!directory) return null;
+
+    function calculateSize(dir: Directory): number {
+      let size = 0;
+
+      // Calculate size of files in the directory
+      for (const file of dir.files) {
+        for (const line of file.content) {
+          for (const part of line) {
+            size += new Blob([part.command]).size;
+          }
+        }
+      }
+
+      // Recursively calculate size of subdirectories
+      for (const subdir of dir.subdirectories) {
+        size += calculateSize(subdir);
+      }
+
+      return size;
+    }
+
+    return calculateSize(directory);
+  }
+
   return {
+    calculateFileSize,
+    calculateDirectorySize,
     writeLine,
     getDirectoryFromFullPath,
     setActiveDirectory,

@@ -478,6 +478,18 @@ function lsCommand(): void {
   let directory: Directory = shell.getActiveDirectory();
   let command = state.input.split("\xa0");
 
+  function formatSize(size: string): string {
+    if (new String(size).length < 4) {
+      let difference = 4 - new String(size).length;
+
+      for (let i = 0; i < difference; i++) {
+        size = " " + size;
+      }
+    }
+
+    return size;
+  }
+
   if (command.length == 1) {
     if (directory.files) {
       for (let file of directory.files) {
@@ -497,7 +509,10 @@ function lsCommand(): void {
           { command: file.permissions + " ", color: "#00a6ff" },
           { command: commandLinePrefix.user.command + " ", color: "#00a6ff" },
           { command: commandLinePrefix.group.command + " ", color: "#00a6ff" },
-          { command: "4096" + " ", color: "#00a6ff" },
+          {
+            command: formatSize(shell.calculateFileSize(file.uid)) + " ",
+            color: "#00a6ff",
+          },
           { command: formatLsDate(file.modifiedDate) + " ", color: "#00a6ff" },
           { command: file.name + " ", color: "#00a6ff" },
         ]);
@@ -510,7 +525,15 @@ function lsCommand(): void {
           { command: subdirectory.permissions + " ", color: "#a78bfa" },
           { command: commandLinePrefix.user.command + " ", color: "#a78bfa" },
           { command: commandLinePrefix.group.command + " ", color: "#a78bfa" },
-          { command: "4096" + " ", color: "#a78bfa" },
+          {
+            command:
+              formatSize(
+                shell.calculateDirectorySize(
+                  shell.getDirectoryFullPath(subdirectory.uid),
+                ),
+              ) + " ",
+            color: "#a78bfa",
+          },
           {
             command: formatLsDate(subdirectory.modifiedDate) + " ",
             color: "#a78bfa",

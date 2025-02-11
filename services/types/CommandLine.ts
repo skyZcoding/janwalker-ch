@@ -18,4 +18,6 @@ export default interface CommandLine {
   saveChanges(): void;
   initializeDrive(): void;
   reset(): void;
+  calculateFileSize(fileUid: string): number | null;
+  calculateDirectorySize(fullPath: string): number | null;
 }
