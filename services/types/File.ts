@@ -5,4 +5,5 @@ export default interface File {
   name: string;
   content: Array<ShellCommandPart[]>;
   permissions: string;
+  modifiedDate: Date;
 }

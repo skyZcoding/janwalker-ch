@@ -7,4 +7,5 @@ export default interface Directory {
   files: File[];
   subdirectories: Directory[];
   permissions: string;
+  modifiedDate: Date;
 }

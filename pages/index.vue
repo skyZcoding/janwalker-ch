@@ -122,6 +122,10 @@ const commandLinePrefix = {
     command: "Jan",
     color: "#67e8f9",
   },
+  group: {
+    command: "dev",
+    color: "#67e8f9",
+  },
   desktop: {
     command: "home-page:",
     color: "#67e8f9",
@@ -316,7 +320,7 @@ function executeCommand(): void {
     clearCommand();
   } else if (input.startsWith("cat\xa0")) {
     catCommand();
-  } else if (input === "ls") {
+  } else if (input.startsWith("ls")) {
     lsCommand();
   } else if (input.startsWith("cd\xa0")) {
     cdCommand();
@@ -472,17 +476,52 @@ function mkdirCommand(): void {
 function lsCommand(): void {
   let commands: Array<ShellCommandPart[]> = [];
   let directory: Directory = shell.getActiveDirectory();
+  let command = state.input.split("\xa0");
 
-  if (directory.files) {
-    for (let file of directory.files) {
-      commands.push([{ command: file.name, color: "#00a6ff" }]);
+  if (command.length == 1) {
+    if (directory.files) {
+      for (let file of directory.files) {
+        commands.push([{ command: file.name, color: "#00a6ff" }]);
+      }
     }
-  }
 
-  if (directory.subdirectories) {
-    for (let subdirectory of directory.subdirectories) {
-      commands.push([{ command: subdirectory.name, color: "#a78bfa" }]);
+    if (directory.subdirectories) {
+      for (let subdirectory of directory.subdirectories) {
+        commands.push([{ command: subdirectory.name, color: "#a78bfa" }]);
+      }
     }
+  } else if (command[1] == "-la") {
+    if (directory.files) {
+      for (let file of directory.files) {
+        commands.push([
+          { command: file.permissions + " ", color: "#00a6ff" },
+          { command: commandLinePrefix.user.command + " ", color: "#00a6ff" },
+          { command: commandLinePrefix.group.command + " ", color: "#00a6ff" },
+          { command: "4096" + " ", color: "#00a6ff" },
+          { command: formatLsDate(file.modifiedDate) + " ", color: "#00a6ff" },
+          { command: file.name + " ", color: "#00a6ff" },
+        ]);
+      }
+    }
+
+    if (directory.subdirectories) {
+      for (let subdirectory of directory.subdirectories) {
+        commands.push([
+          { command: subdirectory.permissions + " ", color: "#a78bfa" },
+          { command: commandLinePrefix.user.command + " ", color: "#a78bfa" },
+          { command: commandLinePrefix.group.command + " ", color: "#a78bfa" },
+          { command: "4096" + " ", color: "#a78bfa" },
+          {
+            command: formatLsDate(subdirectory.modifiedDate) + " ",
+            color: "#a78bfa",
+          },
+          { command: subdirectory.name + " ", color: "#a78bfa" },
+        ]);
+      }
+    }
+  } else {
+    commandNotFound();
+    return;
   }
 
   addCommands(commands);
@@ -647,6 +686,24 @@ function helpCommand(): void {
   commands.push([{ command: "", color: "" }]);
 
   addCommands(commands);
+}
+
+function formatLsDate(date: Date): string {
+  const now: Date = new Date();
+  const sixMonthsAgo: Date = new Date();
+  sixMonthsAgo.setMonth(now.getMonth() - 6);
+
+  const month: string = date.toLocaleString("en-US", { month: "short" });
+  const day: string = String(date.getDate()).padStart(2, " ");
+
+  if (date > sixMonthsAgo) {
+    const hours: string = String(date.getHours()).padStart(2, "0");
+    const minutes: string = String(date.getMinutes()).padStart(2, "0");
+    return `${month} ${day} ${hours}:${minutes}`;
+  } else {
+    const year: number = date.getFullYear();
+    return `${month} ${day}  ${year}`;
+  }
 }
 
 onMounted(() => {

@@ -21,18 +21,21 @@ export function Shell(): CommandLine {
       name: "cv",
       active: true,
       permissions: "drwxr-xr-x",
+      modifiedDate: new Date(),
       subdirectories: [
         {
           uid: uid(),
           name: "contact",
           active: false,
           permissions: "drwxr-xr-x",
+          modifiedDate: new Date(),
           subdirectories: [],
           files: [
             {
               uid: uid(),
               name: "info.txt",
               permissions: "-rw-r--r--",
+              modifiedDate: new Date(),
               content: [
                 [{ command: "", color: "#ffffff" }],
                 [
@@ -92,12 +95,14 @@ export function Shell(): CommandLine {
           name: "projects",
           active: false,
           permissions: "drwxr-xr-x",
+          modifiedDate: new Date(),
           subdirectories: [],
           files: [
             {
               uid: uid(),
               name: "info.txt",
               permissions: "-rw-r--r--",
+              modifiedDate: new Date(),
               content: [
                 [{ command: "", color: "#ffffff" }],
                 [{ command: "Projects", color: "#ffffff" }],
@@ -234,12 +239,14 @@ export function Shell(): CommandLine {
           name: "education",
           active: false,
           permissions: "drwxr-xr-x",
+          modifiedDate: new Date(),
           subdirectories: [],
           files: [
             {
               uid: uid(),
               name: "info.txt",
               permissions: "-rw-r--r--",
+              modifiedDate: new Date(),
               content: [
                 [{ command: "", color: "#ffffff" }],
                 [{ command: "Education", color: "#ffffff" }],
@@ -274,12 +281,14 @@ export function Shell(): CommandLine {
           name: "experience",
           active: false,
           permissions: "drwxr-xr-x",
+          modifiedDate: new Date(),
           subdirectories: [],
           files: [
             {
               uid: uid(),
               name: "info.txt",
               permissions: "-rw-r--r--",
+              modifiedDate: new Date(),
               content: [
                 [{ command: "", color: "#ffffff" }],
                 [{ command: "Experience", color: "#ffffff" }],
@@ -612,6 +621,7 @@ export function Shell(): CommandLine {
     if (!file) return false; // File not found
 
     file.content = [newLine];
+    file.modifiedDate = new Date();
     return true;
   }
 
@@ -649,6 +659,8 @@ export function Shell(): CommandLine {
       uid: uid(),
       name: directoryName,
       active: false,
+      modifiedDate: new Date(),
+      permissions: "drwxr-xr-x",
       subdirectories: [],
       files: [],
     };
@@ -687,6 +699,9 @@ export function Shell(): CommandLine {
     // Create new file
     const newFile = {
       name: fileName,
+      uid: uid(),
+      permissions: "-rw-r--r--",
+      modifiedDate: new Date(),
       content: [],
     };
 
@@ -708,6 +723,7 @@ export function Shell(): CommandLine {
     if (!file) return false; // File not found
 
     file.content.push(line);
+    file.modifiedDate = new Date();
     saveChanges();
     return true;
   }
