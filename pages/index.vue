@@ -523,6 +523,7 @@ function lsCommand(): void {
       for (let subdirectory of directory.subdirectories) {
         commands.push([
           { command: subdirectory.permissions + " ", color: "#a78bfa" },
+          { command: "0 ", color: "#a78bfa" },
           { command: commandLinePrefix.user.command + " ", color: "#a78bfa" },
           { command: commandLinePrefix.group.command + " ", color: "#a78bfa" },
           {
