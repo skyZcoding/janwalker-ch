@@ -184,7 +184,7 @@ export function Shell(): CommandLine {
                 [
                   {
                     command:
-                      '<a href="https://old.creatorspace.dev/kennybets/projects/hiFkMYxIClrrVQAj" target="_blank" style="text-decoration-line: underline;" class="font-mono border-b-2 border-white text-white">Project page</a>',
+                      '<a href="https://github.com/skyZcoding/alumoo" target="_blank" style="text-decoration-line: underline;" class="font-mono border-b-2 border-white text-white">Github</a>',
                     color: "#ffffff",
                   },
                 ],
@@ -245,6 +245,34 @@ export function Shell(): CommandLine {
                   },
                 ],
                 [{ command: "", color: "#ffffff" }],
+                [{ command: "", color: "#ffffff" }],
+                [
+                  {
+                    command: "4ng3l0000",
+                    color: "#ffffff",
+                  },
+                ],
+                [
+                  {
+                    command:
+                      "------------------------------------------------------------",
+                    color: "#ffffff",
+                  },
+                ],
+                [
+                  {
+                    command: "Supported with the website concept and design.",
+                    color: "#ffffff",
+                  },
+                ],
+                [
+                  {
+                    command:
+                      '<a href="https://4ng3l0000.com/" style="text-decoration-line: underline;" target="_blank" class="font-mono border-b-2 border-white text-white">Shop page</a>',
+                    color: "#ffffff",
+                  },
+                ],
+                [{ command: "", color: "#ffffff" }],
               ],
             },
           ],
@@ -286,6 +314,27 @@ export function Shell(): CommandLine {
                   },
                 ],
                 [{ command: "Aug. 2018 - Aug. 2022", color: "#ffffff" }],
+                [{ command: "", color: "#ffffff" }],
+                [
+                  {
+                    command:
+                      "------------------------------------------------------------------",
+                    color: "#ffffff",
+                  },
+                ],
+                [
+                  {
+                    command: "Bachelor of computer science",
+                    color: "#ffffff",
+                  },
+                ],
+                [
+                  {
+                    command: "Hochschule Luzern",
+                    color: "#ffffff",
+                  },
+                ],
+                [{ command: "Aug. 2024 - Present", color: "#ffffff" }],
                 [{ command: "", color: "#ffffff" }],
               ],
             },
