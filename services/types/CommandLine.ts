@@ -20,4 +20,5 @@ export default interface CommandLine {
   reset(): void;
   calculateFileSize(fileUid: string): number | null;
   calculateDirectorySize(fullPath: string): number | null;
+  getParentDirectory(fullPath: string): Directory | null;
 }

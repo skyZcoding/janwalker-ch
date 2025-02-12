@@ -666,6 +666,7 @@ export function Shell(): CommandLine {
     };
 
     activeDir.subdirectories.push(newDirectory);
+    activeDir.modifiedDate = new Date();
     saveChanges();
     return true;
   }
@@ -803,7 +804,17 @@ export function Shell(): CommandLine {
     return calculateSize(directory);
   }
 
+  function getParentDirectory(fullPath: string): Directory | null {
+    const pathParts = fullPath.split("/").filter((part) => part !== "");
+    if (pathParts.length <= 1) return null;
+
+    pathParts.pop(); // Remove the current directory
+    const parentPath = pathParts.join("/");
+    return getDirectoryFromFullPath(parentPath);
+  }
+
   return {
+    getParentDirectory,
     calculateFileSize,
     calculateDirectorySize,
     writeLine,
