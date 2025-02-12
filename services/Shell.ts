@@ -7,7 +7,22 @@ export function Shell(): CommandLine {
   function initializeDrive(): void {
     const storedDrive = localStorage.getItem("drive");
     if (storedDrive) {
-      drive = JSON.parse(storedDrive);
+      function isDateString(value: string): boolean {
+        if (typeof value !== "string") return false;
+        const dateStringRegex = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}.\d{3}Z$/;
+        if (!dateStringRegex.test(value)) return false;
+        return true;
+      }
+
+      function reviver(key: string, value: string): any {
+        if (isDateString(value)) return new Date(value);
+        return value;
+      }
+
+      const parsedDrive: Directory[] = JSON.parse(storedDrive, reviver);
+      if (Array.isArray(parsedDrive)) {
+        drive = parsedDrive;
+      }
     }
   }
 
