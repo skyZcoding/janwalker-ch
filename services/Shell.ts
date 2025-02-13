@@ -14,7 +14,7 @@ export function Shell(): CommandLine {
         return true;
       }
 
-      function reviver(key: string, value: string): any {
+      function reviver(key: string, value: string): string | Date {
         if (isDateString(value)) return new Date(value);
         return value;
       }
