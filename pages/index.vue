@@ -152,6 +152,8 @@ function addCommands(commands: Array<ShellCommandPart[]>): void {
 }
 
 function keyDownHandler(e): void {
+  e.preventDefault();
+
   if (specialKeys.includes(e.keyCode)) {
     console.log(e.keyCode);
   } else if (e.keyCode == 8) {
@@ -282,8 +284,6 @@ function keyDownHandler(e): void {
       state.cursorPosition = state.cursorPosition + 1;
     }
   }
-
-  e.preventDefault();
 }
 
 function createHistoryMessage(): void {
