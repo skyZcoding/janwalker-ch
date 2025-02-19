@@ -804,7 +804,7 @@ definePageMeta({
 <template>
   <div class="h-screen">
     <div
-      class="min-h-full bg-slate-800 p-2 flex flex-col justify-between overflow-y-visible"
+      class="min-h-full bg-dark-gray p-2 flex flex-col justify-between overflow-y-visible"
     >
       <main id="scroller" class="flex flex-col">
         <div
