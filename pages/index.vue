@@ -507,7 +507,7 @@ function lsCommand(): void {
       for (let file of directory.files) {
         commands.push([
           { command: file.permissions + " ", color: "#00a6ff" },
-          { command: "0 ", color: "#a78bfa" },
+          { command: "0 ", color: "#00a6ff" },
           { command: commandLinePrefix.user.command + " ", color: "#00a6ff" },
           { command: commandLinePrefix.group.command + " ", color: "#00a6ff" },
           {
