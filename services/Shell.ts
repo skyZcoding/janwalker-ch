@@ -151,6 +151,18 @@ export function Shell(): CommandLine {
                 [
                   {
                     command:
+                      "Techstack: ",
+                    color: "#0fd142",
+                  },
+                  {
+                    command:
+                      "Asp.net, Bootstrap, Kotlin, Vue.js, Docker, Fedora, VMWare Workspace ONE",
+                    color: "#b64df7",
+                  },
+                ],
+                [
+                  {
+                    command:
                       '<a href="https://diagnostics.roche.com/global/en/products/instruments/cobas-mobile-solution-ins-6695.html" target="_blank" style="text-decoration-line: underline;" class="font-mono border-b-2 border-white text-white">Project page</a>',
                     color: "#ffffff",
                   },
@@ -184,6 +196,18 @@ export function Shell(): CommandLine {
                 [
                   {
                     command:
+                      "Techstack: ",
+                    color: "#0fd142",
+                  },
+                  {
+                    command:
+                      ".NET, Docker",
+                    color: "#b64df7",
+                  },
+                ],
+                [
+                  {
+                    command:
                       '<a href="https://github.com/skyZcoding/alumoo" target="_blank" style="text-decoration-line: underline;" class="font-mono border-b-2 border-white text-white">Github</a>',
                     color: "#ffffff",
                   },
@@ -207,6 +231,18 @@ export function Shell(): CommandLine {
                     command:
                       "Created this home page to display the cv in a creative way.",
                     color: "#ffffff",
+                  },
+                ],
+                [
+                  {
+                    command:
+                      "Techstack: ",
+                    color: "#0fd142",
+                  },
+                  {
+                    command:
+                      "NUXT, TailwindCSS, Vercel, Github actions",
+                    color: "#b64df7",
                   },
                 ],
                 [
@@ -240,6 +276,18 @@ export function Shell(): CommandLine {
                 [
                   {
                     command:
+                      "Techstack: ",
+                    color: "#0fd142",
+                  },
+                  {
+                    command:
+                      "Vue.js, TailwindCSS, Vercel",
+                    color: "#b64df7",
+                  },
+                ],
+                [
+                  {
+                    command:
                       '<a href="https://devpost.com/software/scrapsters" style="text-decoration-line: underline;" target="_blank" class="font-mono border-b-2 border-white text-white">Project page</a>',
                     color: "#ffffff",
                   },
@@ -268,7 +316,60 @@ export function Shell(): CommandLine {
                 [
                   {
                     command:
+                      "Techstack: ",
+                    color: "#0fd142",
+                  },
+                  {
+                    command:
+                      "Cargo and brainpower",
+                    color: "#b64df7",
+                  },
+                ],
+                [
+                  {
+                    command:
                       '<a href="https://4ng3l0000.com/" style="text-decoration-line: underline;" target="_blank" class="font-mono border-b-2 border-white text-white">Shop page</a>',
+                    color: "#ffffff",
+                  },
+                ],
+                [{ command: "", color: "#ffffff" }],
+                [{ command: "", color: "#ffffff" }],
+                [
+                  {
+                    command: "GlossyWords",
+                    color: "#ffffff",
+                  },
+                ],
+                [
+                  {
+                    command:
+                      "------------------------------------------------------------",
+                    color: "#ffffff",
+                  },
+                ],
+                [
+                  {
+                    command:
+                      "Implemented the website with the design and concept using a CMS system. Additionally created pipelines to deploy the website.",
+                    color: "#ffffff",
+                  },
+                ],
+                [
+                  {
+                    command:
+                      "Techstack: ",
+                    color: "#0fd142",
+                  },
+                  {
+                    command:
+                      "NUXT, TailwindCSS, Vercel, Github actions, Strapi",
+                    color: "#b64df7",
+                  },
+                ],
+                [
+                  {
+                    command:
+                      '<a href="https://glossywords.ch/" style="text-decoration-line: underline;" target="_blank" class="font-mono border-b-2 border-white text-white">Website</a>',
                     color: "#ffffff",
                   },
                 ],
