@@ -150,8 +150,7 @@ export function Shell(): CommandLine {
                 ],
                 [
                   {
-                    command:
-                      "Techstack: ",
+                    command: "Techstack: ",
                     color: "#0fd142",
                   },
                   {
@@ -195,13 +194,11 @@ export function Shell(): CommandLine {
                 ],
                 [
                   {
-                    command:
-                      "Techstack: ",
+                    command: "Techstack: ",
                     color: "#0fd142",
                   },
                   {
-                    command:
-                      ".NET, Docker",
+                    command: ".NET, Docker",
                     color: "#b64df7",
                   },
                 ],
@@ -235,13 +232,11 @@ export function Shell(): CommandLine {
                 ],
                 [
                   {
-                    command:
-                      "Techstack: ",
+                    command: "Techstack: ",
                     color: "#0fd142",
                   },
                   {
-                    command:
-                      "NUXT, TailwindCSS, Vercel, Github actions",
+                    command: "NUXT, TailwindCSS, Vercel, Github actions",
                     color: "#b64df7",
                   },
                 ],
@@ -275,13 +270,11 @@ export function Shell(): CommandLine {
                 ],
                 [
                   {
-                    command:
-                      "Techstack: ",
+                    command: "Techstack: ",
                     color: "#0fd142",
                   },
                   {
-                    command:
-                      "Vue.js, TailwindCSS, Vercel",
+                    command: "Vue.js, TailwindCSS, Vercel",
                     color: "#b64df7",
                   },
                 ],
@@ -315,13 +308,11 @@ export function Shell(): CommandLine {
                 ],
                 [
                   {
-                    command:
-                      "Techstack: ",
+                    command: "Techstack: ",
                     color: "#0fd142",
                   },
                   {
-                    command:
-                      "Cargo and brainpower",
+                    command: "Cargo and brainpower",
                     color: "#b64df7",
                   },
                 ],
@@ -356,8 +347,7 @@ export function Shell(): CommandLine {
                 ],
                 [
                   {
-                    command:
-                      "Techstack: ",
+                    command: "Techstack: ",
                     color: "#0fd142",
                   },
                   {
